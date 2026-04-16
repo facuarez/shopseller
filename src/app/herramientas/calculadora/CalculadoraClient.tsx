@@ -248,9 +248,9 @@ function MiniField({ label, value, onChange, suffix, placeholder, step }: { labe
   );
 }
 
-function Row({ label, value, negative, bold }: { label: string; value: string; negative?: boolean; bold?: boolean }) {
+function Row({ label, value, negative, bold, even }: { label: string; value: string; negative?: boolean; bold?: boolean; even?: boolean }) {
   return (
-    <div className={`flex items-center justify-between ${bold ? "py-1" : "py-[3px]"}`}>
+    <div className={`flex items-center justify-between px-2 rounded ${bold ? "py-1.5" : "py-[5px]"} ${even && !bold ? "bg-bg-secondary/50" : ""}`}>
       <span className={`text-xs ${bold ? "font-bold text-text" : "text-text-secondary"}`}>{label}</span>
       <span className={`text-xs tabular-nums font-semibold ${bold ? "font-bold text-text" : negative ? "text-red-400" : "text-text"}`}>
         {negative ? `−${value}` : value}
@@ -295,48 +295,49 @@ function CountryCard({ data, config, originFlag, onUpdate, style }: {
 
   return (
     <div className="bg-card-bg rounded-2xl border border-border shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow" style={style}>
-      {/* Header */}
-      <div className="px-4 py-3 bg-gradient-to-r from-[#1a1a2e] to-[#2a2a4e] text-white">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-lg leading-none">{country.flag}</span>
-            <span className="font-bold text-sm">{country.name}</span>
+      {/* Header — sutil, sin gradiente agresivo */}
+      <div className="px-4 py-3.5 border-b border-border bg-bg-secondary/60">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2.5">
+            <span className="text-xl leading-none">{country.flag}</span>
+            <span className="font-bold text-sm text-text">{country.name}</span>
           </div>
-          <button onClick={() => onUpdate({ _active: false })} className="text-white/30 hover:text-white/70 text-sm transition-colors" title="Quitar">
+          <button onClick={() => onUpdate({ _active: false })} className="text-text-secondary/40 hover:text-text-secondary text-sm transition-colors" title="Quitar">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
           </button>
         </div>
-        <div className="flex items-end gap-3 mt-2">
+        {/* PVP grande */}
+        <div className="flex items-end gap-3">
           <div className="flex-1">
-            <span className="text-[10px] text-white/40 uppercase tracking-wide">{isFreeShipping ? "PVP org." : "PVP pub."}</span>
-            <div className="text-2xl font-black leading-tight tracking-tight">{fmt(organic.pvp)}</div>
-            {!isFreeShipping && <div className="text-[10px] text-white/35 mt-0.5">+ envio {fmt(buyerFeeForMode)} = <span className="text-white/60 font-semibold">{fmt(organic.pvp + buyerFeeForMode)}</span></div>}
+            <span className="text-[10px] text-text-secondary uppercase tracking-wide">{isFreeShipping ? "PVP org." : "PVP pub."}</span>
+            <div className="text-2xl font-black leading-tight tracking-tight text-text font-data">{fmt(organic.pvp)}</div>
+            {!isFreeShipping && <div className="text-[10px] text-text-secondary/60 mt-0.5">+ envio {fmt(buyerFeeForMode)} = <span className="text-text-secondary font-semibold">{fmt(organic.pvp + buyerFeeForMode)}</span></div>}
           </div>
           {paid?.valid && (
             <div className="flex-1 text-right">
               <span className="text-[10px] text-accent/70 uppercase tracking-wide">{isFreeShipping ? "PVP paid" : "Paid pub."}</span>
-              <div className="text-2xl font-black leading-tight tracking-tight text-accent">{fmt(paid.pvp)}</div>
-              {!isFreeShipping && <div className="text-[10px] text-white/35 mt-0.5">+ envio {fmt(buyerFeeForMode)} = <span className="text-accent/60 font-semibold">{fmt(paid.pvp + buyerFeeForMode)}</span></div>}
+              <div className="text-2xl font-black leading-tight tracking-tight text-accent font-data">{fmt(paid.pvp)}</div>
+              {!isFreeShipping && <div className="text-[10px] text-text-secondary/60 mt-0.5">+ envio {fmt(buyerFeeForMode)} = <span className="text-accent/60 font-semibold">{fmt(paid.pvp + buyerFeeForMode)}</span></div>}
             </div>
           )}
         </div>
       </div>
 
       {/* Shipping strip */}
-      <div className="flex items-center justify-between px-4 py-1.5 bg-bg-secondary text-[11px] border-b border-border">
+      <div className="flex items-center justify-between px-4 py-1.5 text-[11px] border-b border-border/60">
         <span className="text-text-secondary">{originFlag} → {country.flag} · {weightTier} kg</span>
-        <span className="text-text font-semibold">{isFreeShipping ? `Seller: ${fmt(sellerShippingCost)}` : `Seller: ${fmt(sellerNet)}`}</span>
+        <span className="text-text font-semibold font-data">{isFreeShipping ? `Seller: ${fmt(sellerShippingCost)}` : `Seller: ${fmt(sellerNet)}`}</span>
       </div>
 
-      <div className="px-4 py-3 flex-1 flex flex-col">
+      <div className="px-3 py-3 flex-1 flex flex-col">
         {/* Config toggle */}
-        <button onClick={() => setExpanded(!expanded)} className="flex items-center gap-1 text-[10px] text-text-secondary hover:text-text mb-2 transition-colors">
+        <button onClick={() => setExpanded(!expanded)} className="flex items-center gap-1 text-[10px] text-text-secondary hover:text-text mb-2.5 px-1 transition-colors">
           <svg className={`w-3 h-3 transition-transform ${expanded ? "rotate-90" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
           Comisiones
         </button>
 
         {expanded && (
-          <div className="mb-2.5 pb-2.5 border-b border-border">
+          <div className="mb-3 pb-3 border-b border-border/60 px-1">
             <div className="grid grid-cols-3 gap-1.5 items-end">
               <SmallInput label="Afil. org." value={config._affiliateOrganic} onChange={(v) => onUpdate({ _affiliateOrganic: v })} suffix="%" />
               <SmallInput label="Afil. paid" value={config._affiliatePaid} onChange={(v) => onUpdate({ _affiliatePaid: v })} suffix="%" disabled={!config._paidEnabled} />
@@ -349,23 +350,23 @@ function CountryCard({ data, config, originFlag, onUpdate, style }: {
           </div>
         )}
 
-        {/* Organic breakdown */}
-        <div className="flex-1">
-          <Row label="PVP organico" value={fmt(organic.pvp)} />
-          <Row label={`− TikTok ${tikP}%`} value={fmt(organic.tikCost)} negative />
-          <Row label={`− Afiliado ${affOrg}%`} value={fmt(organic.affCost)} negative />
-          <Row label={`− IVA ${ivaPct}%`} value={fmt(organic.ivaCost)} negative />
-          <Row label="− Producto" value={fmt(cost)} negative />
-          <Row label={isFreeShipping ? "− Envio (free)" : "− Envio seller"} value={fmt(sellerShippingCost)} negative />
-          <Row label={`− Dev. (${retPct}%)`} value={fmt(dev)} negative />
-          <div className="border-t border-border my-1.5" />
-          <div className="flex items-center justify-between py-1.5">
+        {/* Organic breakdown — zebra rows */}
+        <div className="flex-1 space-y-0">
+          <Row label="PVP organico" value={fmt(organic.pvp)} even={false} />
+          <Row label={`− TikTok ${tikP}%`} value={fmt(organic.tikCost)} negative even />
+          <Row label={`− Afiliado ${affOrg}%`} value={fmt(organic.affCost)} negative even={false} />
+          <Row label={`− IVA ${ivaPct}%`} value={fmt(organic.ivaCost)} negative even />
+          <Row label="− Producto" value={fmt(cost)} negative even={false} />
+          <Row label={isFreeShipping ? "− Envio (free)" : "− Envio seller"} value={fmt(sellerShippingCost)} negative even />
+          <Row label={`− Dev. (${retPct}%)`} value={fmt(dev)} negative even={false} />
+          <div className="border-t-2 border-border/80 my-2" />
+          <div className="flex items-center justify-between px-2 py-2 rounded-lg bg-bg-secondary">
             <span className="text-[13px] font-bold text-text">Beneficio org.</span>
-            <span className="text-base font-black text-text tabular-nums">{fmt(organic.benefit)}</span>
+            <span className="text-base font-black text-text tabular-nums font-data">{fmt(organic.benefit)}</span>
           </div>
         </div>
 
-        <div className="mt-1.5">
+        <div className="mt-2 px-1">
           <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-semibold ${st.bg} ${st.text}`}>
             <span className={`w-1.5 h-1.5 rounded-full ${st.dot}`} />{st.label} · {fmt(organic.benefit)}
           </span>
@@ -373,22 +374,22 @@ function CountryCard({ data, config, originFlag, onUpdate, style }: {
 
         {/* Paid breakdown */}
         {paid?.valid && (
-          <div className="mt-2.5 pt-2.5 border-t border-border">
-            <div className={`rounded-xl px-3 py-2.5 ${config._paidEnabled ? "bg-accent/5" : "bg-bg-secondary opacity-40"}`}>
-              <Row label="PVP paid" value={fmt(paid.pvp)} />
-              <Row label={`− TikTok ${tikP}%`} value={fmt(paid.tikCost)} negative />
-              <Row label={`− Afiliado ${affPaid}%`} value={fmt(paid.affCost)} negative />
-              <Row label="− CPA TTS" value={fmt(parseFloat(config._cpaTtsAds ?? "0") || 0)} negative />
-              <Row label={`− IVA ${ivaPct}%`} value={fmt(paid.ivaCost)} negative />
-              <Row label="− Costes" value={fmt(cost + sellerShippingCost + dev)} negative />
-              <div className="border-t border-accent/10 my-1.5" />
-              <div className="flex items-center justify-between py-1.5">
+          <div className="mt-3 pt-3 border-t border-border/60">
+            <div className={`rounded-xl px-2 py-2.5 ${config._paidEnabled ? "bg-accent/[0.03] border border-accent/10" : "bg-bg-secondary opacity-40"}`}>
+              <Row label="PVP paid" value={fmt(paid.pvp)} even={false} />
+              <Row label={`− TikTok ${tikP}%`} value={fmt(paid.tikCost)} negative even />
+              <Row label={`− Afiliado ${affPaid}%`} value={fmt(paid.affCost)} negative even={false} />
+              <Row label="− CPA TTS" value={fmt(parseFloat(config._cpaTtsAds ?? "0") || 0)} negative even />
+              <Row label={`− IVA ${ivaPct}%`} value={fmt(paid.ivaCost)} negative even={false} />
+              <Row label="− Costes" value={fmt(cost + sellerShippingCost + dev)} negative even />
+              <div className="border-t-2 border-accent/15 my-2" />
+              <div className="flex items-center justify-between px-2 py-2 rounded-lg bg-accent/5">
                 <span className="text-[13px] font-bold text-text">Beneficio paid</span>
-                <span className="text-base font-black text-text tabular-nums">{fmt(paid.benefit)}</span>
+                <span className="text-base font-black text-text tabular-nums font-data">{fmt(paid.benefit)}</span>
               </div>
             </div>
             {paidSt && (
-              <div className="mt-1.5">
+              <div className="mt-2 px-1">
                 <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-semibold ${paidSt.bg} ${paidSt.text}`}>
                   <span className={`w-1.5 h-1.5 rounded-full ${paidSt.dot}`} />Paid: {paidSt.label} · {fmt(paid.benefit)}
                 </span>
@@ -397,7 +398,7 @@ function CountryCard({ data, config, originFlag, onUpdate, style }: {
           </div>
         )}
 
-        <div className="mt-2.5 pt-2 border-t border-border text-[11px] text-text-secondary">
+        <div className="mt-3 pt-2 border-t border-border/60 text-[11px] text-text-secondary px-1">
           {isFreeShipping ? <>Buyer: €0.00 · TTS: {fmt(ttsFeeHome)}</> : <>Buyer: {fmt(buyerFeeForMode)} · TTS: {fmt(ttsFeeHome)}</>}
         </div>
       </div>
