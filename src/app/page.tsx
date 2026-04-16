@@ -410,16 +410,6 @@ export default function Home() {
         </section>
       )}
 
-      {/* ═══════════════════════════════════════════════
-          7. NEWSLETTER CTA
-          ═══════════════════════════════════════════════ */}
-      <section className="bg-bg-secondary py-20 border-t border-border">
-        <div className="max-w-2xl mx-auto px-4">
-          <ScrollReveal>
-            <NewsletterCTA />
-          </ScrollReveal>
-        </div>
-      </section>
     </div>
   );
 }
