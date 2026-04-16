@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-sm">
           {/* Marca */}
           <div>
-            <p className="font-semibold text-text mb-2"><span className="text-accent">TTS</span> Seller</p>
+            <p className="font-semibold text-text mb-2"><span className="text-accent">Shop</span>Seller</p>
             <p className="text-text-secondary leading-relaxed">
               TikTok Shop Europa para vendedores que operan de verdad.
             </p>
@@ -47,7 +47,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-border mt-8 pt-6 text-xs text-text-secondary text-center">
-          &copy; {new Date().getFullYear()} TTS Seller. Hecho por un vendedor para vendedores.
+          &copy; {new Date().getFullYear()} ShopSeller. Hecho por un vendedor para vendedores.
         </div>
       </div>
     </footer>

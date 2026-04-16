@@ -57,7 +57,7 @@ export function truncate(text: string, maxLength: number): string {
 /**
  * URL base del sitio — cambiar cuando se elija dominio definitivo.
  */
-export const SITE_URL = "https://ttsseller.com";
-export const SITE_NAME = "TTS Seller";
+export const SITE_URL = "https://shopseller.eu";
+export const SITE_NAME = "ShopSeller";
 export const SITE_DESCRIPTION =
   "TikTok Shop Europa para vendedores que operan de verdad. Herramientas, datos y analisis.";

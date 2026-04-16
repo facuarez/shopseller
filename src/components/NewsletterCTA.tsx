@@ -28,7 +28,7 @@ export default function NewsletterCTA() {
         </button>
       </div>
       <p className="text-xs text-text-secondary mt-3">
-        Newsletter de TTS Seller en preparacion. Proximamente.
+        Newsletter de ShopSeller en preparacion. Proximamente.
       </p>
     </section>
   );

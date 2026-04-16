@@ -15,7 +15,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between relative">
         {/* Logo */}
         <Link href="/" className="font-semibold text-lg text-text hover:text-accent transition-colors tracking-tight">
-          <span className="text-accent font-bold">TTS</span> Seller
+          <span className="text-accent font-bold">Shop</span>Seller
         </Link>
 
         {/* Nav desktop */}
