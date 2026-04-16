@@ -1,0 +1,44 @@
+{
+  "ES": {
+    "country": "España",
+    "standard": 21,
+    "reduced": [10, 4],
+    "currency": "EUR",
+    "notes": "IVA general 21%. Tipo reducido del 10% aplica a alimentos procesados, transporte, hostelería. Tipo superreducido del 4% aplica a pan, leche, frutas, verduras, libros y medicamentos."
+  },
+  "FR": {
+    "country": "Francia",
+    "standard": 20,
+    "reduced": [10, 5.5, 2.1],
+    "currency": "EUR",
+    "notes": "TVA general 20%. Tipo reducido 10% para restauración y transporte. Tipo reducido 5.5% para alimentación y libros. Tipo superreducido 2.1% para medicamentos reembolsables y prensa."
+  },
+  "IT": {
+    "country": "Italia",
+    "standard": 22,
+    "reduced": [10, 5, 4],
+    "currency": "EUR",
+    "notes": "IVA general 22%. Tipo reducido 10% para turismo, alimentación procesada, medicamentos. Tipo 5% para ciertos alimentos. Tipo 4% para alimentación básica, libros y prensa."
+  },
+  "DE": {
+    "country": "Alemania",
+    "standard": 19,
+    "reduced": [7],
+    "currency": "EUR",
+    "notes": "MwSt general 19%. Tipo reducido 7% para alimentación, libros, periódicos, transporte local, entradas culturales y alojamiento."
+  },
+  "IE": {
+    "country": "Irlanda",
+    "standard": 23,
+    "reduced": [13.5, 9, 4.8, 0],
+    "currency": "EUR",
+    "notes": "VAT general 23%. Tipo 13.5% para combustible y construcción. Tipo 9% para periódicos y publicaciones electrónicas. Tipo 4.8% para ganado y animales. Tipo 0% para alimentación infantil, libros y ropa infantil."
+  },
+  "UK": {
+    "country": "Reino Unido",
+    "standard": 20,
+    "reduced": [5, 0],
+    "currency": "GBP",
+    "notes": "VAT general 20%. Tipo reducido 5% para energía doméstica, asientos infantiles para coche. Tipo 0% para alimentación básica, ropa infantil, libros y periódicos. UK ya no forma parte de la UE — reglas de importación y customs duties diferentes."
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "ES": {
+    "country": "España",
+    "lastUpdated": "2026-04-16",
+    "categories": [
+      { "name": "TODO: Hogar y jardín", "commission": 0, "notes": "TODO: Verificar comisión actual" },
+      { "name": "TODO: Belleza y cuidado personal", "commission": 0, "notes": "TODO: Verificar comisión actual" },
+      { "name": "TODO: Moda y accesorios", "commission": 0, "notes": "TODO: Verificar comisión actual" },
+      { "name": "TODO: Electrónica", "commission": 0, "notes": "TODO: Verificar comisión actual" },
+      { "name": "TODO: Alimentación", "commission": 0, "notes": "TODO: Verificar comisión actual" },
+      { "name": "TODO: Deportes", "commission": 0, "notes": "TODO: Verificar comisión actual" }
+    ]
+  },
+  "FR": {
+    "country": "Francia",
+    "lastUpdated": "2026-04-16",
+    "categories": [
+      { "name": "TODO: categoría 1", "commission": 0, "notes": "TODO" },
+      { "name": "TODO: categoría 2", "commission": 0, "notes": "TODO" }
+    ]
+  },
+  "IT": {
+    "country": "Italia",
+    "lastUpdated": "2026-04-16",
+    "categories": [
+      { "name": "TODO: categoría 1", "commission": 0, "notes": "TODO" },
+      { "name": "TODO: categoría 2", "commission": 0, "notes": "TODO" }
+    ]
+  },
+  "DE": {
+    "country": "Alemania",
+    "lastUpdated": "2026-04-16",
+    "categories": [
+      { "name": "TODO: categoría 1", "commission": 0, "notes": "TODO" },
+      { "name": "TODO: categoría 2", "commission": 0, "notes": "TODO" }
+    ]
+  },
+  "IE": {
+    "country": "Irlanda",
+    "lastUpdated": "2026-04-16",
+    "categories": [
+      { "name": "TODO: categoría 1", "commission": 0, "notes": "TODO" },
+      { "name": "TODO: categoría 2", "commission": 0, "notes": "TODO" }
+    ]
+  },
+  "UK": {
+    "country": "Reino Unido",
+    "lastUpdated": "2026-04-16",
+    "categories": [
+      { "name": "TODO: categoría 1", "commission": 0, "notes": "TODO" },
+      { "name": "TODO: categoría 2", "commission": 0, "notes": "TODO" }
+    ]
+  }
+}

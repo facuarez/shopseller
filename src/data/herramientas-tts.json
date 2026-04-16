@@ -1,0 +1,64 @@
+{
+  "tools": [
+    {
+      "slug": "kalodata",
+      "name": "Kalodata",
+      "type": "analytics",
+      "description": "Plataforma de analytics para TikTok Shop. Permite analizar productos trending, ventas estimadas por tienda, rendimiento de creadores y tendencias de mercado por país.",
+      "pricing": "freemium",
+      "url": "https://kalodata.com",
+      "countries": ["ES", "FR", "UK", "DE", "IT"],
+      "tags": ["research", "trends", "products", "analytics"]
+    },
+    {
+      "slug": "fastmoss",
+      "name": "FastMoss",
+      "type": "analytics",
+      "description": "Herramienta de investigación de mercado para TikTok Shop. Muestra rankings de productos, datos de ventas estimadas, y análisis de competencia por categoría y país.",
+      "pricing": "freemium",
+      "url": "https://www.fastmoss.com",
+      "countries": ["ES", "FR", "UK", "DE", "IT", "IE"],
+      "tags": ["research", "competitors", "products", "rankings"]
+    },
+    {
+      "slug": "shoplus",
+      "name": "Shoplus",
+      "type": "analytics",
+      "description": "Suite de analytics para TikTok que incluye búsqueda de productos virales, análisis de vídeos top, y tracking de tiendas competidoras. Especialmente útil para encontrar productos con potencial.",
+      "pricing": "freemium",
+      "url": "https://www.shoplus.net",
+      "countries": ["ES", "FR", "UK", "DE", "IT"],
+      "tags": ["research", "viral", "products", "videos"]
+    },
+    {
+      "slug": "echotik",
+      "name": "EchoTik",
+      "type": "analytics",
+      "description": "Plataforma de datos y analytics para TikTok Shop con foco en descubrimiento de productos, análisis de creadores, y tracking de tendencias. Interfaz clara con datos por región.",
+      "pricing": "freemium",
+      "url": "https://echotik.live",
+      "countries": ["ES", "FR", "UK", "DE", "IT"],
+      "tags": ["research", "creators", "trends", "analytics"]
+    },
+    {
+      "slug": "tiktok-creative-center",
+      "name": "TikTok Creative Center",
+      "type": "creative",
+      "description": "Herramienta oficial de TikTok para explorar tendencias de contenido, hashtags populares, audios trending y templates de anuncios. Gratis y directamente de TikTok — esencial para planificar contenido.",
+      "pricing": "free",
+      "url": "https://ads.tiktok.com/business/creativecenter",
+      "countries": ["ES", "FR", "UK", "DE", "IT", "IE"],
+      "tags": ["creative", "trends", "hashtags", "official"]
+    },
+    {
+      "slug": "shopee",
+      "name": "Shopee",
+      "type": "marketplace",
+      "description": "Marketplace de ecommerce del sudeste asiático operado por Sea Group. Aunque no opera directamente en Europa, es referencia para vendedores que quieren entender dinámicas de social commerce y cross-border.",
+      "pricing": "free",
+      "url": "https://shopee.com",
+      "countries": [],
+      "tags": ["marketplace", "reference", "cross-border"]
+    }
+  ]
+}
