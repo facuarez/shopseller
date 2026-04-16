@@ -1,140 +1,500 @@
 import Link from "next/link";
 import ArticleCard from "@/components/ArticleCard";
-import ToolCard from "@/components/ToolCard";
 import ChangelogEntryComponent from "@/components/ChangelogEntry";
 import NewsletterCTA from "@/components/NewsletterCTA";
+import ScrollReveal from "@/components/ScrollReveal";
 import { getAnalisis, getChangelog } from "@/lib/content";
 
 export default function Home() {
   const analisis = getAnalisis().slice(0, 3);
   const changelog = getChangelog().slice(0, 3);
+  const featured = analisis.find((a) => a.frontmatter.featured);
+  const rest = analisis.filter((a) => a.slug !== featured?.slug);
 
   return (
     <div>
-      {/* Hero */}
-      <section className="max-w-4xl mx-auto px-4 pt-20 pb-16 text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold text-text leading-tight mb-4">
-          TikTok Shop Europa
-          <br />
-          <span className="text-accent">para vendedores que operan de verdad</span>
-        </h1>
-        <p className="text-lg text-text-secondary max-w-xl mx-auto mb-8">
-          Herramientas, datos actualizados y analisis desde la trinchera.
-          Sin humo, sin gurues, sin teoria.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Link
-            href="/herramientas"
-            className="px-6 py-2.5 bg-accent text-white font-medium rounded-md hover:bg-accent-hover transition-colors text-sm"
-          >
-            Ver herramientas
-          </Link>
-          {analisis.length > 0 && (
-            <Link
-              href={`/analisis/${analisis[0].slug}`}
-              className="px-6 py-2.5 border border-border text-text font-medium rounded-md hover:bg-bg-secondary transition-colors text-sm"
-            >
-              Ultimo analisis
-            </Link>
-          )}
+      {/* ═══════════════════════════════════════════════
+          1. HERO — fondo oscuro + mockup dashboard
+          ═══════════════════════════════════════════════ */}
+      <section className="relative overflow-hidden bg-[#0A0A0A]">
+        <div className="absolute inset-0 opacity-[0.04]" style={{
+          backgroundImage: "radial-gradient(circle, #FF5A1F 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }} />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent/8 rounded-full blur-[120px]" />
+
+        <div className="relative max-w-6xl mx-auto px-4 pt-20 pb-20 lg:pt-28 lg:pb-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <ScrollReveal from="left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                <span className="text-xs text-accent font-medium">Operando en TTS Europa</span>
+              </div>
+              <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-5">
+                TikTok Shop Europa
+                <br />
+                <span className="text-accent">para vendedores reales</span>
+              </h1>
+              <p className="text-lg text-[#999] max-w-md mb-8 leading-relaxed">
+                Herramientas, datos actualizados y analisis desde la trinchera.
+                Sin humo, sin gurues, sin teoria.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link href="/herramientas" className="px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-all text-sm shadow-lg shadow-accent/20">
+                  Ver herramientas
+                </Link>
+                {analisis.length > 0 && (
+                  <Link href={`/analisis/${analisis[0].slug}`} className="px-6 py-3 border border-[#333] text-[#ccc] font-medium rounded-lg hover:bg-[#111] hover:border-[#555] transition-all text-sm">
+                    Ultimo analisis
+                  </Link>
+                )}
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal from="right" delay={200} className="hidden lg:block">
+              <div className="relative">
+                <div className="bg-[#111] border border-[#222] rounded-xl p-6 shadow-2xl">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs text-[#666] font-medium uppercase tracking-wider">Resumen de producto</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-green-500/10 text-green-400 font-medium">Rentable</span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4 mb-5">
+                    <div className="bg-[#0A0A0A] rounded-lg p-3 border border-[#1a1a1a]">
+                      <p className="text-[10px] text-[#666] mb-1">Margen neto</p>
+                      <p className="text-2xl font-bold text-white font-data">23.4<span className="text-sm text-accent">%</span></p>
+                    </div>
+                    <div className="bg-[#0A0A0A] rounded-lg p-3 border border-[#1a1a1a]">
+                      <p className="text-[10px] text-[#666] mb-1">Beneficio/unidad</p>
+                      <p className="text-2xl font-bold text-white font-data">4.82<span className="text-sm text-[#666]">&euro;</span></p>
+                    </div>
+                  </div>
+                  <div className="space-y-2.5">
+                    {[
+                      { label: "PVP", value: "24.99 €", accent: false },
+                      { label: "Comision TTS", value: "-5.0%", accent: true },
+                      { label: "IVA (ES 21%)", value: "-4.34 €", accent: false },
+                      { label: "Envio", value: "-3.50 €", accent: false },
+                      { label: "Coste producto", value: "-8.20 €", accent: false },
+                    ].map((row) => (
+                      <div key={row.label} className="flex justify-between items-center py-1.5 border-b border-[#1a1a1a] last:border-0">
+                        <span className="text-xs text-[#888]">{row.label}</span>
+                        <span className={`text-sm font-data ${row.accent ? "text-accent font-semibold" : "text-[#ccc]"}`}>{row.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="absolute -bottom-4 -left-4 bg-[#111] border border-[#222] rounded-lg p-3 shadow-xl">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-md bg-accent/10 flex items-center justify-center">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF5A1F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-[10px] text-[#666]">6 paises</p>
+                      <p className="text-xs text-white font-semibold font-data">ES FR IT DE IE UK</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
-      {/* Herramientas */}
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-text">Herramientas</h2>
-          <Link href="/herramientas" className="text-sm text-accent hover:text-accent-hover transition-colors">
-            Ver todas &rarr;
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <ToolCard
-            name="Calculadora de rentabilidad"
-            description="Calcula margenes reales por producto incluyendo comisiones TTS, envio, IVA y costes."
-            href="/herramientas/calculadora"
-            status="disponible"
-          />
-          <ToolCard
-            name="Tabla de envios TTS Europa"
-            description="Costes, tiempos y carriers por ruta. Comparativa entre paises y opciones de fulfillment."
-            href="/herramientas/envios"
-            status="disponible"
-          />
-          <ToolCard
-            name="Simulador ROI por campaña"
-            description="Proyecta retorno de campañas de afiliados y ads basandote en datos historicos."
-            href="/herramientas"
-            status="proximamente"
-          />
+      {/* ═══════════════════════════════════════════════
+          2. HERRAMIENTAS — Alternating left/right (Dub.co style)
+          ═══════════════════════════════════════════════ */}
+      <section className="bg-bg py-20">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Herramientas</p>
+            <h2 className="text-3xl font-bold text-text mb-4">Apps que construi porque las necesitaba</h2>
+            <p className="text-text-secondary max-w-lg mb-14">
+              Cada herramienta nace de un problema operativo real. No son demos — son lo que uso para gestionar mi propia operacion en TTS.
+            </p>
+          </ScrollReveal>
+
+          {/* Tool 1: Calculadora — texto izq, mock der */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-20">
+            <ScrollReveal from="left">
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 text-[11px] font-medium mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                Disponible
+              </div>
+              <h3 className="text-2xl font-bold text-text mb-3">Calculadora de rentabilidad</h3>
+              <p className="text-text-secondary leading-relaxed mb-4">
+                Introduce PVP, coste del producto, pais y categoria. La calculadora aplica automaticamente la comision TTS, IVA correspondiente, costes de envio, y te muestra el margen neto real. Sin sorpresas.
+              </p>
+              <ul className="space-y-2 text-sm text-text-secondary mb-6">
+                <li className="flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
+                  Comisiones TTS reales por categoria
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
+                  IVA automatico por pais de destino
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
+                  Costes de envio, packaging y ads opcionales
+                </li>
+              </ul>
+              <Link href="/herramientas/calculadora" className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-hover transition-colors">
+                Abrir calculadora
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+              </Link>
+            </ScrollReveal>
+
+            <ScrollReveal from="right" delay={150}>
+              <div className="bg-card-bg border border-border rounded-xl p-5 shadow-sm">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
+                  <span className="text-[10px] text-text-secondary ml-2 font-data">calculadora.tsx</span>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center p-3 bg-bg-secondary rounded-lg">
+                    <span className="text-xs text-text-secondary">PVP</span>
+                    <span className="text-sm font-data font-semibold text-text">24.99 €</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-bg-secondary rounded-lg">
+                    <span className="text-xs text-text-secondary">Comision TTS (5%)</span>
+                    <span className="text-sm font-data text-accent">-1.25 €</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-bg-secondary rounded-lg">
+                    <span className="text-xs text-text-secondary">IVA ES (21%)</span>
+                    <span className="text-sm font-data text-text-secondary">-4.34 €</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-bg-secondary rounded-lg">
+                    <span className="text-xs text-text-secondary">Envio</span>
+                    <span className="text-sm font-data text-text-secondary">-3.50 €</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-bg-secondary rounded-lg">
+                    <span className="text-xs text-text-secondary">Coste producto</span>
+                    <span className="text-sm font-data text-text-secondary">-8.20 €</span>
+                  </div>
+                  <div className="border-t-2 border-accent/30 pt-3 mt-1">
+                    <div className="flex justify-between items-center p-3 bg-accent/5 rounded-lg border border-accent/20">
+                      <span className="text-xs font-semibold text-text">Margen neto</span>
+                      <span className="text-lg font-data font-bold text-accent">+7.70 € (30.8%)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          {/* Tool 2: Envios — mock izq, texto der */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-16">
+            <ScrollReveal from="left" delay={100} className="order-2 lg:order-1">
+              <div className="bg-card-bg border border-border rounded-xl p-5 shadow-sm">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
+                  <span className="text-[10px] text-text-secondary ml-2 font-data">envios-europa.tsx</span>
+                </div>
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th className="text-left text-[10px] text-text-secondary uppercase tracking-wider pb-2 font-semibold">Ruta</th>
+                      <th className="text-right text-[10px] text-text-secondary uppercase tracking-wider pb-2 font-semibold">Coste</th>
+                      <th className="text-right text-[10px] text-text-secondary uppercase tracking-wider pb-2 font-semibold">Dias</th>
+                    </tr>
+                  </thead>
+                  <tbody className="font-data">
+                    {[
+                      { route: "🇪🇸 ES → 🇪🇸 ES", cost: "3.50 €", days: "2-3" },
+                      { route: "🇪🇸 ES → 🇫🇷 FR", cost: "5.20 €", days: "3-5" },
+                      { route: "🇪🇸 ES → 🇩🇪 DE", cost: "5.80 €", days: "4-6" },
+                      { route: "🇪🇸 ES → 🇮🇹 IT", cost: "5.40 €", days: "3-5" },
+                      { route: "🇬🇧 UK → 🇬🇧 UK", cost: "£3.20", days: "1-3" },
+                    ].map((r) => (
+                      <tr key={r.route} className="border-b border-border/50 last:border-0">
+                        <td className="py-2.5 text-xs text-text">{r.route}</td>
+                        <td className="py-2.5 text-xs text-right text-accent font-semibold">{r.cost}</td>
+                        <td className="py-2.5 text-xs text-right text-text-secondary">{r.days}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal from="right" className="order-1 lg:order-2">
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 text-[11px] font-medium mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                Disponible
+              </div>
+              <h3 className="text-2xl font-bold text-text mb-3">Tabla de envios TTS Europa</h3>
+              <p className="text-text-secondary leading-relaxed mb-4">
+                Costes reales de envio por ruta, tiempos de entrega y carriers disponibles. Comparativa entre fulfillment de TTS y logistica propia para que elijas lo que mas te conviene.
+              </p>
+              <ul className="space-y-2 text-sm text-text-secondary mb-6">
+                <li className="flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
+                  Todas las rutas intra-Europa
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
+                  Fulfillment TTS vs envio propio
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
+                  Tiempos de entrega reales
+                </li>
+              </ul>
+              <Link href="/herramientas/envios" className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-hover transition-colors">
+                Ver tabla de envios
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+              </Link>
+            </ScrollReveal>
+          </div>
+
+          {/* Proximamente — fila compacta */}
+          <ScrollReveal>
+            <div className="border-t border-border pt-8">
+              <p className="text-xs text-text-secondary uppercase tracking-widest mb-4">Proximamente</p>
+              <div className="flex flex-wrap gap-3">
+                {["Tracker de afiliados", "Seguimiento de muestras", "Simulador ROI"].map((name) => (
+                  <span key={name} className="px-4 py-2 rounded-lg border border-border bg-card-bg text-sm text-text-secondary">
+                    {name}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Ultimo analisis */}
+      {/* ═══════════════════════════════════════════════
+          3. DATOS — Bento grid asimetrico (Stripe style)
+          ═══════════════════════════════════════════════ */}
+      <section className="bg-bg-secondary py-20">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Datos</p>
+            <h2 className="text-3xl font-bold text-text mb-4">Base de datos del vendedor TTS</h2>
+            <p className="text-text-secondary max-w-lg mb-10">
+              Informacion estructurada que actualizo manualmente con datos verificados. No es scraping — es experiencia operativa documentada.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            {/* Card grande — Comisiones (2 cols) */}
+            <ScrollReveal className="lg:col-span-2">
+              <Link href="/datos/comisiones" className="group block h-full p-6 rounded-xl border border-border bg-card-bg shadow-sm hover:border-accent/40 hover:shadow-md transition-all">
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-text group-hover:text-accent transition-colors">Comisiones TTS por pais</h3>
+                    <p className="text-sm text-text-secondary mt-1">Desglose por categoria y pais. Ultima actualizacion: abril 2026.</p>
+                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-text-secondary group-hover:text-accent transition-colors shrink-0">
+                    <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </div>
+                {/* Mini tabla preview */}
+                <div className="bg-bg-secondary rounded-lg p-4 mt-2">
+                  <table className="w-full text-sm font-data">
+                    <thead>
+                      <tr className="border-b border-border">
+                        <th className="text-left text-[10px] text-text-secondary uppercase pb-2">Pais</th>
+                        <th className="text-left text-[10px] text-text-secondary uppercase pb-2">Categoria</th>
+                        <th className="text-right text-[10px] text-text-secondary uppercase pb-2">Comision</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-border/50"><td className="py-2 text-xs text-text">🇪🇸 España</td><td className="py-2 text-xs text-text-secondary">Hogar y jardin</td><td className="py-2 text-xs text-right text-accent font-semibold">TODO</td></tr>
+                      <tr className="border-b border-border/50"><td className="py-2 text-xs text-text">🇫🇷 Francia</td><td className="py-2 text-xs text-text-secondary">Belleza</td><td className="py-2 text-xs text-right text-accent font-semibold">TODO</td></tr>
+                      <tr><td className="py-2 text-xs text-text">🇬🇧 UK</td><td className="py-2 text-xs text-text-secondary">Moda</td><td className="py-2 text-xs text-right text-accent font-semibold">TODO</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-accent font-medium mt-4">Ver tabla completa &rarr;</p>
+              </Link>
+            </ScrollReveal>
+
+            {/* Cards chicas apiladas (1 col) */}
+            <div className="flex flex-col gap-5">
+              <ScrollReveal delay={100}>
+                <Link href="/datos/ivas-europa" className="group block p-6 rounded-xl border border-border bg-card-bg shadow-sm hover:border-accent/40 hover:shadow-md transition-all">
+                  <h3 className="font-bold text-text group-hover:text-accent transition-colors mb-2">IVAs Europa</h3>
+                  <p className="text-sm text-text-secondary leading-relaxed mb-3">IVA estandar y reducido por pais.</p>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      { country: "ES", rate: "21%" },
+                      { country: "FR", rate: "20%" },
+                      { country: "DE", rate: "19%" },
+                      { country: "IT", rate: "22%" },
+                    ].map((v) => (
+                      <span key={v.country} className="text-[11px] px-2 py-1 rounded-md bg-bg-secondary font-data text-text-secondary">
+                        {v.country} <span className="text-text font-semibold">{v.rate}</span>
+                      </span>
+                    ))}
+                  </div>
+                </Link>
+              </ScrollReveal>
+
+              <ScrollReveal delay={200}>
+                <Link href="/datos/herramientas-tts" className="group block p-6 rounded-xl border border-border bg-card-bg shadow-sm hover:border-accent/40 hover:shadow-md transition-all">
+                  <h3 className="font-bold text-text group-hover:text-accent transition-colors mb-2">Directorio de herramientas</h3>
+                  <p className="text-sm text-text-secondary leading-relaxed mb-3">Analytics, research y gestion para TTS.</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Kalodata", "FastMoss", "Shoplus", "EchoTik"].map((t) => (
+                      <span key={t} className="text-[11px] px-2 py-1 rounded-md bg-bg-secondary text-text-secondary">{t}</span>
+                    ))}
+                  </div>
+                </Link>
+              </ScrollReveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════
+          4. ANALISIS — Featured highlight + smaller cards
+          ═══════════════════════════════════════════════ */}
       {analisis.length > 0 && (
-        <section className="max-w-6xl mx-auto px-4 py-12">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-text">Ultimo analisis</h2>
-            <Link href="/analisis" className="text-sm text-accent hover:text-accent-hover transition-colors">
-              Ver todos &rarr;
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {analisis.map((item) => (
-              <ArticleCard key={item.slug} slug={item.slug} frontmatter={item.frontmatter} />
-            ))}
+        <section className="bg-bg py-20">
+          <div className="max-w-6xl mx-auto px-4">
+            <ScrollReveal>
+              <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Analisis</p>
+              <h2 className="text-3xl font-bold text-text mb-10">Desde la trinchera, no desde la teoria</h2>
+            </ScrollReveal>
+
+            {/* Featured article — bloque grande */}
+            {featured && (
+              <ScrollReveal>
+                <Link
+                  href={`/analisis/${featured.slug}`}
+                  className="group block p-8 rounded-xl border border-border bg-card-bg shadow-sm hover:border-accent/40 hover:shadow-md transition-all mb-6"
+                >
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-accent/10 text-accent">Destacado</span>
+                        <span className="text-xs text-text-secondary font-data">{featured.frontmatter.readingTime} min de lectura</span>
+                      </div>
+                      <h3 className="text-xl lg:text-2xl font-bold text-text group-hover:text-accent transition-colors mb-2">
+                        {featured.frontmatter.title}
+                      </h3>
+                      <p className="text-text-secondary leading-relaxed max-w-2xl">
+                        {featured.frontmatter.description}
+                      </p>
+                    </div>
+                    <div className="shrink-0">
+                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
+                        Leer
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            )}
+
+            {/* Resto de articulos */}
+            {rest.length > 0 && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {rest.map((item, i) => (
+                  <ScrollReveal key={item.slug} delay={i * 100}>
+                    <ArticleCard slug={item.slug} frontmatter={item.frontmatter} />
+                  </ScrollReveal>
+                ))}
+              </div>
+            )}
+
+            <ScrollReveal>
+              <div className="mt-8 text-center">
+                <Link href="/analisis" className="text-sm font-semibold text-accent hover:text-accent-hover transition-colors">
+                  Ver todos los articulos &rarr;
+                </Link>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
       )}
 
-      {/* Datos y fichas */}
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-text">Datos y fichas</h2>
-          <Link href="/datos" className="text-sm text-accent hover:text-accent-hover transition-colors">
-            Ver todos &rarr;
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Link href="/datos/comisiones" className="group p-5 rounded-lg border border-border bg-card-bg hover:border-accent/40 transition-colors">
-            <h3 className="font-semibold text-text group-hover:text-accent transition-colors mb-1">Comisiones TTS</h3>
-            <p className="text-sm text-text-secondary">Comisiones por pais y categoria. Actualizadas manualmente.</p>
-          </Link>
-          <Link href="/datos/ivas-europa" className="group p-5 rounded-lg border border-border bg-card-bg hover:border-accent/40 transition-colors">
-            <h3 className="font-semibold text-text group-hover:text-accent transition-colors mb-1">IVAs Europa</h3>
-            <p className="text-sm text-text-secondary">IVA estandar y reducido por pais europeo donde opera TTS.</p>
-          </Link>
-          <Link href="/datos/herramientas-tts" className="group p-5 rounded-lg border border-border bg-card-bg hover:border-accent/40 transition-colors">
-            <h3 className="font-semibold text-text group-hover:text-accent transition-colors mb-1">Directorio de herramientas</h3>
-            <p className="text-sm text-text-secondary">Herramientas externas para analytics, research y gestion de TTS.</p>
-          </Link>
+      {/* ═══════════════════════════════════════════════
+          5. SOCIAL PROOF / TRUST — Fondo oscuro (rompe ritmo)
+          ═══════════════════════════════════════════════ */}
+      <section className="relative overflow-hidden bg-[#0A0A0A] py-20">
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: "radial-gradient(circle, #FF5A1F 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }} />
+        <div className="relative max-w-4xl mx-auto px-4 text-center">
+          <ScrollReveal>
+            <p className="text-2xl sm:text-3xl font-bold text-white leading-snug mb-8">
+              Datos verificados por un operador real
+              <br />
+              <span className="text-[#666]">que vende en TTS Europa todos los dias</span>
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={150}>
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
+              {[
+                { value: "6", label: "Paises cubiertos" },
+                { value: "5+", label: "Herramientas" },
+                { value: "Semanal", label: "Actualizacion de datos" },
+                { value: "100%", label: "Datos propios" },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center px-4 py-3">
+                  <p className="text-2xl sm:text-3xl font-bold text-accent font-data">{stat.value}</p>
+                  <p className="text-xs text-[#888] mt-1">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Changelog */}
+      {/* ═══════════════════════════════════════════════
+          6. CHANGELOG — Timeline con dots
+          ═══════════════════════════════════════════════ */}
       {changelog.length > 0 && (
-        <section className="max-w-6xl mx-auto px-4 py-12">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-text">Ultimos cambios en TTS Europa</h2>
-            <Link href="/changelog" className="text-sm text-accent hover:text-accent-hover transition-colors">
-              Ver todos &rarr;
-            </Link>
-          </div>
-          <div className="border border-border rounded-lg bg-card-bg p-4 divide-y divide-border">
-            {changelog.map((entry) => (
-              <ChangelogEntryComponent
-                key={entry.slug}
-                frontmatter={entry.frontmatter}
-                compact
-              />
-            ))}
+        <section className="bg-bg py-20">
+          <div className="max-w-4xl mx-auto px-4">
+            <ScrollReveal>
+              <div className="flex items-center justify-between mb-10">
+                <div>
+                  <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Changelog</p>
+                  <h2 className="text-3xl font-bold text-text">Cambios en TTS Europa</h2>
+                </div>
+                <Link href="/changelog" className="text-sm text-accent hover:text-accent-hover transition-colors font-medium">
+                  Ver todos &rarr;
+                </Link>
+              </div>
+            </ScrollReveal>
+
+            {/* Timeline */}
+            <div className="relative pl-8 border-l-2 border-border">
+              {changelog.map((entry, i) => (
+                <ScrollReveal key={entry.slug} delay={i * 80}>
+                  <div className="relative pb-8 last:pb-0">
+                    {/* Dot */}
+                    <div className="absolute -left-[calc(2rem+5px)] w-3 h-3 rounded-full bg-accent border-2 border-bg" />
+                    <ChangelogEntryComponent frontmatter={entry.frontmatter} content={entry.content} />
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
         </section>
       )}
 
-      {/* Newsletter CTA */}
-      <section className="max-w-2xl mx-auto px-4 py-16">
-        <NewsletterCTA />
+      {/* ═══════════════════════════════════════════════
+          7. NEWSLETTER CTA
+          ═══════════════════════════════════════════════ */}
+      <section className="bg-bg-secondary py-20">
+        <div className="max-w-2xl mx-auto px-4">
+          <ScrollReveal>
+            <NewsletterCTA />
+          </ScrollReveal>
+        </div>
       </section>
     </div>
   );

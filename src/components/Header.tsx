@@ -14,8 +14,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-bg/80 backdrop-blur-md border-b border-border">
       <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between relative">
         {/* Logo */}
-        <Link href="/" className="font-semibold text-lg text-text hover:text-accent transition-colors">
-          nuevositio
+        <Link href="/" className="font-semibold text-lg text-text hover:text-accent transition-colors tracking-tight">
+          <span className="text-accent font-bold">TTS</span> Seller
         </Link>
 
         {/* Nav desktop */}

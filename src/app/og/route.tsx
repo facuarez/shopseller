@@ -11,7 +11,7 @@ export const runtime = "edge";
  */
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
-  const title = searchParams.get("title") ?? "nuevositio";
+  const title = searchParams.get("title") ?? "TTS Seller";
   const description = searchParams.get("description") ?? "TikTok Shop Europa para vendedores";
 
   return new ImageResponse(
@@ -75,7 +75,7 @@ export async function GET(request: NextRequest) {
             color: "#555555",
           }}
         >
-          nuevositio — TikTok Shop Europa
+          TTS Seller — TikTok Shop Europa
         </div>
       </div>
     ),

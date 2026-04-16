@@ -11,7 +11,7 @@ export default function ArticleCard({ slug, frontmatter }: Props) {
   return (
     <Link
       href={`/analisis/${slug}`}
-      className="group block p-5 rounded-lg border border-border bg-card-bg hover:border-accent/40 transition-colors"
+      className="group block p-5 rounded-xl border border-border bg-card-bg shadow-sm hover:border-accent/40 hover:-translate-y-0.5 hover:shadow-md transition-all"
     >
       <div className="flex items-center gap-2 text-xs text-text-secondary mb-2">
         <time dateTime={frontmatter.pubDate}>{formatDate(frontmatter.pubDate)}</time>

@@ -1,4 +1,4 @@
-# nuevositio
+# TTS Seller
 
 Sitio de referencia en español sobre TikTok Shop Europa para vendedores. Herramientas interactivas, datos actualizados, analisis y changelog de cambios en la plataforma.
 
@@ -109,7 +109,7 @@ Editar `src/data/comisiones-tts.json`. Cada pais tiene un array de categorias co
 ## TODO
 
 - [ ] Elegir y comprar dominio definitivo
-- [ ] Reemplazar "nuevositio" en todo el codigo por nombre real
+- [ ] Reemplazar "TTS Seller" en todo el codigo por nombre real
 - [ ] Portar TTrack como componente en `/herramientas/calculadora`
 - [ ] Portar tabla de envios
 - [ ] Completar `comisiones-tts.json` con datos reales por categoria

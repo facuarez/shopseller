@@ -15,8 +15,8 @@ export default function ToolCard({ name, description, href, status, icon }: Prop
   return (
     <div
       className={cn(
-        "p-5 rounded-lg border border-border bg-card-bg transition-colors",
-        isAvailable && "hover:border-accent/40"
+        "p-5 rounded-xl border border-border bg-card-bg shadow-sm transition-all",
+        isAvailable && "hover:border-accent/40 hover:-translate-y-0.5 hover:shadow-md"
       )}
     >
       <div className="flex items-start justify-between mb-3">
