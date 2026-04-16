@@ -30,7 +30,7 @@ export default function Footer() {
 
       {/* Links */}
       <div className="max-w-6xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-sm">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-sm">
           {/* Marca */}
           <div className="col-span-2 sm:col-span-1">
             <p className="font-semibold text-text mb-2"><span className="text-accent">Shop</span>Seller</p>
@@ -46,6 +46,16 @@ export default function Footer() {
               <Link href="/herramientas/calculadora" className="text-text-secondary hover:text-text transition-colors text-xs">Calculadora</Link>
               <Link href="/herramientas/envios" className="text-text-secondary hover:text-text transition-colors text-xs">Envíos</Link>
               <Link href="/herramientas/afiliados" className="text-text-secondary hover:text-text transition-colors text-xs">Afiliados</Link>
+            </nav>
+          </div>
+
+          {/* Afiliados */}
+          <div>
+            <p className="font-semibold text-text mb-2 text-xs uppercase tracking-wider">Afiliados</p>
+            <nav className="flex flex-col gap-1.5">
+              <Link href="/afiliados/como-empezar" className="text-text-secondary hover:text-text transition-colors text-xs">Cómo empezar</Link>
+              <Link href="/afiliados/calculadora-ganancias" className="text-text-secondary hover:text-text transition-colors text-xs">Calculadora</Link>
+              <Link href="/afiliados/muestras" className="text-text-secondary hover:text-text transition-colors text-xs">Muestras</Link>
             </nav>
           </div>
 

@@ -18,6 +18,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/analisis`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/changelog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE_URL}/sobre-mi`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
+    { url: `${SITE_URL}/afiliados`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
+    { url: `${SITE_URL}/afiliados/calculadora-ganancias`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/afiliados/como-empezar`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/afiliados/muestras`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/afiliados/multipais`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
   ];
 
   const analisisPages: MetadataRoute.Sitemap = analisis.map((item) => ({
