@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import DataTable from "@/components/DataTable";
+import IVACalculator from "@/components/IVACalculator";
 import { readDataFile } from "@/lib/content";
 import type { IVAsData } from "@/types/content";
 
 export const metadata: Metadata = {
-  title: "IVAs por pais europeo",
-  description: "IVA estandar y reducido de cada pais donde opera TikTok Shop en Europa.",
+  title: "IVAs por pais europeo + Calculadora de IVA",
+  description: "IVA estandar y reducido de cada pais donde opera TikTok Shop en Europa. Calculadora de IVA interactiva con comparativa por pais.",
 };
 
 export default function IVAsPage() {
@@ -21,11 +22,18 @@ export default function IVAsPage() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-text mb-2">IVAs por pais europeo</h1>
-      <p className="text-text-secondary mb-8">
-        IVA estandar y tipos reducidos de cada pais donde opera TikTok Shop en Europa, incluyendo UK.
+      <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Datos</p>
+      <h1 className="text-3xl font-bold text-text mb-3">IVAs por pais europeo</h1>
+      <p className="text-text-secondary mb-8 max-w-2xl">
+        IVA estandar y tipos reducidos de cada pais donde opera TikTok Shop en Europa, incluyendo UK. Usa la calculadora para ver el impacto en tus precios.
       </p>
 
+      {/* Calculadora de IVA */}
+      <div className="mb-10">
+        <IVACalculator />
+      </div>
+
+      {/* Tabla de IVAs */}
       <DataTable
         columns={[
           { key: "country", label: "Pais" },
