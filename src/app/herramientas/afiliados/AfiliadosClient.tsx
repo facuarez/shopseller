@@ -89,10 +89,10 @@ export default function AfiliadosClient() {
     else { setSortKey(key); setSortDir("desc"); }
   }
 
-  function SortHeader({ label, field }: { label: string; field: string }) {
+  function SortHeader({ label, field, align = "right" }: { label: string; field: string; align?: "left" | "right" | "center" }) {
     const active = sortKey === field;
     return (
-      <button onClick={() => toggleSort(field)} className={`text-[10px] uppercase tracking-wider font-semibold flex items-center gap-1 ${active ? "text-accent" : "text-text-secondary"} hover:text-accent transition-colors`}>
+      <button onClick={() => toggleSort(field)} className={`text-[10px] uppercase tracking-wider font-semibold flex items-center gap-1 w-full ${align === "right" ? "justify-end" : align === "center" ? "justify-center" : "justify-start"} ${active ? "text-accent" : "text-text-secondary"} hover:text-accent transition-colors`}>
         {label}
         {active && <span className="text-[8px]">{sortDir === "desc" ? "▼" : "▲"}</span>}
       </button>
