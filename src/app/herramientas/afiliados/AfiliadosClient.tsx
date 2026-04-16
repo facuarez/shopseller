@@ -269,38 +269,38 @@ export default function AfiliadosClient() {
 
         {/* ─── TAB: AFFILIATES ─── */}
         {tab === "affiliates" && (
-          <table className="w-full text-sm">
+          <table className="w-full text-sm table-fixed">
             <thead className="sticky top-0 z-10">
               <tr className="bg-bg-secondary border-b border-border">
-                <th className="text-center px-3 py-3 w-12"><span className="text-[10px] text-text-secondary uppercase">#</span></th>
-                <th className="text-left px-3 py-3"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Afiliado</span></th>
-                <th className="text-right px-3 py-3 w-20"><SortHeader label="Ventas" field="totalOrders" /></th>
-                <th className="text-right px-3 py-3 w-28"><SortHeader label="GMV" field="gmvTotal" /></th>
-                <th className="text-right px-3 py-3 w-28 hidden lg:table-cell"><SortHeader label="GMV Org." field="gmvOrganic" /></th>
-                <th className="text-right px-3 py-3 w-28 hidden lg:table-cell"><SortHeader label="GMV Paid" field="gmvPaid" /></th>
-                <th className="text-right px-3 py-3 w-24"><SortHeader label="Comision" field="commissionTotal" /></th>
-                <th className="text-center px-3 py-3 w-16 hidden md:table-cell"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Videos</span></th>
-                <th className="text-center px-3 py-3 w-20 hidden md:table-cell"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Canal</span></th>
+                <th className="text-center px-2 py-3 w-10"><span className="text-[10px] text-text-secondary uppercase">#</span></th>
+                <th className="text-left px-2 py-3 w-[180px]"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Afiliado</span></th>
+                <th className="text-right px-2 py-3"><SortHeader label="Ventas" field="totalOrders" /></th>
+                <th className="text-right px-2 py-3"><SortHeader label="GMV" field="gmvTotal" /></th>
+                <th className="text-right px-2 py-3 hidden lg:table-cell"><SortHeader label="Org." field="gmvOrganic" /></th>
+                <th className="text-right px-2 py-3 hidden lg:table-cell"><SortHeader label="Paid" field="gmvPaid" /></th>
+                <th className="text-right px-2 py-3"><SortHeader label="Comision" field="commissionTotal" /></th>
+                <th className="text-center px-2 py-3 w-14 hidden md:table-cell"><span className="text-[10px] text-text-secondary uppercase">Vid.</span></th>
+                <th className="text-center px-2 py-3 w-20 hidden md:table-cell"><span className="text-[10px] text-text-secondary uppercase">Canal</span></th>
               </tr>
             </thead>
             <tbody>
               {filteredAffiliates.map((a, i) => (
                 <tr key={a.username} className={`border-b border-border/40 last:border-0 hover:bg-bg-secondary/50 transition-colors ${i % 2 !== 0 ? "bg-bg-secondary/20" : ""}`}>
-                  <td className="text-center px-3 py-2.5"><Medal pos={i} /></td>
-                  <td className="px-3 py-2.5">
+                  <td className="text-center px-2 py-2"><Medal pos={i} /></td>
+                  <td className="px-2 py-2 truncate">
                     <a href={tiktokProfileUrl(a.username)} target="_blank" rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-hover transition-colors">
+                      className="inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-accent-hover transition-colors">
                       @{a.username}
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-40"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-40 shrink-0"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                     </a>
                   </td>
-                  <td className="text-right px-3 py-2.5 font-data font-semibold text-text">{a.totalOrders}</td>
-                  <td className="text-right px-3 py-2.5 font-data font-bold text-text">{fmtEur(a.gmvTotal)}</td>
-                  <td className="text-right px-3 py-2.5 font-data text-text-secondary hidden lg:table-cell">{fmtEur(a.gmvOrganic)}</td>
-                  <td className="text-right px-3 py-2.5 font-data text-text-secondary hidden lg:table-cell">{fmtEur(a.gmvPaid)}</td>
-                  <td className="text-right px-3 py-2.5 font-data text-text-secondary">{fmtEur(a.commissionTotal)}</td>
-                  <td className="text-center px-3 py-2.5 font-data text-text-secondary hidden md:table-cell">{a.uniqueVideos}</td>
-                  <td className="text-center px-3 py-2.5 hidden md:table-cell"><ChannelBadge organicPct={a.organicPct} /></td>
+                  <td className="text-right px-2 py-2 font-data font-semibold text-text">{a.totalOrders}</td>
+                  <td className="text-right px-2 py-2 font-data font-bold text-text">{fmtEur(a.gmvTotal)}</td>
+                  <td className="text-right px-2 py-2 font-data text-text-secondary hidden lg:table-cell">{fmtEur(a.gmvOrganic)}</td>
+                  <td className="text-right px-2 py-2 font-data text-text-secondary hidden lg:table-cell">{fmtEur(a.gmvPaid)}</td>
+                  <td className="text-right px-2 py-2 font-data text-text-secondary">{fmtEur(a.commissionTotal)}</td>
+                  <td className="text-center px-2 py-2 font-data text-text-secondary hidden md:table-cell">{a.uniqueVideos}</td>
+                  <td className="text-center px-2 py-2 hidden md:table-cell"><ChannelBadge organicPct={a.organicPct} /></td>
                 </tr>
               ))}
               {filteredAffiliates.length === 0 && (
@@ -310,53 +310,55 @@ export default function AfiliadosClient() {
           </table>
         )}
 
-        {/* ─── TAB: VIDEOS ─── */}
+        {/* ─── TAB: VIDEOS — link integrado en creador ─── */}
         {tab === "videos" && (
-          <table className="w-full text-sm">
+          <table className="w-full text-sm table-fixed">
             <thead className="sticky top-0 z-10">
               <tr className="bg-bg-secondary border-b border-border">
-                <th className="text-center px-3 py-3 w-12"><span className="text-[10px] text-text-secondary uppercase">#</span></th>
-                <th className="text-left px-3 py-3"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Creador</span></th>
-                <th className="text-left px-3 py-3 hidden lg:table-cell"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Producto principal</span></th>
-                <th className="text-right px-3 py-3 w-20"><SortHeader label="Ventas" field="totalOrders" /></th>
-                <th className="text-right px-3 py-3 w-28"><SortHeader label="GMV" field="gmv" /></th>
-                <th className="text-right px-3 py-3 w-24"><SortHeader label="Comision" field="commission" /></th>
-                <th className="text-center px-3 py-3 w-24"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Tipo</span></th>
-                <th className="text-center px-3 py-3 w-12"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Ver</span></th>
+                <th className="text-center px-2 py-3 w-10"><span className="text-[10px] text-text-secondary uppercase">#</span></th>
+                <th className="text-left px-2 py-3 w-[200px]"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Creador / Video</span></th>
+                <th className="text-left px-2 py-3 hidden lg:table-cell"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Producto</span></th>
+                <th className="text-right px-2 py-3"><SortHeader label="Ventas" field="totalOrders" /></th>
+                <th className="text-right px-2 py-3"><SortHeader label="GMV" field="gmv" /></th>
+                <th className="text-right px-2 py-3"><SortHeader label="Comision" field="commission" /></th>
               </tr>
             </thead>
             <tbody>
               {filteredVideos.map((v, i) => (
                 <tr key={v.contentId} className={`border-b border-border/40 last:border-0 hover:bg-bg-secondary/50 transition-colors ${i % 2 !== 0 ? "bg-bg-secondary/20" : ""}`}>
-                  <td className="text-center px-3 py-2.5"><Medal pos={i} /></td>
-                  <td className="px-3 py-2.5">
-                    <a href={tiktokProfileUrl(v.username)} target="_blank" rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-hover transition-colors">
-                      @{v.username}
-                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-40"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
-                    </a>
+                  <td className="text-center px-2 py-2"><Medal pos={i} /></td>
+                  <td className="px-2 py-2">
+                    <div className="flex items-center gap-2">
+                      {/* Play button as video link */}
+                      {v.contentType === "video" ? (
+                        <a href={tiktokVideoUrl(v.username, v.contentId)} target="_blank" rel="noopener noreferrer"
+                          className="shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-lg bg-accent/10 text-accent hover:bg-accent hover:text-white transition-all" title="Ver video en TikTok">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+                        </a>
+                      ) : (
+                        <span className="shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-lg bg-bg-secondary text-text-secondary">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" /><line x1="3" y1="6" x2="21" y2="6" /></svg>
+                        </span>
+                      )}
+                      <div className="min-w-0">
+                        <a href={tiktokProfileUrl(v.username)} target="_blank" rel="noopener noreferrer"
+                          className="text-sm font-semibold text-accent hover:text-accent-hover transition-colors truncate block">
+                          @{v.username}
+                        </a>
+                        <span className={`text-[10px] font-medium ${v.contentType === "video" ? "text-text-secondary" : "text-purple-500"}`}>
+                          {v.contentType === "video" ? "Video" : "Escaparate"}
+                        </span>
+                      </div>
+                    </div>
                   </td>
-                  <td className="px-3 py-2.5 text-xs text-text-secondary max-w-[220px] truncate hidden lg:table-cell">{v.productName}</td>
-                  <td className="text-right px-3 py-2.5 font-data font-semibold text-text">{v.totalOrders}</td>
-                  <td className="text-right px-3 py-2.5 font-data font-bold text-text">{fmtEur(v.gmv)}</td>
-                  <td className="text-right px-3 py-2.5 font-data text-text-secondary">{fmtEur(v.commission)}</td>
-                  <td className="text-center px-3 py-2.5">
-                    <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${v.contentType === "video" ? "bg-blue-500/10 text-blue-600 dark:text-blue-400" : "bg-purple-500/10 text-purple-600 dark:text-purple-400"}`}>
-                      {v.contentType === "video" ? "Video" : "Escaparate"}
-                    </span>
-                  </td>
-                  <td className="text-center px-3 py-2.5">
-                    {v.contentType === "video" ? (
-                      <a href={tiktokVideoUrl(v.username, v.contentId)} target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-accent/10 text-accent hover:bg-accent/20 transition-colors">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3" /></svg>
-                      </a>
-                    ) : <span className="text-text-secondary/30">—</span>}
-                  </td>
+                  <td className="px-2 py-2 text-xs text-text-secondary truncate hidden lg:table-cell">{v.productName}</td>
+                  <td className="text-right px-2 py-2 font-data font-semibold text-text">{v.totalOrders}</td>
+                  <td className="text-right px-2 py-2 font-data font-bold text-text">{fmtEur(v.gmv)}</td>
+                  <td className="text-right px-2 py-2 font-data text-text-secondary">{fmtEur(v.commission)}</td>
                 </tr>
               ))}
               {filteredVideos.length === 0 && (
-                <tr><td colSpan={8} className="px-4 py-8 text-center text-text-secondary">No hay videos para estos filtros.</td></tr>
+                <tr><td colSpan={6} className="px-4 py-8 text-center text-text-secondary">No hay videos para estos filtros.</td></tr>
               )}
             </tbody>
           </table>
@@ -364,30 +366,30 @@ export default function AfiliadosClient() {
 
         {/* ─── TAB: PRODUCTS ─── */}
         {tab === "products" && (
-          <table className="w-full text-sm">
+          <table className="w-full text-sm table-fixed">
             <thead className="sticky top-0 z-10">
               <tr className="bg-bg-secondary border-b border-border">
-                <th className="text-center px-3 py-3 w-12"><span className="text-[10px] text-text-secondary uppercase">#</span></th>
-                <th className="text-left px-3 py-3"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Producto</span></th>
-                <th className="text-right px-3 py-3 w-20"><SortHeader label="Pedidos" field="totalOrders" /></th>
-                <th className="text-right px-3 py-3 w-16 hidden md:table-cell"><SortHeader label="Uds" field="totalUnits" /></th>
-                <th className="text-right px-3 py-3 w-28"><SortHeader label="GMV" field="gmvTotal" /></th>
-                <th className="text-center px-3 py-3 w-32 hidden lg:table-cell"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Org / Paid</span></th>
-                <th className="text-right px-3 py-3 w-20 hidden md:table-cell"><SortHeader label="Afiliados" field="uniqueAffiliates" /></th>
-                <th className="text-right px-3 py-3 w-24"><SortHeader label="Comision" field="commissionTotal" /></th>
+                <th className="text-center px-2 py-3 w-10"><span className="text-[10px] text-text-secondary uppercase">#</span></th>
+                <th className="text-left px-2 py-3"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Producto</span></th>
+                <th className="text-right px-2 py-3 w-16"><SortHeader label="Ped." field="totalOrders" /></th>
+                <th className="text-right px-2 py-3 w-14 hidden md:table-cell"><SortHeader label="Uds" field="totalUnits" /></th>
+                <th className="text-right px-2 py-3 w-24"><SortHeader label="GMV" field="gmvTotal" /></th>
+                <th className="text-center px-2 py-3 w-24 hidden lg:table-cell"><span className="text-[10px] text-text-secondary uppercase">Org/Paid</span></th>
+                <th className="text-right px-2 py-3 w-14 hidden md:table-cell"><SortHeader label="Afil." field="uniqueAffiliates" /></th>
+                <th className="text-right px-2 py-3 w-24"><SortHeader label="Comision" field="commissionTotal" /></th>
               </tr>
             </thead>
             <tbody>
               {filteredProducts.map((p, i) => (
                 <tr key={p.productId} className={`border-b border-border/40 last:border-0 hover:bg-bg-secondary/50 transition-colors ${i % 2 !== 0 ? "bg-bg-secondary/20" : ""}`}>
-                  <td className="text-center px-3 py-2.5"><Medal pos={i} /></td>
-                  <td className="px-3 py-2.5 text-sm font-medium text-text max-w-[280px]"><span className="line-clamp-1">{p.productName}</span></td>
-                  <td className="text-right px-3 py-2.5 font-data font-semibold text-text">{p.totalOrders}</td>
-                  <td className="text-right px-3 py-2.5 font-data text-text-secondary hidden md:table-cell">{p.totalUnits}</td>
-                  <td className="text-right px-3 py-2.5 font-data font-bold text-text">{fmtEur(p.gmvTotal)}</td>
-                  <td className="px-3 py-2.5 hidden lg:table-cell"><OrgPaidBar organic={p.organicOrders} paid={p.paidOrders} /></td>
-                  <td className="text-right px-3 py-2.5 font-data text-text-secondary hidden md:table-cell">{p.uniqueAffiliates}</td>
-                  <td className="text-right px-3 py-2.5 font-data text-text-secondary">{fmtEur(p.commissionTotal)}</td>
+                  <td className="text-center px-2 py-2"><Medal pos={i} /></td>
+                  <td className="px-2 py-2 text-sm font-medium text-text truncate">{p.productName}</td>
+                  <td className="text-right px-2 py-2 font-data font-semibold text-text">{p.totalOrders}</td>
+                  <td className="text-right px-2 py-2 font-data text-text-secondary hidden md:table-cell">{p.totalUnits}</td>
+                  <td className="text-right px-2 py-2 font-data font-bold text-text">{fmtEur(p.gmvTotal)}</td>
+                  <td className="px-2 py-2 hidden lg:table-cell"><OrgPaidBar organic={p.organicOrders} paid={p.paidOrders} /></td>
+                  <td className="text-right px-2 py-2 font-data text-text-secondary hidden md:table-cell">{p.uniqueAffiliates}</td>
+                  <td className="text-right px-2 py-2 font-data text-text-secondary">{fmtEur(p.commissionTotal)}</td>
                 </tr>
               ))}
               {filteredProducts.length === 0 && (
