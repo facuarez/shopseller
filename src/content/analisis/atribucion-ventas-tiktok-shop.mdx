@@ -1,9 +1,9 @@
 ---
-title: "El problema de atribucion en TikTok Shop: no sabes de donde vienen tus ventas"
-description: "TikTok Shop no te dice si una venta es de un afiliado organico, un video propio o GMV Max. Asi lo resolvi con datos reales."
+title: "El problema de atribución en TikTok Shop: no sabés de donde vienen tus ventas"
+description: "TikTok Shop no te dice si una venta es de un afiliado orgánico, un video propio o GMV Max. Así lo resolvi con datos reales."
 pubDate: "2026-04-16"
 author: "Facu"
-tags: ["atribucion", "afiliados", "gmv-max", "analytics"]
+tags: ["atribución", "afiliados", "gmv-max", "analytics"]
 featured: true
 draft: false
 ---
@@ -12,7 +12,7 @@ draft: false
 
 Llevas una semana vendiendo en TikTok Shop. Facturaste 3.400 euros, 114 pedidos. Bien. Pero cuando abris el dashboard de TTS y queres saber de donde vinieron esas ventas, te encontras con un muro.
 
-TikTok Shop te muestra pedidos. Te muestra facturacion. Te muestra comisiones. Pero no te dice con claridad si una venta la genero un afiliado organico que publico un video, si fue tu propio contenido el que convirtio, o si fue una campaña de GMV Max la que pago por esa conversion.
+TikTok Shop te muestra pedidos. Te muestra facturación. Te muestra comisiones. Pero no te dice con claridad si una venta la genero un afiliado orgánico que público un video, si fue tu propio contenido el que convirtio, o si fue una campaña de GMV Max la que pago por esa conversión.
 
 Y eso es un problema serio, porque cada canal tiene un coste diferente.
 
@@ -20,83 +20,83 @@ Y eso es un problema serio, porque cada canal tiene un coste diferente.
 
 Si vendes un producto a 24.99 euros y tu margen neto es del 17%, cada punto porcentual cuenta. Mira la diferencia real entre canales:
 
-**Venta por video propio (organico):**
-- Sin comision de afiliado
+**Venta por video propio (orgánico):**
+- Sin comisión de afiliado
 - Sin coste de ads
-- Margen neto: el mas alto posible
+- Margen neto: el más alto posible
 
-**Venta por afiliado organico:**
+**Venta por afiliado orgánico:**
 - Comision de afiliado: 10-20% sobre el precio
 - Sin coste de ads
-- Margen neto: moderado, depende de la comision que pactes
+- Margen neto: moderado, depende de la comisión que pactes
 
 **Venta por GMV Max (paid):**
-- CPA variable (en mi caso promedio 4-5 euros por conversion)
-- Puede o no tener comision de afiliado encima
-- Margen neto: el mas bajo, y a veces negativo
+- CPA variable (en mi caso promedio 4-5 euros por conversión)
+- Puede o no tener comisión de afiliado encima
+- Margen neto: el más bajo, y a veces negativo
 
-Si no sabes que el 46% de tus ventas vienen de afiliados organicos, el 39% de videos propios y el 14% de paid — no podes tomar decisiones. Estas volando a ciegas.
+Si no sabés que el 46% de tus ventas vienen de afiliados orgánicos, el 39% de videos propios y el 14% de paid — no podes tomar decisiones. Estas volando a ciegas.
 
 ## Lo que TikTok Shop te muestra (y lo que no)
 
 El Seller Center de TTS tiene un dashboard de analytics. Podes ver:
 - Ventas totales, pedidos, tickets promedio
-- Productos mas vendidos
+- Productos más vendidos
 - Datos basicos de afiliados (quien vendio cuanto)
 
 Lo que NO ves de forma clara:
-- **Que porcentaje de tus ventas es organico vs afiliado vs paid**
+- **Que porcentaje de tus ventas es orgánico vs afiliado vs paid**
 - **El CPA real de tus campañas de GMV Max** (TTS te muestra gasto, pero cruzarlo con las ventas reales es manual)
-- **Que afiliados generan ventas de paid vs organico** (un afiliado puede generar ventas por su contenido organico Y por tus campañas de GMV Max, y TTS no distingue bien)
+- **Que afiliados generan ventas de paid vs orgánico** (un afiliado puede generar ventas por su contenido orgánico Y por tus campañas de GMV Max, y TTS no distingue bien)
 - **El margen neto real por canal** incluyendo todos los costes
 
 Basicamente, TTS te da datos en bruto pero no te da la inteligencia para operar.
 
 ## Como lo resolvi
 
-Despues de meses de operar con datos fragmentados, construi un sistema para cruzar la informacion. La logica es:
+Despues de meses de operar con datos fragmentados, construi un sistema para cruzar la información. La logica es:
 
 1. **Exportar datos de ordenes** del Seller Center — cada orden tiene un ID, producto, precio, fecha
 2. **Exportar datos de afiliados** — que creador genero que venta, con que video
 3. **Exportar datos de campañas** — gasto de GMV Max por dia y por campaña
-4. **Cruzar todo** para asignar cada orden a su origen: propio, afiliado organico, o paid
+4. **Cruzar todo** para asignar cada orden a su origen: propio, afiliado orgánico, o paid
 
 El resultado es un dashboard que me muestra, por ejemplo, que en un dia con 114 pedidos:
 - 45 pedidos (39%) vinieron de contenido propio
-- 53 pedidos (46%) de afiliados organicos
+- 53 pedidos (46%) de afiliados orgánicos
 - 16 pedidos (14%) de campañas paid
 
-Con esa informacion puedo calcular el beneficio neto real (no el estimado) y saber exactamente cuanto me cuesta cada canal.
+Con esa información puedo calcular el beneficio neto real (no el estimado) y saber exactamente cuanto me cuesta cada canal.
 
-## Lo que descubri cuando empece a medir
+## Lo que descubri cuando empecé a medir
 
 Algunos descubrimientos que solo aparecen cuando cruzas los datos:
 
-**Los afiliados top no siempre son los mas rentables.** Un afiliado que te genera 18 ventas con una comision del 20% puede ser menos rentable que uno que genera 7 ventas con una comision del 10%. Sin el cruce, solo ves "18 ventas" y lo consideras tu mejor afiliado.
+**Los afiliados top no siempre son los más rentables.** Un afiliado que te genera 18 ventas con una comisión del 20% puede ser menos rentable que uno que genera 7 ventas con una comisión del 10%. Sin el cruce, solo ves "18 ventas" y lo consideras tu mejor afiliado.
 
-**GMV Max tiene un CPA real mas alto de lo que parece.** El dashboard de TTS te muestra un ROAS de la campaña, pero no incluye la comision de afiliado que se paga encima. Cuando cruzas todo, el coste real por conversion sube.
+**GMV Max tiene un CPA real más alto de lo que parece.** El dashboard de TTS te muestra un ROAS de la campaña, pero no incluye la comisión de afiliado que se paga encima. Cuando cruzas todo, el coste real por conversión sube.
 
-**Los videos propios son tu canal mas rentable.** Parece obvio, pero cuando ves los numeros — margen del 70% sobre COGS en videos propios vs 40% en afiliados — la diferencia es tan grande que justifica invertir en crear contenido propio antes que en afiliados.
+**Los videos propios son tu canal más rentable.** Parece obvio, pero cuando ves los números — margen del 70% sobre COGS en videos propios vs 40% en afiliados — la diferencia es tan grande que justifica invertir en crear contenido propio antes que en afiliados.
 
-**La estructura de costes es 17% IVA, 15% envios, 9% comision TTS, 25% COGS, 8% afiliados, 8% ads.** Solo queda un 17-18% de margen neto. Cada punto porcentual que optimices en cualquiera de esas lineas impacta directamente en tu bolsillo.
+**La estructura de costes es 17% IVA, 15% envios, 9% comisión TTS, 25% COGS, 8% afiliados, 8% ads.** Solo queda un 17-18% de margen neto. Cada punto porcentual que optimices en cualquiera de esas lineas impacta directamente en tu bolsillo.
 
 ## Que deberia hacer TikTok Shop (y no hace)
 
-Lo minimo que TTS deberia ofrecer a los sellers:
-- Un informe de atribucion por canal (propio / afiliado / paid)
+Lo mínimo que TTS deberia ofrecer a los sellers:
+- Un informe de atribución por canal (propio / afiliado / paid)
 - El CPA real incluyendo comisiones de afiliado
 - Un P&L por producto que incluya todos los costes
 - Metricas de rentabilidad por afiliado, no solo volumen de ventas
 
 Hasta que lo hagan (si lo hacen), los vendedores serios necesitamos herramientas propias para operar con datos reales.
 
-## Como aplica esto a tu operacion
+## Como aplica esto a tu operación
 
-Si estas vendiendo en TTS Europa y no medis la atribucion de tus ventas, estas dejando dinero en la mesa. Estos son los pasos concretos:
+Si estas vendiendo en TTS Europa y no medis la atribución de tus ventas, estas dejando dinero en la mesa. Estos son los pasos concretos:
 
 1. **Exporta tus datos semanalmente** — ordenes, afiliados y campañas
 2. **Cruza los datos** para saber que porcentaje de ventas es de cada canal
 3. **Calcula el margen neto real por canal** — no el estimado, el real
-4. **Ajusta tu estrategia** — si paid no es rentable, baja el gasto. Si un afiliado tiene comision alta y bajo volumen, renegocia
+4. **Ajusta tu estrategia** — si paid no es rentable, baja el gasto. Si un afiliado tiene comisión alta y bajo volumen, renegocia
 
-Las herramientas que estoy desarrollando para ShopSeller van exactamente en esta direccion: hacer que el vendedor tenga visibilidad real sobre su operacion sin necesidad de armar todo desde cero.
+Las herramientas que estoy desarrollando para ShopSeller van exactamente en esta dirección: hacer que el vendedor tenga visibilidad real sobre su operación sin necesidad de armar todo desde cero.

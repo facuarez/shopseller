@@ -37,7 +37,7 @@ export default function ToolCard({ name, description, href, status, icon }: Prop
               : "bg-bg-secondary text-text-secondary"
           )}
         >
-          {isAvailable ? "Disponible" : "Proximamente"}
+          {isAvailable ? "Disponible" : "Próximamente"}
         </span>
       </div>
 

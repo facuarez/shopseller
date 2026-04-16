@@ -11,7 +11,7 @@ function fmt(n: number | undefined | null): string {
 }
 
 const SHIPPING_MODES = [
-  { id: "free", label: "Envio gratis" },
+  { id: "free", label: "Envío gratis" },
   { id: "home", label: "Buyer paga (Home)" },
   { id: "pudo", label: "Buyer paga (PUDO)" },
 ];
@@ -128,15 +128,15 @@ export default function CalculadoraClient() {
     <div className="max-w-[1440px] mx-auto px-4 sm:px-6 py-6">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-text">Calculadora de rentabilidad</h1>
-        <p className="text-sm text-text-secondary mt-1">Calcula el PVP minimo rentable para TikTok Shop EU por pais.</p>
+        <p className="text-sm text-text-secondary mt-1">Calcula el PVP mínimo rentable para TikTok Shop EU por país.</p>
       </div>
 
       {/* Parameter bar */}
       <div className="bg-card-bg rounded-2xl border border-border shadow-sm px-5 py-4 mb-4">
         <div className="flex flex-wrap items-end gap-x-5 gap-y-3">
-          <SelectField label="Envio desde" value={originCountry} onChange={setOriginCountry}
+          <SelectField label="Envío desde" value={originCountry} onChange={setOriginCountry}
             options={COUNTRIES.map((c) => ({ value: c.id, label: `${c.flag} ${c.name}` }))} />
-          <SelectField label="Modo envio" value={shippingMode} onChange={setShippingMode}
+          <SelectField label="Modo envío" value={shippingMode} onChange={setShippingMode}
             options={SHIPPING_MODES.map((m) => ({ value: m.id, label: m.label }))} />
           <MiniField label="Coste" value={cost} onChange={setCost} suffix="€" placeholder="10" />
           <SelectField label="Peso" value={weightKg} onChange={setWeightKg}
@@ -145,7 +145,7 @@ export default function CalculadoraClient() {
           <div className="hidden lg:block w-px h-8 bg-border self-end mb-1" />
 
           <MiniField label="Devoluciones" value={returnRate} onChange={setReturnRate} suffix="%" placeholder="5" step="1" />
-          <MiniField label="Comision TTS" value={tikTokCommission} onChange={setTikTokCommission} suffix="%" placeholder="9" step="0.5" />
+          <MiniField label="Comisión TTS" value={tikTokCommission} onChange={setTikTokCommission} suffix="%" placeholder="9" step="0.5" />
           <MiniField label="IVA" value={ivaPct} onChange={setIvaPct} suffix="%" placeholder="21" step="1" />
 
           <div className="hidden lg:block w-px h-8 bg-border self-end mb-1" />
@@ -311,13 +311,13 @@ function CountryCard({ data, config, originFlag, onUpdate, style }: {
           <div className="flex-1">
             <span className="text-[10px] text-text-secondary uppercase tracking-wide">{isFreeShipping ? "PVP org." : "PVP pub."}</span>
             <div className="text-2xl font-black leading-tight tracking-tight text-text font-data">{fmt(organic.pvp)}</div>
-            {!isFreeShipping && <div className="text-[10px] text-text-secondary/60 mt-0.5">+ envio {fmt(buyerFeeForMode)} = <span className="text-text-secondary font-semibold">{fmt(organic.pvp + buyerFeeForMode)}</span></div>}
+            {!isFreeShipping && <div className="text-[10px] text-text-secondary/60 mt-0.5">+ envío {fmt(buyerFeeForMode)} = <span className="text-text-secondary font-semibold">{fmt(organic.pvp + buyerFeeForMode)}</span></div>}
           </div>
           {paid?.valid && (
             <div className="flex-1 text-right">
               <span className="text-[10px] text-accent/70 uppercase tracking-wide">{isFreeShipping ? "PVP paid" : "Paid pub."}</span>
               <div className="text-2xl font-black leading-tight tracking-tight text-accent font-data">{fmt(paid.pvp)}</div>
-              {!isFreeShipping && <div className="text-[10px] text-text-secondary/60 mt-0.5">+ envio {fmt(buyerFeeForMode)} = <span className="text-accent/60 font-semibold">{fmt(paid.pvp + buyerFeeForMode)}</span></div>}
+              {!isFreeShipping && <div className="text-[10px] text-text-secondary/60 mt-0.5">+ envío {fmt(buyerFeeForMode)} = <span className="text-accent/60 font-semibold">{fmt(paid.pvp + buyerFeeForMode)}</span></div>}
             </div>
           )}
         </div>
@@ -352,12 +352,12 @@ function CountryCard({ data, config, originFlag, onUpdate, style }: {
 
         {/* Organic breakdown — zebra rows */}
         <div className="flex-1 space-y-0">
-          <Row label="PVP organico" value={fmt(organic.pvp)} even={false} />
+          <Row label="PVP orgánico" value={fmt(organic.pvp)} even={false} />
           <Row label={`− TikTok ${tikP}%`} value={fmt(organic.tikCost)} negative even />
           <Row label={`− Afiliado ${affOrg}%`} value={fmt(organic.affCost)} negative even={false} />
           <Row label={`− IVA ${ivaPct}%`} value={fmt(organic.ivaCost)} negative even />
           <Row label="− Producto" value={fmt(cost)} negative even={false} />
-          <Row label={isFreeShipping ? "− Envio (free)" : "− Envio seller"} value={fmt(sellerShippingCost)} negative even />
+          <Row label={isFreeShipping ? "− Envío (free)" : "− Envío seller"} value={fmt(sellerShippingCost)} negative even />
           <Row label={`− Dev. (${retPct}%)`} value={fmt(dev)} negative even={false} />
           <div className="border-t-2 border-border/80 my-2" />
           <div className="flex items-center justify-between px-2 py-2 rounded-lg bg-bg-secondary">

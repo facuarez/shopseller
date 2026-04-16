@@ -9,18 +9,18 @@ export const metadata: Metadata = {
 const DATA_PAGES = [
   {
     href: "/datos/comisiones",
-    title: "Comisiones TTS por pais y categoria",
-    description: "Tabla completa de comisiones de TikTok Shop desglosadas por pais europeo y categoria de producto. Datos verificados y actualizados manualmente.",
+    title: "Comisiones TTS por país y categoría",
+    description: "Tabla completa de comisiones de TikTok Shop desglosadas por país europeo y categoría de producto. Datos verificados y actualizados manualmente.",
   },
   {
     href: "/datos/ivas-europa",
-    title: "IVAs por pais europeo",
-    description: "IVA estandar y tipos reducidos de cada pais donde opera TikTok Shop en Europa. Incluye UK y notas sobre categorias especificas.",
+    title: "IVAs por país europeo",
+    description: "IVA estándar y tipos reducidos de cada país donde opera TikTok Shop en Europa. Incluye UK y notas sobre categorías específicas.",
   },
   {
     href: "/datos/herramientas-tts",
     title: "Directorio de herramientas externas",
-    description: "Herramientas de analytics, research y gestion para vendedores TTS. Cada una con descripcion, precio y para que sirve realmente.",
+    description: "Herramientas de analytics, research y gestión para vendedores TTS. Cada una con descripción, precio y para qué sirve realmente.",
   },
 ];
 
@@ -29,8 +29,8 @@ export default function DatosPage() {
     <div className="max-w-6xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold text-text mb-2">Datos y fichas</h1>
       <p className="text-text-secondary mb-8 max-w-xl">
-        Informacion estructurada y actualizada para operar en TikTok Shop Europa.
-        Datos que se verifican manualmente, no scraping automatico.
+        Información estructurada y actualizada para operar en TikTok Shop Europa.
+        Datos que se verifican manualmente, no scraping automático.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

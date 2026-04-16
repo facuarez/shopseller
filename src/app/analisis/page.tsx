@@ -4,8 +4,8 @@ import { getAnalisis } from "@/lib/content";
 import { formatDate } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Analisis",
-  description: "Analisis y reflexiones sobre TikTok Shop Europa desde la perspectiva de un vendedor real.",
+  title: "Análisis",
+  description: "Análisis y reflexiones sobre TikTok Shop Europa desde la perspectiva de un vendedor real.",
 };
 
 export default function AnalisisPage() {
@@ -18,16 +18,16 @@ export default function AnalisisPage() {
       {/* Header con fondo */}
       <div className="bg-bg-secondary border-b border-border">
         <div className="max-w-6xl mx-auto px-4 py-12">
-          <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Analisis</p>
-          <h1 className="text-3xl font-bold text-text mb-3">Desde la trinchera, no desde la teoria</h1>
+          <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Análisis</p>
+          <h1 className="text-3xl font-bold text-text mb-3">Desde la trinchera, no desde la teoría</h1>
           <p className="text-text-secondary max-w-xl">
-            Reflexiones, datos y angulos sobre TikTok Shop Europa que no vas a encontrar
-            en ningun otro sitio en español. Todo desde la experiencia operando.
+            Reflexiones, datos y ángulos sobre TikTok Shop Europa que no vas a encontrar
+            en ningún otro sitio en español. Todo desde la experiencia operando.
           </p>
           <div className="flex items-center gap-4 mt-4 text-sm text-text-secondary">
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-accent" />
-              <span className="font-data font-semibold text-text">{items.length}</span> articulos
+              <span className="font-data font-semibold text-text">{items.length}</span> artículos
             </span>
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-green-500" />
@@ -77,7 +77,7 @@ export default function AnalisisPage() {
                     ))}
                   </div>
                   <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:gap-2.5 transition-all">
-                    Leer articulo
+                    Leer artículo
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
                   </span>
                 </div>
@@ -91,7 +91,7 @@ export default function AnalisisPage() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px flex-1 bg-border" />
-              <span className="text-xs font-semibold text-text-secondary uppercase tracking-widest shrink-0">Todos los articulos</span>
+              <span className="text-xs font-semibold text-text-secondary uppercase tracking-widest shrink-0">Todos los artículos</span>
               <div className="h-px flex-1 bg-border" />
             </div>
 

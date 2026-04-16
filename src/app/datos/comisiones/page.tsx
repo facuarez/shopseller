@@ -3,8 +3,8 @@ import DataTable from "@/components/DataTable";
 import { readDataFile } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Comisiones TikTok Shop por pais — EU5 + UK",
-  description: "Comisiones reales de TikTok Shop Europa por pais y categoria. Datos verificados con fuentes oficiales. Actualizado a enero 2026.",
+  title: "Comisiones TikTok Shop por país — EU5 + UK",
+  description: "Comisiones reales de TikTok Shop Europa por país y categoría. Datos verificados con fuentes oficiales. Actualizado a enero 2026.",
 };
 
 interface Category { name: string; commission: number; notes: string }
@@ -38,23 +38,23 @@ export default function ComisionesPage() {
       <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Datos</p>
       <h1 className="text-3xl font-bold text-text mb-3">Comisiones TikTok Shop Europa</h1>
       <p className="text-text-secondary mb-6 max-w-2xl">
-        Comisiones reales de la plataforma por pais y tipo de producto. EU5 tiene estructura de 2 niveles: 9% estandar y 7% para electronica de consumo y belleza. UK igual pero con fee adicional por pedido MFN.
+        Comisiones reales de la plataforma por país y tipo de producto. EU5 tiene estructura de 2 niveles: 9% estándar y 7% para electrónica de consumo y belleza. UK igual pero con fee adicional por pedido MFN.
       </p>
 
       {/* Key info cards */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
         <div className="p-4 rounded-xl border border-border bg-card-bg">
-          <p className="text-[10px] text-text-secondary uppercase tracking-wider mb-1">Estandar EU5</p>
+          <p className="text-[10px] text-text-secondary uppercase tracking-wider mb-1">Estándar EU5</p>
           <p className="text-2xl font-bold font-data text-accent">9%</p>
         </div>
         <div className="p-4 rounded-xl border border-border bg-card-bg">
-          <p className="text-[10px] text-text-secondary uppercase tracking-wider mb-1">Electronica</p>
+          <p className="text-[10px] text-text-secondary uppercase tracking-wider mb-1">Electrónica</p>
           <p className="text-2xl font-bold font-data text-text">7%</p>
         </div>
         <div className="p-4 rounded-xl border border-border bg-card-bg">
           <p className="text-[10px] text-text-secondary uppercase tracking-wider mb-1">Nuevo seller</p>
           <p className="text-2xl font-bold font-data text-green-600 dark:text-green-400">4%</p>
-          <p className="text-[10px] text-text-secondary">60 dias</p>
+          <p className="text-[10px] text-text-secondary">60 días</p>
         </div>
         <div className="p-4 rounded-xl border border-border bg-card-bg">
           <p className="text-[10px] text-text-secondary uppercase tracking-wider mb-1">Vigente desde</p>
@@ -64,9 +64,9 @@ export default function ComisionesPage() {
 
       <DataTable
         columns={[
-          { key: "country", label: "Pais" },
-          { key: "category", label: "Categoria" },
-          { key: "commission", label: "Comision", align: "right", mono: true },
+          { key: "country", label: "País" },
+          { key: "category", label: "Categoría" },
+          { key: "commission", label: "Comisión", align: "right", mono: true },
           { key: "notes", label: "Notas" },
         ]}
         data={rows}
@@ -77,7 +77,7 @@ export default function ComisionesPage() {
 
       {/* Formula */}
       <div className="mt-8 p-5 rounded-xl border border-border bg-card-bg">
-        <h2 className="font-bold text-text mb-2">Como se calcula la comision</h2>
+        <h2 className="font-bold text-text mb-2">Cómo se calcula la comisión</h2>
         <p className="text-sm text-text-secondary mb-3">{meta.formula}</p>
         <p className="text-xs text-text-secondary">{meta.notes}</p>
       </div>

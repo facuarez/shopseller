@@ -153,7 +153,7 @@ export default async function AnalisisArticlePage({ params }: Props) {
         {/* Volver */}
         <div className="mt-8">
           <Link href="/analisis" className="text-sm text-accent hover:text-accent-hover transition-colors">
-            &larr; Volver a analisis
+            &larr; Volver a análisis
           </Link>
         </div>
       </article>

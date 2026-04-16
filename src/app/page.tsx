@@ -36,8 +36,8 @@ export default function Home() {
                 <span className="text-accent">para vendedores reales</span>
               </h1>
               <p className="text-lg text-[#999] max-w-md mb-8 leading-relaxed">
-                Herramientas, datos actualizados y analisis desde la trinchera.
-                Sin humo, sin gurues, sin teoria.
+                Herramientas, datos actualizados y análisis desde la trinchera.
+                Sin humo, sin gurúes, sin teoría.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/herramientas" className="px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-all text-sm shadow-lg shadow-accent/20">
@@ -45,7 +45,7 @@ export default function Home() {
                 </Link>
                 {analisis.length > 0 && (
                   <Link href={`/analisis/${analisis[0].slug}`} className="px-6 py-3 border border-[#333] text-[#ccc] font-medium rounded-lg hover:bg-[#111] hover:border-[#555] transition-all text-sm">
-                    Ultimo analisis
+                    Último análisis
                   </Link>
                 )}
               </div>
@@ -71,9 +71,9 @@ export default function Home() {
                   <div className="space-y-2.5">
                     {[
                       { label: "PVP", value: "24.99 €", accent: false },
-                      { label: "Comision TTS", value: "-5.0%", accent: true },
+                      { label: "Comisión TTS", value: "-5.0%", accent: true },
                       { label: "IVA (ES 21%)", value: "-4.34 €", accent: false },
-                      { label: "Envio", value: "-3.50 €", accent: false },
+                      { label: "Envío", value: "-3.50 €", accent: false },
                       { label: "Coste producto", value: "-8.20 €", accent: false },
                     ].map((row) => (
                       <div key={row.label} className="flex justify-between items-center py-1.5 border-b border-[#1a1a1a] last:border-0">
@@ -91,7 +91,7 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-[10px] text-[#666]">6 paises</p>
+                      <p className="text-[10px] text-[#666]">6 países</p>
                       <p className="text-xs text-white font-semibold font-data">ES FR IT DE IE UK</p>
                     </div>
                   </div>
@@ -109,9 +109,9 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
             <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Herramientas</p>
-            <h2 className="text-3xl font-bold text-text mb-3">Apps que construi porque las necesitaba</h2>
+            <h2 className="text-3xl font-bold text-text mb-3">Apps que construí porque las necesitaba</h2>
             <p className="text-text-secondary max-w-lg mb-10">
-              Cada herramienta nace de un problema operativo real. No son demos — son lo que uso para gestionar mi propia operacion en TTS.
+              Cada herramienta nace de un problema operativo real. No son demos — son lo que uso para gestionar mi propia operación en TTS.
             </p>
           </ScrollReveal>
 
@@ -127,7 +127,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-bold text-text group-hover:text-accent transition-colors mb-2">Calculadora de rentabilidad</h3>
                 <p className="text-sm text-text-secondary leading-relaxed mb-4">
-                  Calcula el PVP minimo rentable por pais. Comisiones TTS, IVA, envios y afiliados incluidos.
+                  Calcula el PVP mínimo rentable por país. Comisiones TTS, IVA, envíos y afiliados incluidos.
                 </p>
                 <div className="bg-bg-secondary rounded-lg p-3 font-data text-xs space-y-1.5">
                   <div className="flex justify-between"><span className="text-text-secondary">PVP</span><span className="text-text font-semibold">24.99 €</span></div>
@@ -146,7 +146,7 @@ export default function Home() {
                   </div>
                   <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-green-500/10 text-green-600 dark:text-green-400">Disponible</span>
                 </div>
-                <h3 className="text-lg font-bold text-text group-hover:text-accent transition-colors mb-2">Comparador de envios</h3>
+                <h3 className="text-lg font-bold text-text group-hover:text-accent transition-colors mb-2">Comparador de envíos</h3>
                 <p className="text-sm text-text-secondary leading-relaxed mb-4">
                   Matriz de costes por ruta, peso y tipo de entrega. Compara todas las rutas EU de un vistazo.
                 </p>
@@ -169,12 +169,12 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-bold text-text group-hover:text-accent transition-colors mb-2">Analizador de afiliados</h3>
                 <p className="text-sm text-text-secondary leading-relaxed mb-4">
-                  Subi tu CSV de ordenes y obtene rankings de afiliados, videos y productos. 100% en tu navegador.
+                  Subí tu CSV de órdenes y obtené rankings de afiliados, videos y productos. 100% en tu navegador.
                 </p>
                 <div className="bg-bg-secondary rounded-lg p-3 font-data text-xs space-y-1.5">
                   <div className="flex justify-between"><span className="text-text-secondary">Top afiliados</span><span className="text-text font-semibold">por GMV</span></div>
                   <div className="flex justify-between"><span className="text-text-secondary">Top videos</span><span className="text-text font-semibold">por ventas</span></div>
-                  <div className="flex justify-between"><span className="text-text-secondary">Org. vs Paid</span><span className="text-accent font-semibold">atribucion</span></div>
+                  <div className="flex justify-between"><span className="text-text-secondary">Org. vs Paid</span><span className="text-accent font-semibold">atribución</span></div>
                 </div>
               </Link>
             </ScrollReveal>
@@ -185,7 +185,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-3 mt-8 justify-center">
               {["Seguimiento de muestras", "Simulador ROI"].map((name) => (
                 <span key={name} className="px-4 py-2 rounded-lg border border-border/60 text-xs text-text-secondary">
-                  Proximamente: {name}
+                  Próximamente: {name}
                 </span>
               ))}
             </div>
@@ -202,7 +202,7 @@ export default function Home() {
             <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Datos</p>
             <h2 className="text-3xl font-bold text-text mb-4">Base de datos del vendedor TTS</h2>
             <p className="text-text-secondary max-w-lg mb-10">
-              Informacion estructurada que actualizo manualmente con datos verificados. No es scraping — es experiencia operativa documentada.
+              Información estructurada que actualizo manualmente con datos verificados. No es scraping — es experiencia operativa documentada.
             </p>
           </ScrollReveal>
 
@@ -212,8 +212,8 @@ export default function Home() {
               <Link href="/datos/comisiones" className="group block h-full p-6 rounded-xl border border-border bg-card-bg shadow-sm hover:border-accent/40 hover:shadow-md transition-all">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-text group-hover:text-accent transition-colors">Comisiones TTS por pais</h3>
-                    <p className="text-sm text-text-secondary mt-1">Desglose por categoria y pais. Ultima actualizacion: abril 2026.</p>
+                    <h3 className="text-xl font-bold text-text group-hover:text-accent transition-colors">Comisiones TTS por país</h3>
+                    <p className="text-sm text-text-secondary mt-1">Desglose por categoría y país. Última actualización: abril 2026.</p>
                   </div>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-text-secondary group-hover:text-accent transition-colors shrink-0">
                     <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
@@ -224,15 +224,15 @@ export default function Home() {
                   <table className="w-full text-sm font-data">
                     <thead>
                       <tr className="border-b border-border">
-                        <th className="text-left text-[10px] text-text-secondary uppercase pb-2">Pais</th>
-                        <th className="text-left text-[10px] text-text-secondary uppercase pb-2">Categoria</th>
-                        <th className="text-right text-[10px] text-text-secondary uppercase pb-2">Comision</th>
+                        <th className="text-left text-[10px] text-text-secondary uppercase pb-2">País</th>
+                        <th className="text-left text-[10px] text-text-secondary uppercase pb-2">Categoría</th>
+                        <th className="text-right text-[10px] text-text-secondary uppercase pb-2">Comisión</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr className="border-b border-border/50"><td className="py-2 text-xs text-text">🇪🇸 EU5 General</td><td className="py-2 text-xs text-text-secondary">Moda, hogar, lifestyle...</td><td className="py-2 text-xs text-right text-accent font-semibold">9%</td></tr>
-                      <tr className="border-b border-border/50"><td className="py-2 text-xs text-text">🇪🇸 EU5 Electronica</td><td className="py-2 text-xs text-text-secondary">Moviles, tablets, smartwatches</td><td className="py-2 text-xs text-right text-accent font-semibold">7%</td></tr>
-                      <tr><td className="py-2 text-xs text-text">🇪🇸 Nuevo seller</td><td className="py-2 text-xs text-text-secondary">Primeros 60 dias</td><td className="py-2 text-xs text-right text-green-600 dark:text-green-400 font-semibold">4%</td></tr>
+                      <tr className="border-b border-border/50"><td className="py-2 text-xs text-text">🇪🇸 EU5 Electrónica</td><td className="py-2 text-xs text-text-secondary">Moviles, tablets, smartwatches</td><td className="py-2 text-xs text-right text-accent font-semibold">7%</td></tr>
+                      <tr><td className="py-2 text-xs text-text">🇪🇸 Nuevo seller</td><td className="py-2 text-xs text-text-secondary">Primeros 60 días</td><td className="py-2 text-xs text-right text-green-600 dark:text-green-400 font-semibold">4%</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -245,7 +245,7 @@ export default function Home() {
               <ScrollReveal delay={100}>
                 <Link href="/datos/ivas-europa" className="group block p-6 rounded-xl border border-border bg-card-bg shadow-sm hover:border-accent/40 hover:shadow-md transition-all">
                   <h3 className="font-bold text-text group-hover:text-accent transition-colors mb-2">IVAs Europa</h3>
-                  <p className="text-sm text-text-secondary leading-relaxed mb-3">IVA estandar y reducido por pais.</p>
+                  <p className="text-sm text-text-secondary leading-relaxed mb-3">IVA estándar y reducido por país.</p>
                   <div className="flex flex-wrap gap-2">
                     {[
                       { country: "ES", rate: "21%" },
@@ -264,7 +264,7 @@ export default function Home() {
               <ScrollReveal delay={200}>
                 <Link href="/datos/herramientas-tts" className="group block p-6 rounded-xl border border-border bg-card-bg shadow-sm hover:border-accent/40 hover:shadow-md transition-all">
                   <h3 className="font-bold text-text group-hover:text-accent transition-colors mb-2">Directorio de herramientas</h3>
-                  <p className="text-sm text-text-secondary leading-relaxed mb-3">Analytics, research y gestion para TTS.</p>
+                  <p className="text-sm text-text-secondary leading-relaxed mb-3">Analytics, research y gestión para TTS.</p>
                   <div className="flex flex-wrap gap-2">
                     {["Kalodata", "FastMoss", "Shoplus", "EchoTik"].map((t) => (
                       <span key={t} className="text-[11px] px-2 py-1 rounded-md bg-bg-secondary text-text-secondary">{t}</span>
@@ -284,8 +284,8 @@ export default function Home() {
         <section className="bg-bg-secondary py-20 border-t border-border">
           <div className="max-w-6xl mx-auto px-4">
             <ScrollReveal>
-              <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Analisis</p>
-              <h2 className="text-3xl font-bold text-text mb-10">Desde la trinchera, no desde la teoria</h2>
+              <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Análisis</p>
+              <h2 className="text-3xl font-bold text-text mb-10">Desde la trinchera, no desde la teoría</h2>
             </ScrollReveal>
 
             {/* Featured article — bloque grande */}
@@ -333,7 +333,7 @@ export default function Home() {
             <ScrollReveal>
               <div className="mt-8 text-center">
                 <Link href="/analisis" className="text-sm font-semibold text-accent hover:text-accent-hover transition-colors">
-                  Ver todos los articulos &rarr;
+                  Ver todos los artículos &rarr;
                 </Link>
               </div>
             </ScrollReveal>
@@ -351,24 +351,27 @@ export default function Home() {
         }} />
         <div className="relative max-w-4xl mx-auto px-4 text-center">
           <ScrollReveal>
-            <p className="text-2xl sm:text-3xl font-bold text-white leading-snug mb-8">
-              Datos verificados por un operador real
-              <br />
-              <span className="text-[#666]">que vende en TTS Europa todos los dias</span>
+            <p className="text-2xl sm:text-3xl font-bold text-white leading-snug mb-3">
+              No soy consultor. No vendo cursos.
+            </p>
+            <p className="text-lg text-[#888] max-w-2xl mx-auto mb-10">
+              Soy un operador que gestiona productos en TikTok Shop Europa todos los días.
+              Las herramientas las construyo porque las necesito yo primero.
+              Los datos los verifico con mi propia operación.
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={150}>
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
               {[
-                { value: "6", label: "Paises cubiertos" },
-                { value: "5+", label: "Herramientas" },
-                { value: "Semanal", label: "Actualizacion de datos" },
-                { value: "100%", label: "Datos propios" },
+                { value: "2%→9%", label: "Evolución de comisiones TTS que documentamos" },
+                { value: "ES FR DE IT IE UK", label: "Mercados cubiertos con datos reales" },
+                { value: "3", label: "Herramientas operativas gratuitas" },
+                { value: "20+", label: "Cambios de TTS Europa documentados" },
               ].map((stat) => (
-                <div key={stat.label} className="text-center px-4 py-3">
-                  <p className="text-2xl sm:text-3xl font-bold text-accent font-data">{stat.value}</p>
-                  <p className="text-xs text-[#888] mt-1">{stat.label}</p>
+                <div key={stat.label} className="text-center p-4 rounded-xl border border-[#222] bg-[#111]">
+                  <p className="text-lg sm:text-xl font-bold text-accent font-data mb-1">{stat.value}</p>
+                  <p className="text-[11px] text-[#888] leading-snug">{stat.label}</p>
                 </div>
               ))}
             </div>

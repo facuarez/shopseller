@@ -16,11 +16,11 @@ interface ChangelogItem {
 
 const CATEGORIES = [
   { value: "all", label: "Todas" },
-  { value: "politica", label: "Politica" },
+  { value: "politica", label: "Política" },
   { value: "feature", label: "Feature" },
-  { value: "comision", label: "Comision" },
+  { value: "comision", label: "Comisión" },
   { value: "bug", label: "Bug" },
-  { value: "expansion", label: "Expansion" },
+  { value: "expansion", label: "Expansión" },
 ];
 
 const COUNTRIES = [
@@ -59,13 +59,13 @@ export default function ChangelogPageClient({ items }: { items: ChangelogItem[] 
       {/* Filtros */}
       <div className="flex flex-wrap gap-3 mb-8">
         <div className="flex items-center gap-2">
-          <label className="text-xs text-text-secondary" htmlFor="cat-filter">Categoria:</label>
+          <label className="text-xs text-text-secondary" htmlFor="cat-filter">Categoría:</label>
           <select id="cat-filter" value={catFilter} onChange={(e) => setCatFilter(e.target.value)} className="text-sm border border-border rounded-md px-2 py-1 bg-card-bg text-text">
             {CATEGORIES.map((c) => <option key={c.value} value={c.value}>{c.label}</option>)}
           </select>
         </div>
         <div className="flex items-center gap-2">
-          <label className="text-xs text-text-secondary" htmlFor="country-filter">Pais:</label>
+          <label className="text-xs text-text-secondary" htmlFor="country-filter">País:</label>
           <select id="country-filter" value={countryFilter} onChange={(e) => setCountryFilter(e.target.value)} className="text-sm border border-border rounded-md px-2 py-1 bg-card-bg text-text">
             {COUNTRIES.map((c) => <option key={c.value} value={c.value}>{c.label}</option>)}
           </select>

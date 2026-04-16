@@ -5,7 +5,7 @@ import MobileMenu from "./MobileMenu";
 const NAV_LINKS = [
   { href: "/herramientas", label: "Herramientas" },
   { href: "/datos", label: "Datos" },
-  { href: "/analisis", label: "Analisis" },
+  { href: "/analisis", label: "Análisis" },
   { href: "/changelog", label: "Changelog" },
 ];
 

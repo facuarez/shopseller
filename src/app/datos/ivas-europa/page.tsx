@@ -5,8 +5,8 @@ import { readDataFile } from "@/lib/content";
 import type { IVAsData } from "@/types/content";
 
 export const metadata: Metadata = {
-  title: "IVAs por pais europeo + Calculadora de IVA",
-  description: "IVA estandar y reducido de cada pais donde opera TikTok Shop en Europa. Calculadora de IVA interactiva con comparativa por pais.",
+  title: "IVAs por país europeo + Calculadora de IVA",
+  description: "IVA estándar y reducido de cada país donde opera TikTok Shop en Europa. Calculadora de IVA interactiva con comparativa por país.",
 };
 
 export default function IVAsPage() {
@@ -23,9 +23,9 @@ export default function IVAsPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
       <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Datos</p>
-      <h1 className="text-3xl font-bold text-text mb-3">IVAs por pais europeo</h1>
+      <h1 className="text-3xl font-bold text-text mb-3">IVAs por país europeo</h1>
       <p className="text-text-secondary mb-8 max-w-2xl">
-        IVA estandar y tipos reducidos de cada pais donde opera TikTok Shop en Europa, incluyendo UK. Usa la calculadora para ver el impacto en tus precios.
+        IVA estándar y tipos reducidos de cada país donde opera TikTok Shop en Europa, incluyendo UK. Usa la calculadora para ver el impacto en tus precios.
       </p>
 
       {/* Calculadora de IVA */}
@@ -36,9 +36,9 @@ export default function IVAsPage() {
       {/* Tabla de IVAs */}
       <DataTable
         columns={[
-          { key: "country", label: "Pais" },
+          { key: "country", label: "País" },
           { key: "currency", label: "Moneda", mono: true },
-          { key: "standard", label: "IVA estandar", align: "right", mono: true },
+          { key: "standard", label: "IVA estándar", align: "right", mono: true },
           { key: "reduced", label: "Tipos reducidos", mono: true },
         ]}
         data={rows}
@@ -47,7 +47,7 @@ export default function IVAsPage() {
 
       {/* Notas detalladas */}
       <div className="mt-8 space-y-4">
-        <h2 className="text-xl font-bold text-text">Notas por pais</h2>
+        <h2 className="text-xl font-bold text-text">Notas por país</h2>
         {Object.entries(data).map(([code, pais]) => (
           <div key={code} className="border border-border rounded-lg p-4 bg-card-bg">
             <h3 className="font-semibold text-text mb-1">

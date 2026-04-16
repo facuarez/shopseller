@@ -3,37 +3,37 @@ import ToolCard from "@/components/ToolCard";
 
 export const metadata: Metadata = {
   title: "Herramientas",
-  description: "Apps interactivas para vendedores de TikTok Shop Europa: calculadora de rentabilidad, tabla de envios, trackers y simuladores.",
+  description: "Apps interactivas para vendedores de TikTok Shop Europa: calculadora de rentabilidad, tabla de envíos, trackers y simuladores.",
 };
 
 const TOOLS = [
   {
     name: "Calculadora de rentabilidad",
-    description: "Calcula margenes reales por producto incluyendo comisiones TTS, envio, IVA y todos los costes ocultos.",
+    description: "Calcula márgenes reales por producto incluyendo comisiones TTS, envío, IVA y todos los costes ocultos.",
     href: "/herramientas/calculadora",
     status: "disponible" as const,
   },
   {
-    name: "Tabla de envios TTS Europa",
-    description: "Costes, tiempos y carriers por ruta. Comparativa entre paises y opciones de fulfillment TTS.",
+    name: "Tabla de envíos TTS Europa",
+    description: "Costes, tiempos y carriers por ruta. Comparativa entre países y opciones de fulfillment TTS.",
     href: "/herramientas/envios",
     status: "disponible" as const,
   },
   {
     name: "Analizador de afiliados",
-    description: "Subi tu CSV de ordenes de afiliados y obtene rankings de afiliados, videos y productos. 100% client-side.",
+    description: "Subí tu CSV de órdenes de afiliados y obtené rankings de afiliados, videos y productos. 100% client-side.",
     href: "/herramientas/afiliados",
     status: "disponible" as const,
   },
   {
     name: "Seguimiento de muestras gratis",
-    description: "Controla el inventario de muestras enviadas, tasa de conversion a contenido, y ROI de cada envio.",
+    description: "Controla el inventario de muestras enviadas, tasa de conversión a contenido, y ROI de cada envío.",
     href: "/herramientas/muestras-gratis",
     status: "proximamente" as const,
   },
   {
     name: "Simulador ROI por campaña",
-    description: "Proyecta el retorno de campañas de afiliados y ads basandote en datos historicos y benchmarks del mercado.",
+    description: "Proyecta el retorno de campañas de afiliados y ads basándote en datos históricos y benchmarks del mercado.",
     href: "/herramientas",
     status: "proximamente" as const,
   },
@@ -44,7 +44,7 @@ export default function HerramientasPage() {
     <div className="max-w-6xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold text-text mb-2">Herramientas</h1>
       <p className="text-text-secondary mb-8 max-w-xl">
-        Apps interactivas para gestionar y optimizar tu operacion en TikTok Shop Europa.
+        Apps interactivas para gestionar y optimizar tu operación en TikTok Shop Europa.
         Construidas desde la experiencia real como vendedor.
       </p>
 

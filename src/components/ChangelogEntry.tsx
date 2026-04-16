@@ -9,11 +9,11 @@ interface Props {
 }
 
 const CATEGORY_LABELS: Record<string, { label: string; color: string }> = {
-  politica: { label: "Politica", color: "bg-blue-500/10 text-blue-600 dark:text-blue-400" },
+  politica: { label: "Política", color: "bg-blue-500/10 text-blue-600 dark:text-blue-400" },
   feature: { label: "Feature", color: "bg-green-500/10 text-green-600 dark:text-green-400" },
-  comision: { label: "Comision", color: "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400" },
+  comision: { label: "Comisión", color: "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400" },
   bug: { label: "Bug", color: "bg-red-500/10 text-red-600 dark:text-red-400" },
-  expansion: { label: "Expansion", color: "bg-purple-500/10 text-purple-600 dark:text-purple-400" },
+  expansion: { label: "Expansión", color: "bg-purple-500/10 text-purple-600 dark:text-purple-400" },
 };
 
 const IMPACT_LABELS: Record<string, { label: string; color: string }> = {

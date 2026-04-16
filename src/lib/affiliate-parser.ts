@@ -176,7 +176,7 @@ export function parseAffiliateCSV(file: File): Promise<ParseResult> {
       complete(results) {
         try {
           const raw = results.data as Record<string, unknown>[];
-          if (raw.length === 0) { reject(new Error("El archivo no contiene ordenes")); return; }
+          if (raw.length === 0) { reject(new Error("El archivo no contiene órdenes")); return; }
 
           // Detect language
           const firstRow = raw[0];

@@ -48,7 +48,7 @@ export default function IVACalculator() {
   return (
     <div className="border-2 border-border rounded-xl bg-card-bg p-6 shadow-sm">
       <h2 className="text-xl font-bold text-text mb-1">Calculadora de IVA</h2>
-      <p className="text-sm text-text-secondary mb-5">Calcula el IVA para cualquier pais TTS Europa.</p>
+      <p className="text-sm text-text-secondary mb-5">Calcula el IVA para cualquier país TTS Europa.</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         {/* Importe */}
@@ -66,7 +66,7 @@ export default function IVACalculator() {
 
         {/* Pais */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[10px] font-semibold text-text-secondary uppercase tracking-wider">Pais</label>
+          <label className="text-[10px] font-semibold text-text-secondary uppercase tracking-wider">País</label>
           <select
             value={countryId}
             onChange={(e) => { setCountryId(e.target.value); setRateType("standard"); }}
@@ -86,7 +86,7 @@ export default function IVACalculator() {
             onChange={(e) => setRateType(e.target.value)}
             className="bg-bg-secondary border border-border text-text rounded-lg px-3 py-2 text-sm font-semibold focus:outline-none focus:border-accent cursor-pointer"
           >
-            <option value="standard">Estandar ({country.standard}%)</option>
+            <option value="standard">Estándar ({country.standard}%)</option>
             {country.reduced.map((r, i) => (
               <option key={i} value={`reduced-${i}`}>Reducido ({r}%)</option>
             ))}
@@ -95,7 +95,7 @@ export default function IVACalculator() {
 
         {/* Direccion */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[10px] font-semibold text-text-secondary uppercase tracking-wider">Operacion</label>
+          <label className="text-[10px] font-semibold text-text-secondary uppercase tracking-wider">Operación</label>
           <div className="flex gap-1">
             <button
               onClick={() => setDirection("add")}
@@ -139,7 +139,7 @@ export default function IVACalculator() {
 
           {/* Multi-country comparison */}
           <div className="mt-5 pt-4 border-t border-border">
-            <p className="text-[10px] text-text-secondary uppercase tracking-wider mb-3">Comparativa: mismo importe en todos los paises (IVA estandar)</p>
+            <p className="text-[10px] text-text-secondary uppercase tracking-wider mb-3">Comparativa: mismo importe en todos los países (IVA estándar)</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
               {COUNTRIES.map((c) => {
                 const base = parseFloat(amount) || 0;

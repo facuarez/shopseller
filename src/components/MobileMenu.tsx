@@ -6,7 +6,7 @@ import Link from "next/link";
 const NAV_LINKS = [
   { href: "/herramientas", label: "Herramientas" },
   { href: "/datos", label: "Datos" },
-  { href: "/analisis", label: "Analisis" },
+  { href: "/analisis", label: "Análisis" },
   { href: "/changelog", label: "Changelog" },
 ];
 

@@ -60,4 +60,4 @@ export function truncate(text: string, maxLength: number): string {
 export const SITE_URL = "https://shopseller.online";
 export const SITE_NAME = "ShopSeller";
 export const SITE_DESCRIPTION =
-  "TikTok Shop Europa para vendedores que operan de verdad. Herramientas, datos y analisis.";
+  "TikTok Shop Europa para vendedores que operan de verdad. Herramientas, datos y análisis.";

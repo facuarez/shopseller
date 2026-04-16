@@ -23,7 +23,7 @@ function Medal({ pos }: { pos: number }) {
 }
 
 function ChannelBadge({ organicPct }: { organicPct: number }) {
-  if (organicPct > 0.7) return <span className="text-[10px] px-2 py-0.5 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 font-medium">Organico</span>;
+  if (organicPct > 0.7) return <span className="text-[10px] px-2 py-0.5 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 font-medium">Orgánico</span>;
   if (organicPct < 0.3) return <span className="text-[10px] px-2 py-0.5 rounded-full bg-accent/10 text-accent font-medium">Paid</span>;
   return <span className="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-medium">Mixto</span>;
 }
@@ -145,7 +145,7 @@ export default function AfiliadosClient() {
     return (
       <div className="max-w-3xl mx-auto px-4 py-12">
         <h1 className="text-2xl font-bold text-text mb-2">Analizador de Afiliados TikTok Shop</h1>
-        <p className="text-text-secondary mb-8">Subi tu export de ordenes de afiliados y obtene un desglose completo. Tus datos no salen de tu navegador.</p>
+        <p className="text-text-secondary mb-8">Subí tu export de órdenes de afiliados y obtené un desglose completo. Tus datos no salen de tu navegador.</p>
 
         {/* Drop zone */}
         <div
@@ -162,8 +162,8 @@ export default function AfiliadosClient() {
             <p className="text-text font-medium">Procesando CSV...</p>
           ) : (
             <>
-              <p className="text-text font-medium mb-1">Arrastra tu CSV aqui o hace click para seleccionar</p>
-              <p className="text-sm text-text-secondary">Export de &quot;Ordenes de afiliados&quot; del TikTok Seller Center</p>
+              <p className="text-text font-medium mb-1">Arrastrá tu CSV aquí o hacé click para seleccionar</p>
+              <p className="text-sm text-text-secondary">Export de &quot;Órdenes de afiliados&quot; del TikTok Seller Center</p>
             </>
           )}
         </div>
@@ -177,19 +177,19 @@ export default function AfiliadosClient() {
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-600 dark:text-green-400 shrink-0 mt-0.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>
           <div>
             <p className="text-sm font-semibold text-text mb-0.5">100% client-side</p>
-            <p className="text-xs text-text-secondary">Esta herramienta procesa tu archivo localmente en tu navegador. Ningun dato se envia a nuestros servidores ni a terceros.</p>
+            <p className="text-xs text-text-secondary">Esta herramienta procesa tu archivo localmente en tu navegador. Ningún dato se envía a nuestros servidores ni a terceros.</p>
           </div>
         </div>
 
         {/* How to export */}
         <div className="mt-8">
-          <h2 className="text-lg font-bold text-text mb-3">Como exportar el CSV desde TikTok Seller Center</h2>
+          <h2 className="text-lg font-bold text-text mb-3">Cómo exportar el CSV desde TikTok Seller Center</h2>
           <ol className="space-y-2 text-sm text-text-secondary list-decimal list-inside">
-            <li>Entra a <strong className="text-text">TikTok Seller Center</strong> → seccion <strong className="text-text">Afiliados</strong></li>
-            <li>Ve a <strong className="text-text">Ordenes de afiliados</strong></li>
-            <li>Selecciona el rango de fechas que queres analizar</li>
+            <li>Entra a <strong className="text-text">TikTok Seller Center</strong> → sección <strong className="text-text">Afiliados</strong></li>
+            <li>Ve a <strong className="text-text">Órdenes de afiliados</strong></li>
+            <li>Selecciona el rango de fechas que querés analizar</li>
             <li>Click en <strong className="text-text">Exportar</strong> → descarga el CSV</li>
-            <li>Subi ese archivo aqui arriba</li>
+            <li>Subí ese archivo aquí arriba</li>
           </ol>
         </div>
       </div>
@@ -211,7 +211,7 @@ export default function AfiliadosClient() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
         <div>
           <h1 className="text-2xl font-bold text-text">Analizador de Afiliados</h1>
-          <p className="text-sm text-text-secondary">{m.totalOrders} ordenes · {m.organicOrders} org · {m.paidOrders} paid{data.skippedRows > 0 && <> · <span className="text-yellow-600">{data.skippedRows} filas ignoradas</span></>}</p>
+          <p className="text-sm text-text-secondary">{m.totalOrders} órdenes · {m.organicOrders} org · {m.paidOrders} paid{data.skippedRows > 0 && <> · <span className="text-yellow-600">{data.skippedRows} filas ignoradas</span></>}</p>
         </div>
         <button
           onClick={() => { setData(null); setError(null); setSearch(""); }}
@@ -228,7 +228,7 @@ export default function AfiliadosClient() {
           { label: "GMV total", value: fmtEur(m.gmvTotal), accent: true },
           { label: "Afiliados activos", value: String(m.activeAffiliates) },
           { label: "Videos con ventas", value: String(m.videosWithSales) },
-          { label: "Comision estimada", value: fmtEur(m.commissionTotal) },
+          { label: "Comisión estimada", value: fmtEur(m.commissionTotal) },
         ].map((card) => (
           <div key={card.label} className="p-4 rounded-xl border border-border bg-card-bg shadow-sm">
             <p className="text-[10px] text-text-secondary uppercase tracking-wider mb-1">{card.label}</p>
@@ -405,7 +405,7 @@ export default function AfiliadosClient() {
       {/* Privacy footer */}
       <div className="mt-4 text-center text-[11px] text-text-secondary/60">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block mr-1 -mt-0.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>
-        Tus datos se procesan localmente. Nada se envia a ningun servidor.
+        Tus datos se procesan localmente. Nada se envía a ningún servidor.
       </div>
     </div>
   );

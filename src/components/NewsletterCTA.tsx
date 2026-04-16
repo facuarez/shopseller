@@ -9,8 +9,8 @@ export default function NewsletterCTA() {
         Novedades de TikTok Shop Europa en tu inbox
       </h2>
       <p className="text-sm text-text-secondary mb-6 max-w-md mx-auto">
-        Cambios en politicas, nuevas comisiones, herramientas que valen la pena.
-        Sin spam, solo lo que necesitas saber como vendedor.
+        Cambios en políticas, nuevas comisiones, herramientas que valen la pena.
+        Sin spam, solo lo que necesitás saber como vendedor.
       </p>
       <div className="flex flex-col sm:flex-row gap-2 max-w-sm mx-auto">
         <input
@@ -28,7 +28,7 @@ export default function NewsletterCTA() {
         </button>
       </div>
       <p className="text-xs text-text-secondary mt-3">
-        Newsletter de ShopSeller en preparacion. Proximamente.
+        Newsletter de ShopSeller en preparación. Próximamente.
       </p>
     </section>
   );

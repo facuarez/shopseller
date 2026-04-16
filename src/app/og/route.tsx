@@ -5,7 +5,7 @@ export const runtime = "edge";
 
 /**
  * OG Image dinámica.
- * Uso: /og?title=Mi+titulo&description=Mi+descripcion
+ * Uso: /og?title=Mi+título&description=Mi+descripción
  * Para v1 genera un OG image simple con texto.
  * TODO: Mejorar diseño con logo y branding cuando se defina el dominio.
  */

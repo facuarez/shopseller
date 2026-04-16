@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="max-w-md">
               <h3 className="font-bold text-text mb-1">Novedades de TTS Europa en tu inbox</h3>
-              <p className="text-sm text-text-secondary">Cambios en politicas, comisiones y herramientas. Sin spam.</p>
+              <p className="text-sm text-text-secondary">Cambios en políticas, comisiones y herramientas. Sin spam.</p>
             </div>
             <div className="flex gap-2 max-w-sm w-full md:w-auto">
               <input
@@ -24,7 +24,7 @@ export default function Footer() {
               </button>
             </div>
           </div>
-          <p className="text-[10px] text-text-secondary/50 mt-3 md:text-right">Proximamente.</p>
+          <p className="text-[10px] text-text-secondary/50 mt-3 md:text-right">Próximamente.</p>
         </div>
       </div>
 
@@ -44,7 +44,7 @@ export default function Footer() {
             <p className="font-semibold text-text mb-2 text-xs uppercase tracking-wider">Herramientas</p>
             <nav className="flex flex-col gap-1.5">
               <Link href="/herramientas/calculadora" className="text-text-secondary hover:text-text transition-colors text-xs">Calculadora</Link>
-              <Link href="/herramientas/envios" className="text-text-secondary hover:text-text transition-colors text-xs">Envios</Link>
+              <Link href="/herramientas/envios" className="text-text-secondary hover:text-text transition-colors text-xs">Envíos</Link>
               <Link href="/herramientas/afiliados" className="text-text-secondary hover:text-text transition-colors text-xs">Afiliados</Link>
             </nav>
           </div>
@@ -54,7 +54,7 @@ export default function Footer() {
             <p className="font-semibold text-text mb-2 text-xs uppercase tracking-wider">Contenido</p>
             <nav className="flex flex-col gap-1.5">
               <Link href="/datos" className="text-text-secondary hover:text-text transition-colors text-xs">Datos</Link>
-              <Link href="/analisis" className="text-text-secondary hover:text-text transition-colors text-xs">Analisis</Link>
+              <Link href="/analisis" className="text-text-secondary hover:text-text transition-colors text-xs">Análisis</Link>
               <Link href="/changelog" className="text-text-secondary hover:text-text transition-colors text-xs">Changelog</Link>
             </nav>
           </div>
@@ -63,7 +63,7 @@ export default function Footer() {
           <div>
             <p className="font-semibold text-text mb-2 text-xs uppercase tracking-wider">Info</p>
             <nav className="flex flex-col gap-1.5">
-              <Link href="/sobre-mi" className="text-text-secondary hover:text-text transition-colors text-xs">Sobre mi</Link>
+              <Link href="/sobre-mi" className="text-text-secondary hover:text-text transition-colors text-xs">Sobre mí</Link>
               <Link href="/analisis/rss.xml" className="text-text-secondary hover:text-text transition-colors text-xs">RSS Feed</Link>
             </nav>
           </div>

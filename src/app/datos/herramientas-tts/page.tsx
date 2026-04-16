@@ -4,7 +4,7 @@ import type { HerramientasData } from "@/types/content";
 
 export const metadata: Metadata = {
   title: "Directorio de herramientas TTS",
-  description: "Herramientas externas de analytics, research y gestion para vendedores de TikTok Shop Europa.",
+  description: "Herramientas externas de analytics, research y gestión para vendedores de TikTok Shop Europa.",
 };
 
 const TYPE_LABELS: Record<string, string> = {
@@ -12,7 +12,7 @@ const TYPE_LABELS: Record<string, string> = {
   creative: "Creative",
   marketplace: "Marketplace",
   research: "Research",
-  management: "Gestion",
+  management: "Gestión",
 };
 
 const PRICING_LABELS: Record<string, { label: string; color: string }> = {
@@ -29,7 +29,7 @@ export default function HerramientasTTSPage() {
       <h1 className="text-3xl font-bold text-text mb-2">Directorio de herramientas TTS</h1>
       <p className="text-text-secondary mb-8 max-w-xl">
         Herramientas externas para vendedores de TikTok Shop. Cada una probada o investigada.
-        Los enlaces se prepararan para afiliacion cuando sea posible.
+        Los enlaces se prepararán para afiliación cuando sea posible.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

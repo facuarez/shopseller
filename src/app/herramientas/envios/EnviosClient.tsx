@@ -77,8 +77,8 @@ export default function EnviosClient() {
   return (
     <div className="max-w-[1440px] mx-auto px-4 sm:px-6 py-6 flex flex-col gap-5">
       <div>
-        <h1 className="text-2xl font-bold text-text">Comparador de envio</h1>
-        <p className="text-sm text-text-secondary mt-1">Costes de envio TikTok Shop EU por ruta, peso y tipo de entrega. Datos Nov 2025.</p>
+        <h1 className="text-2xl font-bold text-text">Comparador de envío</h1>
+        <p className="text-sm text-text-secondary mt-1">Costes de envío TikTok Shop EU por ruta, peso y tipo de entrega. Datos Nov 2025.</p>
       </div>
 
       {/* Controls */}
@@ -174,11 +174,11 @@ export default function EnviosClient() {
       {/* Legend */}
       <div className="flex flex-wrap items-center gap-4 text-[11px] text-text-secondary">
         <span className="font-semibold text-text">Leyenda:</span>
-        <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-green-500/10 border border-green-500/20" /> Mas barato</span>
+        <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-green-500/10 border border-green-500/20" /> Más barato</span>
         <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-yellow-500/10 border border-yellow-500/20" /> Medio</span>
-        <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-red-500/10 border border-red-500/20" /> Mas caro</span>
+        <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-red-500/10 border border-red-500/20" /> Más caro</span>
         <span className="text-text-secondary/40">·</span>
-        <span>Subrayado = ruta mas barata desde ese origen</span>
+        <span>Subrayado = ruta más barata desde ese origen</span>
         <span className="text-text-secondary/40">·</span>
         <span>Precios sin IVA</span>
       </div>
