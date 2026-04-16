@@ -20,10 +20,10 @@ const TOOLS = [
     status: "disponible" as const,
   },
   {
-    name: "Tracker de ventas de afiliados",
-    description: "Seguimiento de ventas generadas por creadores afiliados. Metricas por creador, producto y periodo.",
-    href: "/herramientas/afiliados-tracker",
-    status: "proximamente" as const,
+    name: "Analizador de afiliados",
+    description: "Subi tu CSV de ordenes de afiliados y obtene rankings de afiliados, videos y productos. 100% client-side.",
+    href: "/herramientas/afiliados",
+    status: "disponible" as const,
   },
   {
     name: "Seguimiento de muestras gratis",
