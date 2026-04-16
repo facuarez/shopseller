@@ -103,167 +103,91 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════
-          2. HERRAMIENTAS — Alternating left/right (Dub.co style)
+          2. HERRAMIENTAS — 3 cards compactas con borde
           ═══════════════════════════════════════════════ */}
-      <section className="bg-bg py-20">
+      <section className="bg-bg-secondary py-20 border-t border-border">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
             <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Herramientas</p>
-            <h2 className="text-3xl font-bold text-text mb-4">Apps que construi porque las necesitaba</h2>
-            <p className="text-text-secondary max-w-lg mb-14">
+            <h2 className="text-3xl font-bold text-text mb-3">Apps que construi porque las necesitaba</h2>
+            <p className="text-text-secondary max-w-lg mb-10">
               Cada herramienta nace de un problema operativo real. No son demos — son lo que uso para gestionar mi propia operacion en TTS.
             </p>
           </ScrollReveal>
 
-          {/* Tool 1: Calculadora — texto izq, mock der */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-20">
-            <ScrollReveal from="left">
-              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 text-[11px] font-medium mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                Disponible
-              </div>
-              <h3 className="text-2xl font-bold text-text mb-3">Calculadora de rentabilidad</h3>
-              <p className="text-text-secondary leading-relaxed mb-4">
-                Introduce PVP, coste del producto, pais y categoria. La calculadora aplica automaticamente la comision TTS, IVA correspondiente, costes de envio, y te muestra el margen neto real. Sin sorpresas.
-              </p>
-              <ul className="space-y-2 text-sm text-text-secondary mb-6">
-                <li className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
-                  Comisiones TTS reales por categoria
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
-                  IVA automatico por pais de destino
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
-                  Costes de envio, packaging y ads opcionales
-                </li>
-              </ul>
-              <Link href="/herramientas/calculadora" className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-hover transition-colors">
-                Abrir calculadora
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            {/* Calculadora */}
+            <ScrollReveal delay={0}>
+              <Link href="/herramientas/calculadora" className="group block h-full p-6 rounded-xl border-2 border-border bg-card-bg shadow-sm hover:border-accent/50 hover:shadow-md transition-all">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF5A1F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" /><line x1="8" y1="6" x2="16" y2="6" /><line x1="8" y1="10" x2="10" y2="10" /><line x1="14" y1="10" x2="16" y2="10" /><line x1="8" y1="14" x2="10" y2="14" /><line x1="14" y1="14" x2="16" y2="14" /><line x1="8" y1="18" x2="10" y2="18" /><line x1="14" y1="18" x2="16" y2="18" /></svg>
+                  </div>
+                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-green-500/10 text-green-600 dark:text-green-400">Disponible</span>
+                </div>
+                <h3 className="text-lg font-bold text-text group-hover:text-accent transition-colors mb-2">Calculadora de rentabilidad</h3>
+                <p className="text-sm text-text-secondary leading-relaxed mb-4">
+                  Calcula el PVP minimo rentable por pais. Comisiones TTS, IVA, envios y afiliados incluidos.
+                </p>
+                <div className="bg-bg-secondary rounded-lg p-3 font-data text-xs space-y-1.5">
+                  <div className="flex justify-between"><span className="text-text-secondary">PVP</span><span className="text-text font-semibold">24.99 €</span></div>
+                  <div className="flex justify-between"><span className="text-text-secondary">Costes</span><span className="text-red-400">-17.29 €</span></div>
+                  <div className="flex justify-between border-t border-border pt-1.5"><span className="text-text font-semibold">Margen</span><span className="text-accent font-bold">+7.70 € (30.8%)</span></div>
+                </div>
               </Link>
             </ScrollReveal>
 
-            <ScrollReveal from="right" delay={150}>
-              <div className="bg-card-bg border border-border rounded-xl p-5 shadow-sm">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
-                  <span className="text-[10px] text-text-secondary ml-2 font-data">calculadora.tsx</span>
+            {/* Envios */}
+            <ScrollReveal delay={100}>
+              <Link href="/herramientas/envios" className="group block h-full p-6 rounded-xl border-2 border-border bg-card-bg shadow-sm hover:border-accent/50 hover:shadow-md transition-all">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF5A1F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13" /><polygon points="16 8 20 8 23 11 23 16 16 16 16 8" /><circle cx="5.5" cy="18.5" r="2.5" /><circle cx="18.5" cy="18.5" r="2.5" /></svg>
+                  </div>
+                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-green-500/10 text-green-600 dark:text-green-400">Disponible</span>
                 </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center p-3 bg-bg-secondary rounded-lg">
-                    <span className="text-xs text-text-secondary">PVP</span>
-                    <span className="text-sm font-data font-semibold text-text">24.99 €</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-bg-secondary rounded-lg">
-                    <span className="text-xs text-text-secondary">Comision TTS (5%)</span>
-                    <span className="text-sm font-data text-accent">-1.25 €</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-bg-secondary rounded-lg">
-                    <span className="text-xs text-text-secondary">IVA ES (21%)</span>
-                    <span className="text-sm font-data text-text-secondary">-4.34 €</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-bg-secondary rounded-lg">
-                    <span className="text-xs text-text-secondary">Envio</span>
-                    <span className="text-sm font-data text-text-secondary">-3.50 €</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-bg-secondary rounded-lg">
-                    <span className="text-xs text-text-secondary">Coste producto</span>
-                    <span className="text-sm font-data text-text-secondary">-8.20 €</span>
-                  </div>
-                  <div className="border-t-2 border-accent/30 pt-3 mt-1">
-                    <div className="flex justify-between items-center p-3 bg-accent/5 rounded-lg border border-accent/20">
-                      <span className="text-xs font-semibold text-text">Margen neto</span>
-                      <span className="text-lg font-data font-bold text-accent">+7.70 € (30.8%)</span>
-                    </div>
-                  </div>
+                <h3 className="text-lg font-bold text-text group-hover:text-accent transition-colors mb-2">Comparador de envios</h3>
+                <p className="text-sm text-text-secondary leading-relaxed mb-4">
+                  Matriz de costes por ruta, peso y tipo de entrega. Compara todas las rutas EU de un vistazo.
+                </p>
+                <div className="bg-bg-secondary rounded-lg p-3 font-data text-xs space-y-1.5">
+                  <div className="flex justify-between"><span className="text-text-secondary">🇪🇸→🇪🇸</span><span className="text-green-600 dark:text-green-400 font-semibold">2.50 €</span></div>
+                  <div className="flex justify-between"><span className="text-text-secondary">🇪🇸→🇫🇷</span><span className="text-text font-semibold">5.20 €</span></div>
+                  <div className="flex justify-between"><span className="text-text-secondary">🇪🇸→🇮🇪</span><span className="text-red-400 font-semibold">9.60 €</span></div>
                 </div>
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* Tool 2: Envios — mock izq, texto der */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-16">
-            <ScrollReveal from="left" delay={100} className="order-2 lg:order-1">
-              <div className="bg-card-bg border border-border rounded-xl p-5 shadow-sm">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
-                  <span className="text-[10px] text-text-secondary ml-2 font-data">envios-europa.tsx</span>
-                </div>
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-border">
-                      <th className="text-left text-[10px] text-text-secondary uppercase tracking-wider pb-2 font-semibold">Ruta</th>
-                      <th className="text-right text-[10px] text-text-secondary uppercase tracking-wider pb-2 font-semibold">Coste</th>
-                      <th className="text-right text-[10px] text-text-secondary uppercase tracking-wider pb-2 font-semibold">Dias</th>
-                    </tr>
-                  </thead>
-                  <tbody className="font-data">
-                    {[
-                      { route: "🇪🇸 ES → 🇪🇸 ES", cost: "3.50 €", days: "2-3" },
-                      { route: "🇪🇸 ES → 🇫🇷 FR", cost: "5.20 €", days: "3-5" },
-                      { route: "🇪🇸 ES → 🇩🇪 DE", cost: "5.80 €", days: "4-6" },
-                      { route: "🇪🇸 ES → 🇮🇹 IT", cost: "5.40 €", days: "3-5" },
-                      { route: "🇬🇧 UK → 🇬🇧 UK", cost: "£3.20", days: "1-3" },
-                    ].map((r) => (
-                      <tr key={r.route} className="border-b border-border/50 last:border-0">
-                        <td className="py-2.5 text-xs text-text">{r.route}</td>
-                        <td className="py-2.5 text-xs text-right text-accent font-semibold">{r.cost}</td>
-                        <td className="py-2.5 text-xs text-right text-text-secondary">{r.days}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              </Link>
             </ScrollReveal>
 
-            <ScrollReveal from="right" className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 text-[11px] font-medium mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                Disponible
-              </div>
-              <h3 className="text-2xl font-bold text-text mb-3">Tabla de envios TTS Europa</h3>
-              <p className="text-text-secondary leading-relaxed mb-4">
-                Costes reales de envio por ruta, tiempos de entrega y carriers disponibles. Comparativa entre fulfillment de TTS y logistica propia para que elijas lo que mas te conviene.
-              </p>
-              <ul className="space-y-2 text-sm text-text-secondary mb-6">
-                <li className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
-                  Todas las rutas intra-Europa
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
-                  Fulfillment TTS vs envio propio
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
-                  Tiempos de entrega reales
-                </li>
-              </ul>
-              <Link href="/herramientas/envios" className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-hover transition-colors">
-                Ver tabla de envios
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+            {/* Analizador de afiliados */}
+            <ScrollReveal delay={200}>
+              <Link href="/herramientas/afiliados" className="group block h-full p-6 rounded-xl border-2 border-border bg-card-bg shadow-sm hover:border-accent/50 hover:shadow-md transition-all">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF5A1F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>
+                  </div>
+                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-green-500/10 text-green-600 dark:text-green-400">Disponible</span>
+                </div>
+                <h3 className="text-lg font-bold text-text group-hover:text-accent transition-colors mb-2">Analizador de afiliados</h3>
+                <p className="text-sm text-text-secondary leading-relaxed mb-4">
+                  Subi tu CSV de ordenes y obtene rankings de afiliados, videos y productos. 100% en tu navegador.
+                </p>
+                <div className="bg-bg-secondary rounded-lg p-3 font-data text-xs space-y-1.5">
+                  <div className="flex justify-between"><span className="text-text-secondary">Top afiliados</span><span className="text-text font-semibold">por GMV</span></div>
+                  <div className="flex justify-between"><span className="text-text-secondary">Top videos</span><span className="text-text font-semibold">por ventas</span></div>
+                  <div className="flex justify-between"><span className="text-text-secondary">Org. vs Paid</span><span className="text-accent font-semibold">atribucion</span></div>
+                </div>
               </Link>
             </ScrollReveal>
           </div>
 
-          {/* Proximamente — fila compacta */}
+          {/* Proximamente */}
           <ScrollReveal>
-            <div className="border-t border-border pt-8">
-              <p className="text-xs text-text-secondary uppercase tracking-widest mb-4">Proximamente</p>
-              <div className="flex flex-wrap gap-3">
-                {["Tracker de afiliados", "Seguimiento de muestras", "Simulador ROI"].map((name) => (
-                  <span key={name} className="px-4 py-2 rounded-lg border border-border bg-card-bg text-sm text-text-secondary">
-                    {name}
-                  </span>
-                ))}
-              </div>
+            <div className="flex flex-wrap gap-3 mt-8 justify-center">
+              {["Seguimiento de muestras", "Simulador ROI"].map((name) => (
+                <span key={name} className="px-4 py-2 rounded-lg border border-border/60 text-xs text-text-secondary">
+                  Proximamente: {name}
+                </span>
+              ))}
             </div>
           </ScrollReveal>
         </div>
@@ -272,7 +196,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════
           3. DATOS — Bento grid asimetrico (Stripe style)
           ═══════════════════════════════════════════════ */}
-      <section className="bg-bg-secondary py-20">
+      <section className="bg-bg py-20 border-t border-border">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
             <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Datos</p>
@@ -357,7 +281,7 @@ export default function Home() {
           4. ANALISIS — Featured highlight + smaller cards
           ═══════════════════════════════════════════════ */}
       {analisis.length > 0 && (
-        <section className="bg-bg py-20">
+        <section className="bg-bg-secondary py-20 border-t border-border">
           <div className="max-w-6xl mx-auto px-4">
             <ScrollReveal>
               <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Analisis</p>
@@ -420,7 +344,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════
           5. SOCIAL PROOF / TRUST — Fondo oscuro (rompe ritmo)
           ═══════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-[#0A0A0A] py-20">
+      <section className="relative overflow-hidden bg-[#0A0A0A] py-20 border-t border-[#222]">
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: "radial-gradient(circle, #FF5A1F 1px, transparent 1px)",
           backgroundSize: "24px 24px",
@@ -456,7 +380,7 @@ export default function Home() {
           6. CHANGELOG — Timeline con dots
           ═══════════════════════════════════════════════ */}
       {changelog.length > 0 && (
-        <section className="bg-bg py-20">
+        <section className="bg-bg py-20 border-t border-border">
           <div className="max-w-4xl mx-auto px-4">
             <ScrollReveal>
               <div className="flex items-center justify-between mb-10">
@@ -489,7 +413,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════
           7. NEWSLETTER CTA
           ═══════════════════════════════════════════════ */}
-      <section className="bg-bg-secondary py-20">
+      <section className="bg-bg-secondary py-20 border-t border-border">
         <div className="max-w-2xl mx-auto px-4">
           <ScrollReveal>
             <NewsletterCTA />
