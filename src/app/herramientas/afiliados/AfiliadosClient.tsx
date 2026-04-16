@@ -199,13 +199,19 @@ export default function AfiliadosClient() {
   // ─── Dashboard ───
   const m = data.metrics;
 
+  const TAB_CONFIG: { id: Tab; label: string; icon: React.ReactNode; count: number }[] = [
+    { id: "affiliates", label: "Afiliados", count: data.affiliates.length, icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg> },
+    { id: "videos", label: "Videos", count: data.videos.length, icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="23 7 16 12 23 17 23 7" /><rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></svg> },
+    { id: "products", label: "Productos", count: data.products.length, icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" /><line x1="3" y1="6" x2="21" y2="6" /><path d="M16 10a4 4 0 01-8 0" /></svg> },
+  ];
+
   return (
     <div className="max-w-[1440px] mx-auto px-4 sm:px-6 py-6">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
         <div>
           <h1 className="text-2xl font-bold text-text">Analizador de Afiliados</h1>
-          <p className="text-sm text-text-secondary">{m.totalOrders} ordenes · {m.activeAffiliates} afiliados · {data.skippedRows > 0 && <span className="text-yellow-600">{data.skippedRows} filas ignoradas</span>}</p>
+          <p className="text-sm text-text-secondary">{m.totalOrders} ordenes · {m.organicOrders} org · {m.paidOrders} paid{data.skippedRows > 0 && <> · <span className="text-yellow-600">{data.skippedRows} filas ignoradas</span></>}</p>
         </div>
         <button
           onClick={() => { setData(null); setError(null); setSearch(""); }}
@@ -232,69 +238,69 @@ export default function AfiliadosClient() {
         ))}
       </div>
 
-      {/* Controls */}
-      <div className="flex flex-wrap items-center gap-3 mb-4">
-        {/* Tabs */}
-        <div className="flex gap-1 bg-bg-secondary rounded-lg p-1">
-          {([["affiliates", "Afiliados"], ["videos", "Videos"], ["products", "Productos"]] as [Tab, string][]).map(([id, label]) => (
-            <button key={id} onClick={() => { setTab(id); setSortKey(id === "affiliates" ? "gmvTotal" : id === "videos" ? "totalOrders" : "totalOrders"); setSortDir("desc"); }}
-              className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all ${tab === id ? "bg-card-bg text-text shadow-sm" : "text-text-secondary hover:text-text"}`}>
+      {/* ═══ TABS — prominentes ═══ */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+        <div className="flex gap-2">
+          {TAB_CONFIG.map(({ id, label, icon, count }) => (
+            <button key={id} onClick={() => { setTab(id); setSortKey(id === "affiliates" ? "gmvTotal" : "totalOrders"); setSortDir("desc"); }}
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-all border ${
+                tab === id
+                  ? "bg-accent text-white border-accent shadow-sm shadow-accent/20"
+                  : "bg-card-bg text-text-secondary border-border hover:border-text-secondary/30 hover:text-text"
+              }`}>
+              {icon}
               {label}
-            </button>
-          ))}
-        </div>
-
-        {/* Channel filter */}
-        <div className="flex gap-1 bg-bg-secondary rounded-lg p-1">
-          {([["all", "Todos"], ["organic", "Organico"], ["paid", "Paid"]] as [ChannelFilter, string][]).map(([id, label]) => (
-            <button key={id} onClick={() => setChannelFilter(id)}
-              className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all ${channelFilter === id ? "bg-card-bg text-text shadow-sm" : "text-text-secondary hover:text-text"}`}>
-              {label}
+              <span className={`text-xs font-data px-1.5 py-0.5 rounded-md ${tab === id ? "bg-white/20" : "bg-bg-secondary"}`}>{count}</span>
             </button>
           ))}
         </div>
 
         {/* Search */}
-        <div className="relative flex-1 min-w-[200px] max-w-xs">
+        <div className="relative min-w-[200px] max-w-xs">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-          <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Buscar afiliado o producto..."
-            className="w-full pl-9 pr-3 py-2 rounded-lg text-xs bg-bg-secondary border border-border text-text placeholder:text-text-secondary/50 focus:outline-none focus:border-accent" />
+          <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Buscar..."
+            className="w-full pl-9 pr-3 py-2.5 rounded-xl text-xs bg-card-bg border border-border text-text placeholder:text-text-secondary/50 focus:outline-none focus:border-accent" />
         </div>
       </div>
 
-      {/* ─── TAB: AFFILIATES ─── */}
-      {tab === "affiliates" && (
-        <div className="overflow-x-auto rounded-xl border border-border bg-card-bg shadow-sm">
+      {/* ═══ TABLE CONTAINER — max height with internal scroll ═══ */}
+      <div className="rounded-xl border border-border bg-card-bg shadow-sm overflow-hidden">
+        <div className="overflow-x-auto max-h-[560px] overflow-y-auto">
+
+        {/* ─── TAB: AFFILIATES ─── */}
+        {tab === "affiliates" && (
           <table className="w-full text-sm">
-            <thead>
+            <thead className="sticky top-0 z-10">
               <tr className="bg-bg-secondary border-b border-border">
-                <th className="text-left px-4 py-3 w-10"><span className="text-[10px] text-text-secondary uppercase">#</span></th>
-                <th className="text-left px-4 py-3"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Afiliado</span></th>
-                <th className="text-right px-4 py-3"><SortHeader label="Ventas" field="totalOrders" /></th>
-                <th className="text-right px-4 py-3"><SortHeader label="GMV" field="gmvTotal" /></th>
-                <th className="text-right px-4 py-3 hidden lg:table-cell"><SortHeader label="GMV Org." field="gmvOrganic" /></th>
-                <th className="text-right px-4 py-3 hidden lg:table-cell"><SortHeader label="GMV Paid" field="gmvPaid" /></th>
-                <th className="text-right px-4 py-3"><SortHeader label="Comision" field="commissionTotal" /></th>
-                <th className="text-center px-4 py-3 hidden md:table-cell"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Videos</span></th>
-                <th className="text-center px-4 py-3 hidden md:table-cell"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Canal</span></th>
+                <th className="text-center px-3 py-3 w-12"><span className="text-[10px] text-text-secondary uppercase">#</span></th>
+                <th className="text-left px-3 py-3"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Afiliado</span></th>
+                <th className="text-right px-3 py-3 w-20"><SortHeader label="Ventas" field="totalOrders" /></th>
+                <th className="text-right px-3 py-3 w-28"><SortHeader label="GMV" field="gmvTotal" /></th>
+                <th className="text-right px-3 py-3 w-28 hidden lg:table-cell"><SortHeader label="GMV Org." field="gmvOrganic" /></th>
+                <th className="text-right px-3 py-3 w-28 hidden lg:table-cell"><SortHeader label="GMV Paid" field="gmvPaid" /></th>
+                <th className="text-right px-3 py-3 w-24"><SortHeader label="Comision" field="commissionTotal" /></th>
+                <th className="text-center px-3 py-3 w-16 hidden md:table-cell"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Videos</span></th>
+                <th className="text-center px-3 py-3 w-20 hidden md:table-cell"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Canal</span></th>
               </tr>
             </thead>
             <tbody>
               {filteredAffiliates.map((a, i) => (
-                <tr key={a.username} className={`border-b border-border/50 last:border-0 hover:bg-bg-secondary/50 transition-colors ${i % 2 === 0 ? "" : "bg-bg-secondary/30"}`}>
-                  <td className="px-4 py-2.5"><Medal pos={i} /></td>
-                  <td className="px-4 py-2.5">
-                    <a href={tiktokProfileUrl(a.username)} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-text hover:text-accent transition-colors">
-                      @{a.username}<ExtLink />
+                <tr key={a.username} className={`border-b border-border/40 last:border-0 hover:bg-bg-secondary/50 transition-colors ${i % 2 !== 0 ? "bg-bg-secondary/20" : ""}`}>
+                  <td className="text-center px-3 py-2.5"><Medal pos={i} /></td>
+                  <td className="px-3 py-2.5">
+                    <a href={tiktokProfileUrl(a.username)} target="_blank" rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-hover transition-colors">
+                      @{a.username}
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-40"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                     </a>
                   </td>
-                  <td className="text-right px-4 py-2.5 font-data font-semibold text-text">{a.totalOrders}</td>
-                  <td className="text-right px-4 py-2.5 font-data font-bold text-accent">{fmtEur(a.gmvTotal)}</td>
-                  <td className="text-right px-4 py-2.5 font-data text-text-secondary hidden lg:table-cell">{fmtEur(a.gmvOrganic)}</td>
-                  <td className="text-right px-4 py-2.5 font-data text-text-secondary hidden lg:table-cell">{fmtEur(a.gmvPaid)}</td>
-                  <td className="text-right px-4 py-2.5 font-data text-text-secondary">{fmtEur(a.commissionTotal)}</td>
-                  <td className="text-center px-4 py-2.5 font-data text-text-secondary hidden md:table-cell">{a.uniqueVideos}</td>
-                  <td className="text-center px-4 py-2.5 hidden md:table-cell"><ChannelBadge organicPct={a.organicPct} /></td>
+                  <td className="text-right px-3 py-2.5 font-data font-semibold text-text">{a.totalOrders}</td>
+                  <td className="text-right px-3 py-2.5 font-data font-bold text-text">{fmtEur(a.gmvTotal)}</td>
+                  <td className="text-right px-3 py-2.5 font-data text-text-secondary hidden lg:table-cell">{fmtEur(a.gmvOrganic)}</td>
+                  <td className="text-right px-3 py-2.5 font-data text-text-secondary hidden lg:table-cell">{fmtEur(a.gmvPaid)}</td>
+                  <td className="text-right px-3 py-2.5 font-data text-text-secondary">{fmtEur(a.commissionTotal)}</td>
+                  <td className="text-center px-3 py-2.5 font-data text-text-secondary hidden md:table-cell">{a.uniqueVideos}</td>
+                  <td className="text-center px-3 py-2.5 hidden md:table-cell"><ChannelBadge organicPct={a.organicPct} /></td>
                 </tr>
               ))}
               {filteredAffiliates.length === 0 && (
@@ -302,43 +308,48 @@ export default function AfiliadosClient() {
               )}
             </tbody>
           </table>
-        </div>
-      )}
+        )}
 
-      {/* ─── TAB: VIDEOS ─── */}
-      {tab === "videos" && (
-        <div className="overflow-x-auto rounded-xl border border-border bg-card-bg shadow-sm">
+        {/* ─── TAB: VIDEOS ─── */}
+        {tab === "videos" && (
           <table className="w-full text-sm">
-            <thead>
+            <thead className="sticky top-0 z-10">
               <tr className="bg-bg-secondary border-b border-border">
-                <th className="text-left px-4 py-3 w-10"><span className="text-[10px] text-text-secondary uppercase">#</span></th>
-                <th className="text-left px-4 py-3"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Creador</span></th>
-                <th className="text-left px-4 py-3 hidden lg:table-cell"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Producto principal</span></th>
-                <th className="text-right px-4 py-3"><SortHeader label="Ventas" field="totalOrders" /></th>
-                <th className="text-right px-4 py-3"><SortHeader label="GMV" field="gmv" /></th>
-                <th className="text-right px-4 py-3"><SortHeader label="Comision" field="commission" /></th>
-                <th className="text-center px-4 py-3"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Tipo</span></th>
-                <th className="text-center px-4 py-3 w-14"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Link</span></th>
+                <th className="text-center px-3 py-3 w-12"><span className="text-[10px] text-text-secondary uppercase">#</span></th>
+                <th className="text-left px-3 py-3"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Creador</span></th>
+                <th className="text-left px-3 py-3 hidden lg:table-cell"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Producto principal</span></th>
+                <th className="text-right px-3 py-3 w-20"><SortHeader label="Ventas" field="totalOrders" /></th>
+                <th className="text-right px-3 py-3 w-28"><SortHeader label="GMV" field="gmv" /></th>
+                <th className="text-right px-3 py-3 w-24"><SortHeader label="Comision" field="commission" /></th>
+                <th className="text-center px-3 py-3 w-24"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Tipo</span></th>
+                <th className="text-center px-3 py-3 w-12"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Ver</span></th>
               </tr>
             </thead>
             <tbody>
               {filteredVideos.map((v, i) => (
-                <tr key={v.contentId} className={`border-b border-border/50 last:border-0 hover:bg-bg-secondary/50 transition-colors ${i % 2 === 0 ? "" : "bg-bg-secondary/30"}`}>
-                  <td className="px-4 py-2.5"><Medal pos={i} /></td>
-                  <td className="px-4 py-2.5 text-sm font-semibold text-text">@{v.username}</td>
-                  <td className="px-4 py-2.5 text-xs text-text-secondary max-w-[200px] truncate hidden lg:table-cell">{v.productName}</td>
-                  <td className="text-right px-4 py-2.5 font-data font-semibold text-text">{v.totalOrders}</td>
-                  <td className="text-right px-4 py-2.5 font-data font-bold text-accent">{fmtEur(v.gmv)}</td>
-                  <td className="text-right px-4 py-2.5 font-data text-text-secondary">{fmtEur(v.commission)}</td>
-                  <td className="text-center px-4 py-2.5">
+                <tr key={v.contentId} className={`border-b border-border/40 last:border-0 hover:bg-bg-secondary/50 transition-colors ${i % 2 !== 0 ? "bg-bg-secondary/20" : ""}`}>
+                  <td className="text-center px-3 py-2.5"><Medal pos={i} /></td>
+                  <td className="px-3 py-2.5">
+                    <a href={tiktokProfileUrl(v.username)} target="_blank" rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-hover transition-colors">
+                      @{v.username}
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-40"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+                    </a>
+                  </td>
+                  <td className="px-3 py-2.5 text-xs text-text-secondary max-w-[220px] truncate hidden lg:table-cell">{v.productName}</td>
+                  <td className="text-right px-3 py-2.5 font-data font-semibold text-text">{v.totalOrders}</td>
+                  <td className="text-right px-3 py-2.5 font-data font-bold text-text">{fmtEur(v.gmv)}</td>
+                  <td className="text-right px-3 py-2.5 font-data text-text-secondary">{fmtEur(v.commission)}</td>
+                  <td className="text-center px-3 py-2.5">
                     <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${v.contentType === "video" ? "bg-blue-500/10 text-blue-600 dark:text-blue-400" : "bg-purple-500/10 text-purple-600 dark:text-purple-400"}`}>
                       {v.contentType === "video" ? "Video" : "Escaparate"}
                     </span>
                   </td>
-                  <td className="text-center px-4 py-2.5">
+                  <td className="text-center px-3 py-2.5">
                     {v.contentType === "video" ? (
-                      <a href={tiktokVideoUrl(v.username, v.contentId)} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-hover transition-colors">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+                      <a href={tiktokVideoUrl(v.username, v.contentId)} target="_blank" rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-accent/10 text-accent hover:bg-accent/20 transition-colors">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3" /></svg>
                       </a>
                     ) : <span className="text-text-secondary/30">—</span>}
                   </td>
@@ -349,36 +360,34 @@ export default function AfiliadosClient() {
               )}
             </tbody>
           </table>
-        </div>
-      )}
+        )}
 
-      {/* ─── TAB: PRODUCTS ─── */}
-      {tab === "products" && (
-        <div className="overflow-x-auto rounded-xl border border-border bg-card-bg shadow-sm">
+        {/* ─── TAB: PRODUCTS ─── */}
+        {tab === "products" && (
           <table className="w-full text-sm">
-            <thead>
+            <thead className="sticky top-0 z-10">
               <tr className="bg-bg-secondary border-b border-border">
-                <th className="text-left px-4 py-3 w-10"><span className="text-[10px] text-text-secondary uppercase">#</span></th>
-                <th className="text-left px-4 py-3"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Producto</span></th>
-                <th className="text-right px-4 py-3"><SortHeader label="Pedidos" field="totalOrders" /></th>
-                <th className="text-right px-4 py-3 hidden md:table-cell"><SortHeader label="Uds" field="totalUnits" /></th>
-                <th className="text-right px-4 py-3"><SortHeader label="GMV" field="gmvTotal" /></th>
-                <th className="text-center px-4 py-3 w-32 hidden lg:table-cell"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Org / Paid</span></th>
-                <th className="text-right px-4 py-3 hidden md:table-cell"><SortHeader label="Afiliados" field="uniqueAffiliates" /></th>
-                <th className="text-right px-4 py-3"><SortHeader label="Comision" field="commissionTotal" /></th>
+                <th className="text-center px-3 py-3 w-12"><span className="text-[10px] text-text-secondary uppercase">#</span></th>
+                <th className="text-left px-3 py-3"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Producto</span></th>
+                <th className="text-right px-3 py-3 w-20"><SortHeader label="Pedidos" field="totalOrders" /></th>
+                <th className="text-right px-3 py-3 w-16 hidden md:table-cell"><SortHeader label="Uds" field="totalUnits" /></th>
+                <th className="text-right px-3 py-3 w-28"><SortHeader label="GMV" field="gmvTotal" /></th>
+                <th className="text-center px-3 py-3 w-32 hidden lg:table-cell"><span className="text-[10px] text-text-secondary uppercase tracking-wider">Org / Paid</span></th>
+                <th className="text-right px-3 py-3 w-20 hidden md:table-cell"><SortHeader label="Afiliados" field="uniqueAffiliates" /></th>
+                <th className="text-right px-3 py-3 w-24"><SortHeader label="Comision" field="commissionTotal" /></th>
               </tr>
             </thead>
             <tbody>
               {filteredProducts.map((p, i) => (
-                <tr key={p.productId} className={`border-b border-border/50 last:border-0 hover:bg-bg-secondary/50 transition-colors ${i % 2 === 0 ? "" : "bg-bg-secondary/30"}`}>
-                  <td className="px-4 py-2.5"><Medal pos={i} /></td>
-                  <td className="px-4 py-2.5 text-sm font-medium text-text max-w-[250px]"><span className="line-clamp-2">{p.productName}</span></td>
-                  <td className="text-right px-4 py-2.5 font-data font-semibold text-text">{p.totalOrders}</td>
-                  <td className="text-right px-4 py-2.5 font-data text-text-secondary hidden md:table-cell">{p.totalUnits}</td>
-                  <td className="text-right px-4 py-2.5 font-data font-bold text-accent">{fmtEur(p.gmvTotal)}</td>
-                  <td className="px-4 py-2.5 hidden lg:table-cell"><OrgPaidBar organic={p.organicOrders} paid={p.paidOrders} /></td>
-                  <td className="text-right px-4 py-2.5 font-data text-text-secondary hidden md:table-cell">{p.uniqueAffiliates}</td>
-                  <td className="text-right px-4 py-2.5 font-data text-text-secondary">{fmtEur(p.commissionTotal)}</td>
+                <tr key={p.productId} className={`border-b border-border/40 last:border-0 hover:bg-bg-secondary/50 transition-colors ${i % 2 !== 0 ? "bg-bg-secondary/20" : ""}`}>
+                  <td className="text-center px-3 py-2.5"><Medal pos={i} /></td>
+                  <td className="px-3 py-2.5 text-sm font-medium text-text max-w-[280px]"><span className="line-clamp-1">{p.productName}</span></td>
+                  <td className="text-right px-3 py-2.5 font-data font-semibold text-text">{p.totalOrders}</td>
+                  <td className="text-right px-3 py-2.5 font-data text-text-secondary hidden md:table-cell">{p.totalUnits}</td>
+                  <td className="text-right px-3 py-2.5 font-data font-bold text-text">{fmtEur(p.gmvTotal)}</td>
+                  <td className="px-3 py-2.5 hidden lg:table-cell"><OrgPaidBar organic={p.organicOrders} paid={p.paidOrders} /></td>
+                  <td className="text-right px-3 py-2.5 font-data text-text-secondary hidden md:table-cell">{p.uniqueAffiliates}</td>
+                  <td className="text-right px-3 py-2.5 font-data text-text-secondary">{fmtEur(p.commissionTotal)}</td>
                 </tr>
               ))}
               {filteredProducts.length === 0 && (
@@ -386,11 +395,13 @@ export default function AfiliadosClient() {
               )}
             </tbody>
           </table>
+        )}
+
         </div>
-      )}
+      </div>
 
       {/* Privacy footer */}
-      <div className="mt-6 text-center text-[11px] text-text-secondary/60">
+      <div className="mt-4 text-center text-[11px] text-text-secondary/60">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block mr-1 -mt-0.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>
         Tus datos se procesan localmente. Nada se envia a ningun servidor.
       </div>
