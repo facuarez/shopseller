@@ -230,9 +230,9 @@ export default function Home() {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border-b border-border/50"><td className="py-2 text-xs text-text">🇪🇸 España</td><td className="py-2 text-xs text-text-secondary">Hogar y jardin</td><td className="py-2 text-xs text-right text-accent font-semibold">TODO</td></tr>
-                      <tr className="border-b border-border/50"><td className="py-2 text-xs text-text">🇫🇷 Francia</td><td className="py-2 text-xs text-text-secondary">Belleza</td><td className="py-2 text-xs text-right text-accent font-semibold">TODO</td></tr>
-                      <tr><td className="py-2 text-xs text-text">🇬🇧 UK</td><td className="py-2 text-xs text-text-secondary">Moda</td><td className="py-2 text-xs text-right text-accent font-semibold">TODO</td></tr>
+                      <tr className="border-b border-border/50"><td className="py-2 text-xs text-text">🇪🇸 EU5 General</td><td className="py-2 text-xs text-text-secondary">Moda, hogar, lifestyle...</td><td className="py-2 text-xs text-right text-accent font-semibold">9%</td></tr>
+                      <tr className="border-b border-border/50"><td className="py-2 text-xs text-text">🇪🇸 EU5 Electronica</td><td className="py-2 text-xs text-text-secondary">Moviles, tablets, smartwatches</td><td className="py-2 text-xs text-right text-accent font-semibold">7%</td></tr>
+                      <tr><td className="py-2 text-xs text-text">🇪🇸 Nuevo seller</td><td className="py-2 text-xs text-text-secondary">Primeros 60 dias</td><td className="py-2 text-xs text-right text-green-600 dark:text-green-400 font-semibold">4%</td></tr>
                     </tbody>
                   </table>
                 </div>

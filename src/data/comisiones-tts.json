@@ -2,53 +2,79 @@
   "ES": {
     "country": "España",
     "lastUpdated": "2026-04-16",
+    "source": "https://seller-es.tiktok.com/university/essay?knowledge_id=6530242332575490",
     "categories": [
-      { "name": "TODO: Hogar y jardín", "commission": 0, "notes": "TODO: Verificar comisión actual" },
-      { "name": "TODO: Belleza y cuidado personal", "commission": 0, "notes": "TODO: Verificar comisión actual" },
-      { "name": "TODO: Moda y accesorios", "commission": 0, "notes": "TODO: Verificar comisión actual" },
-      { "name": "TODO: Electrónica", "commission": 0, "notes": "TODO: Verificar comisión actual" },
-      { "name": "TODO: Alimentación", "commission": 0, "notes": "TODO: Verificar comisión actual" },
-      { "name": "TODO: Deportes", "commission": 0, "notes": "TODO: Verificar comisión actual" }
+      { "name": "General (mayoria de categorias)", "commission": 9, "notes": "Moda, hogar, lifestyle, deportes, alimentacion, juguetes, etc." },
+      { "name": "Electronica de consumo", "commission": 7, "notes": "Moviles, portatiles, tablets, smartwatches y dispositivos similares." },
+      { "name": "Electronica de belleza", "commission": 7, "notes": "Dispositivos electricos de belleza: planchas, afeitadoras, cepillos faciales." },
+      { "name": "Nuevo seller (primeros 60 dias)", "commission": 4, "notes": "Requiere listar 5+ productos en 15 dias. Solo primera tienda en EU5. Productos sustancialmente diferentes a listados existentes." }
     ]
   },
   "FR": {
     "country": "Francia",
     "lastUpdated": "2026-04-16",
+    "source": "https://seller-es.tiktok.com/university/essay?knowledge_id=6530242332575490",
     "categories": [
-      { "name": "TODO: categoría 1", "commission": 0, "notes": "TODO" },
-      { "name": "TODO: categoría 2", "commission": 0, "notes": "TODO" }
-    ]
-  },
-  "IT": {
-    "country": "Italia",
-    "lastUpdated": "2026-04-16",
-    "categories": [
-      { "name": "TODO: categoría 1", "commission": 0, "notes": "TODO" },
-      { "name": "TODO: categoría 2", "commission": 0, "notes": "TODO" }
+      { "name": "General (mayoria de categorias)", "commission": 9, "notes": "Misma estructura que España — 9% estandar." },
+      { "name": "Electronica de consumo", "commission": 7, "notes": "Moviles, portatiles, tablets, smartwatches." },
+      { "name": "Electronica de belleza", "commission": 7, "notes": "Dispositivos electricos de belleza." },
+      { "name": "Nuevo seller (primeros 60 dias)", "commission": 4, "notes": "Mismas condiciones que ES." }
     ]
   },
   "DE": {
     "country": "Alemania",
     "lastUpdated": "2026-04-16",
+    "source": "https://seller-es.tiktok.com/university/essay?knowledge_id=6530242332575490",
     "categories": [
-      { "name": "TODO: categoría 1", "commission": 0, "notes": "TODO" },
-      { "name": "TODO: categoría 2", "commission": 0, "notes": "TODO" }
+      { "name": "General (mayoria de categorias)", "commission": 9, "notes": "Misma estructura EU5 — 9% estandar." },
+      { "name": "Electronica de consumo", "commission": 7, "notes": "Moviles, portatiles, tablets, smartwatches." },
+      { "name": "Electronica de belleza", "commission": 7, "notes": "Dispositivos electricos de belleza." },
+      { "name": "Nuevo seller (primeros 60 dias)", "commission": 4, "notes": "Mismas condiciones que ES." }
+    ]
+  },
+  "IT": {
+    "country": "Italia",
+    "lastUpdated": "2026-04-16",
+    "source": "https://seller-es.tiktok.com/university/essay?knowledge_id=6530242332575490",
+    "categories": [
+      { "name": "General (mayoria de categorias)", "commission": 9, "notes": "Misma estructura EU5 — 9% estandar." },
+      { "name": "Electronica de consumo", "commission": 7, "notes": "Moviles, portatiles, tablets, smartwatches." },
+      { "name": "Electronica de belleza", "commission": 7, "notes": "Dispositivos electricos de belleza." },
+      { "name": "Nuevo seller (primeros 60 dias)", "commission": 4, "notes": "Mismas condiciones que ES." }
     ]
   },
   "IE": {
     "country": "Irlanda",
     "lastUpdated": "2026-04-16",
+    "source": "https://seller-es.tiktok.com/university/essay?knowledge_id=6530242332575490",
     "categories": [
-      { "name": "TODO: categoría 1", "commission": 0, "notes": "TODO" },
-      { "name": "TODO: categoría 2", "commission": 0, "notes": "TODO" }
+      { "name": "General (mayoria de categorias)", "commission": 9, "notes": "Misma estructura EU5 — 9% estandar." },
+      { "name": "Electronica de consumo", "commission": 7, "notes": "Moviles, portatiles, tablets, smartwatches." },
+      { "name": "Electronica de belleza", "commission": 7, "notes": "Dispositivos electricos de belleza." },
+      { "name": "Nuevo seller (primeros 60 dias)", "commission": 4, "notes": "Mismas condiciones que ES." }
     ]
   },
   "UK": {
     "country": "Reino Unido",
     "lastUpdated": "2026-04-16",
+    "source": "https://seller-uk.tiktok.com/university/essay?knowledge_id=3315312175236897",
     "categories": [
-      { "name": "TODO: categoría 1", "commission": 0, "notes": "TODO" },
-      { "name": "TODO: categoría 2", "commission": 0, "notes": "TODO" }
+      { "name": "General (mayoria de categorias)", "commission": 9, "notes": "Moda, hogar, lifestyle, deportes, alimentacion, etc." },
+      { "name": "Electronica de consumo", "commission": 7, "notes": "Moviles, portatiles, tablets, smartwatches. Anteriormente 5%, subio a 7% en enero 2026." },
+      { "name": "Belleza y cuidado personal (electronica)", "commission": 7, "notes": "Dispositivos electricos de belleza." },
+      { "name": "Nuevo seller (primeros 60 dias)", "commission": 4, "notes": "Requiere completar tareas de onboarding." },
+      { "name": "Tasa por pedido MFN", "commission": 0, "notes": "GBP 0.50 adicional por pedido para sellers que gestionan envio propio (no fulfillment TTS). Desde julio 2025." }
+    ]
+  },
+  "_meta": {
+    "formula": "Comision = (Pago del comprador + Descuentos financiados por plataforma - IVA) x Tasa de comision",
+    "effectiveDate": "2026-01-08",
+    "notes": "EU5 tiene estructura simple de 2 niveles (9% estandar / 7% electronica). UK similar pero con fee adicional por pedido MFN. Promocion nuevo seller del 4% durante 60 dias en todos los mercados.",
+    "sources": [
+      "https://seller-es.tiktok.com/university/essay?knowledge_id=6530242332575490",
+      "https://seller-uk.tiktok.com/university/essay?knowledge_id=3315312175236897",
+      "https://channelx.world/2025/12/tiktok-shop-fees-to-rise-to-9-in-europe/",
+      "https://ecommercenews.eu/tiktok-shop-raises-seller-fees-in-europe/"
     ]
   }
 }
