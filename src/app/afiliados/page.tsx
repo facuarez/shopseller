@@ -25,11 +25,17 @@ const TOOLS = [
 
 const GUIDES = [
   {
+    href: "/afiliados/top-tiendas",
+    title: "Top tiendas TikTok Shop España por categoría",
+    description: "Ranking con datos reales: ingresos, % afiliados, GMV Max y crecimiento. Descubrí a qué sellers pedirles muestras.",
+    tag: "Data real",
+    featured: true,
+  },
+  {
     href: "/afiliados/cuantos-videos",
     title: "Cuántos videos publicar en TikTok Shop",
     description: "La traba no está en qué hacer, sino en hacer. Por qué volumen &gt; calidad y cómo funciona realmente el algoritmo.",
     tag: "Imprescindible",
-    featured: true,
   },
   {
     href: "/afiliados/como-empezar",

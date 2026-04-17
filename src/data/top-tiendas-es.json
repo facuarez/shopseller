@@ -1,0 +1,100 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-04-16",
+    "period": "18 mar – 16 abr 2026 (30 días)",
+    "source": "Kalodata — datos verificados manualmente",
+    "disclaimer": "Los datos cambian semanalmente. Este ranking refleja los ingresos de los últimos 30 días al momento de la actualización."
+  },
+  "categorias": [
+    {
+      "id": "general",
+      "nombre": "Top tiendas de TikTok Shop España",
+      "descripcion": "Las 10 tiendas con más ingresos en TikTok Shop España en los últimos 30 días, sin filtrar por categoría. Mezcla de todos los nichos.",
+      "keywords": "mejores tiendas tiktok shop españa, top vendedores tts españa",
+      "tiendas": [
+        { "pos": 1, "nombre": "MIKOMIKA", "tipo": "Marca", "ingresos": 524750, "unidades": 27100, "ticket": 19.37, "ingresosAfiliados": 517550, "ingresosVideoPaid": 379390, "crecimiento": -17.9, "categoria": "Hogar / Bebés" },
+        { "pos": 2, "nombre": "Aldous Bio", "tipo": "Marca", "ingresos": 365050, "unidades": 24620, "ticket": 14.83, "ingresosAfiliados": 353210, "ingresosVideoPaid": 250200, "crecimiento": -47.7, "categoria": "Belleza / Suplementos" },
+        { "pos": 3, "nombre": "Volupat", "tipo": "Minorista", "ingresos": 356830, "unidades": 13970, "ticket": 25.54, "ingresosAfiliados": 354860, "ingresosVideoPaid": 296840, "crecimiento": -10.2, "categoria": "Hogar" },
+        { "pos": 4, "nombre": "Utopya Shop", "tipo": "Marca", "ingresos": 334590, "unidades": 24850, "ticket": 13.47, "ingresosAfiliados": 194140, "ingresosVideoPaid": 192030, "crecimiento": -19.7, "categoria": "Moda" },
+        { "pos": 5, "nombre": "ARMONIAS SPAIN", "tipo": "Marca", "ingresos": 282160, "unidades": 13320, "ticket": 21.19, "ingresosAfiliados": 166830, "ingresosVideoPaid": 167930, "crecimiento": -32.2, "categoria": "Moda" },
+        { "pos": 6, "nombre": "Tío Jose", "tipo": "Minorista", "ingresos": 222440, "unidades": 455, "ticket": 488.87, "ingresosAfiliados": 175750, "ingresosVideoPaid": 19050, "crecimiento": -72.1, "categoria": "Ticket alto" },
+        { "pos": 7, "nombre": "DESPEGUE", "tipo": "Marca", "ingresos": 201000, "unidades": 20860, "ticket": 9.64, "ingresosAfiliados": 173930, "ingresosVideoPaid": 153780, "crecimiento": -63.8, "categoria": "Bebés / Hogar" },
+        { "pos": 8, "nombre": "Easy Yoga", "tipo": "Minorista", "ingresos": 156240, "unidades": 18140, "ticket": 8.61, "ingresosAfiliados": 155500, "ingresosVideoPaid": 135310, "crecimiento": -5.1, "categoria": "Moda / Fitness" },
+        { "pos": 9, "nombre": "FYRAEN ES", "tipo": "Marca", "ingresos": 136890, "unidades": 1710, "ticket": 79.91, "ingresosAfiliados": 136660, "ingresosVideoPaid": 125920, "crecimiento": 93, "categoria": "Hogar" },
+        { "pos": 10, "nombre": "Vitalis Nova", "tipo": "Marca", "ingresos": 130760, "unidades": 5570, "ticket": 23.46, "ingresosAfiliados": 130760, "ingresosVideoPaid": 89300, "crecimiento": 11, "categoria": "Belleza / Suplementos" }
+      ]
+    },
+    {
+      "id": "belleza",
+      "nombre": "Top tiendas de Belleza y cuidado personal",
+      "descripcion": "Categoría más activa para afiliados nuevos: ticket bajo, muestras fáciles de conseguir, volumen alto de búsquedas.",
+      "keywords": "mejores marcas belleza tiktok shop, top tiendas belleza tts españa, afiliados belleza tiktok",
+      "tiendas": [
+        { "pos": 1, "nombre": "Philips España Shop", "tipo": "Marca", "ingresos": 115080, "unidades": 4300, "ticket": 26.79, "ingresosAfiliados": 114460, "ingresosVideoPaid": 106950, "crecimiento": -56.2 },
+        { "pos": 2, "nombre": "mixsoon.es", "tipo": "Marca", "ingresos": 113870, "unidades": 4260, "ticket": 26.76, "ingresosAfiliados": 105620, "ingresosVideoPaid": 81730, "crecimiento": -50.3 },
+        { "pos": 3, "nombre": "Bella Aurora Cosmetics", "tipo": "Marca", "ingresos": 99320, "unidades": 7970, "ticket": 12.46, "ingresosAfiliados": 95350, "ingresosVideoPaid": 83340, "crecimiento": -62 },
+        { "pos": 4, "nombre": "viutycosmetics", "tipo": "Minorista", "ingresos": 93090, "unidades": 2300, "ticket": 40.42, "ingresosAfiliados": 92900, "ingresosVideoPaid": 67730, "crecimiento": -69.1 },
+        { "pos": 5, "nombre": "Maybelline ES", "tipo": "Marca", "ingresos": 92690, "unidades": 9680, "ticket": 9.58, "ingresosAfiliados": 88860, "ingresosVideoPaid": 69940, "crecimiento": -60.6 },
+        { "pos": 6, "nombre": "Masderm", "tipo": "Marca", "ingresos": 71030, "unidades": 1720, "ticket": 41.22, "ingresosAfiliados": 69590, "ingresosVideoPaid": 45880, "crecimiento": -39.2 },
+        { "pos": 7, "nombre": "LASTAR perfume", "tipo": "Marca", "ingresos": 65200, "unidades": 7100, "ticket": 9.18, "ingresosAfiliados": 63870, "ingresosVideoPaid": 52670, "crecimiento": -6 },
+        { "pos": 8, "nombre": "Lowy Cosmetics", "tipo": "Marca", "ingresos": 64510, "unidades": 6440, "ticket": 10.02, "ingresosAfiliados": 43100, "ingresosVideoPaid": 45290, "crecimiento": -17.6 },
+        { "pos": 9, "nombre": "Freshly Cosmetics", "tipo": "Marca", "ingresos": 63340, "unidades": 2660, "ticket": 23.78, "ingresosAfiliados": 61780, "ingresosVideoPaid": 60440, "crecimiento": 96.3 },
+        { "pos": 10, "nombre": "L'Oréal Paris ES", "tipo": "Marca", "ingresos": 61160, "unidades": 6260, "ticket": 9.77, "ingresosAfiliados": 59320, "ingresosVideoPaid": 52390, "crecimiento": -41.5 }
+      ]
+    },
+    {
+      "id": "moda",
+      "nombre": "Top tiendas de Accesorios de moda",
+      "descripcion": "Joyería, gafas, relojes, bolsos. Ticket más bajo que moda tradicional, muy buscado por afiliados con audiencias jóvenes.",
+      "keywords": "mejores tiendas moda tiktok shop, accesorios tiktok shop españa, tiendas joyeria tts",
+      "tiendas": [
+        { "pos": 1, "nombre": "POEDAGAR SSS", "tipo": "Marca", "ingresos": 11270, "unidades": 1550, "ticket": 7.28, "ingresosAfiliados": 10170, "ingresosVideoPaid": 8500, "crecimiento": -47.3 },
+        { "pos": 2, "nombre": "CAPHUNTERS", "tipo": "Minorista", "ingresos": 9850, "unidades": 338, "ticket": 29.15, "ingresosAfiliados": 7570, "ingresosVideoPaid": 7890, "crecimiento": 46 },
+        { "pos": 3, "nombre": "Juban", "tipo": "Minorista", "ingresos": 8470, "unidades": 1100, "ticket": 7.69, "ingresosAfiliados": 7390, "ingresosVideoPaid": 5290, "crecimiento": 48.1 },
+        { "pos": 4, "nombre": "KOUHUA ONLINE", "tipo": "Minorista", "ingresos": 8310, "unidades": 702, "ticket": 11.83, "ingresosAfiliados": 0, "ingresosVideoPaid": 8310, "crecimiento": 999 },
+        { "pos": 5, "nombre": "LETEME Wig Spain Store", "tipo": "Marca", "ingresos": 7500, "unidades": 174, "ticket": 43.13, "ingresosAfiliados": 7120, "ingresosVideoPaid": 7120, "crecimiento": 25 },
+        { "pos": 6, "nombre": "Joyaslabella", "tipo": "Minorista", "ingresos": 7460, "unidades": 456, "ticket": 16.35, "ingresosAfiliados": 1290, "ingresosVideoPaid": 5350, "crecimiento": -32.5 },
+        { "pos": 7, "nombre": "Meeloog ES", "tipo": "Marca", "ingresos": 6500, "unidades": 544, "ticket": 11.95, "ingresosAfiliados": 6470, "ingresosVideoPaid": 5920, "crecimiento": 363.2 },
+        { "pos": 8, "nombre": "Zoravia", "tipo": "Minorista", "ingresos": 6440, "unidades": 1630, "ticket": 3.95, "ingresosAfiliados": 4560, "ingresosVideoPaid": 3540, "crecimiento": -4.1 },
+        { "pos": 9, "nombre": "Drperfect Jewelry", "tipo": "Minorista", "ingresos": 5930, "unidades": 814, "ticket": 7.29, "ingresosAfiliados": 5240, "ingresosVideoPaid": 5160, "crecimiento": -28.6 },
+        { "pos": 10, "nombre": "IROJEFF", "tipo": "Minorista", "ingresos": 5690, "unidades": 1150, "ticket": 4.96, "ingresosAfiliados": 4790, "ingresosVideoPaid": 3850, "crecimiento": 33.8 }
+      ]
+    },
+    {
+      "id": "mascotas",
+      "nombre": "Top tiendas de Productos para mascotas",
+      "descripcion": "Nicho con menos competencia entre afiliados. Audiencia engagée, tickets medios, buenos márgenes de comisión.",
+      "keywords": "productos mascotas tiktok shop, tiendas mascotas tts españa, afiliados mascotas",
+      "tiendas": [
+        { "pos": 1, "nombre": "Exsamind Home_Spain", "tipo": "Minorista", "ingresos": 42290, "unidades": 856, "ticket": 49.41, "ingresosAfiliados": 41270, "ingresosVideoPaid": 40310, "crecimiento": 4.1 },
+        { "pos": 2, "nombre": "MinoyoShop", "tipo": "Minorista", "ingresos": 40170, "unidades": 1630, "ticket": 24.58, "ingresosAfiliados": 39360, "ingresosVideoPaid": 36240, "crecimiento": -50.5 },
+        { "pos": 3, "nombre": "Golden 22K", "tipo": "Marca", "ingresos": 34940, "unidades": 2170, "ticket": 16.13, "ingresosAfiliados": 33150, "ingresosVideoPaid": 32020, "crecimiento": -49 },
+        { "pos": 4, "nombre": "Cottecota", "tipo": "Marca", "ingresos": 27550, "unidades": 1220, "ticket": 22.57, "ingresosAfiliados": 5990, "ingresosVideoPaid": 8260, "crecimiento": -41.9 },
+        { "pos": 5, "nombre": "Aigotech", "tipo": "Minorista", "ingresos": 26270, "unidades": 2830, "ticket": 9.27, "ingresosAfiliados": 23500, "ingresosVideoPaid": 22490, "crecimiento": 137.3 },
+        { "pos": 6, "nombre": "Masonry mall", "tipo": "Minorista", "ingresos": 21680, "unidades": 844, "ticket": 25.69, "ingresosAfiliados": 21290, "ingresosVideoPaid": 20110, "crecimiento": -89.2 },
+        { "pos": 7, "nombre": "Yommymascota", "tipo": "Minorista", "ingresos": 20990, "unidades": 2740, "ticket": 7.67, "ingresosAfiliados": 5750, "ingresosVideoPaid": 8030, "crecimiento": 39.3 },
+        { "pos": 8, "nombre": "TORCHPET", "tipo": "Minorista", "ingresos": 12820, "unidades": 629, "ticket": 20.39, "ingresosAfiliados": 10950, "ingresosVideoPaid": 10660, "crecimiento": 80.7 },
+        { "pos": 9, "nombre": "SELLWISE", "tipo": "Minorista", "ingresos": 11130, "unidades": 694, "ticket": 16.04, "ingresosAfiliados": 1930, "ingresosVideoPaid": 6030, "crecimiento": 10 },
+        { "pos": 10, "nombre": "popet mascotas", "tipo": "Marca", "ingresos": 7100, "unidades": 1310, "ticket": 5.43, "ingresosAfiliados": 4760, "ingresosVideoPaid": 4740, "crecimiento": -51.1 }
+      ]
+    },
+    {
+      "id": "bebes",
+      "nombre": "Top tiendas de Bebés y maternidad",
+      "descripcion": "Audiencia muy engagée (madres/padres nuevos), conversión alta, pero con requisitos de compliance para algunos productos.",
+      "keywords": "productos bebes tiktok shop, tiendas bebes tts españa, maternidad tiktok shop",
+      "tiendas": [
+        { "pos": 1, "nombre": "Momcozy-ES", "tipo": "Marca", "ingresos": 54520, "unidades": 1330, "ticket": 41.09, "ingresosAfiliados": 47760, "ingresosVideoPaid": 49550, "crecimiento": -11.1 },
+        { "pos": 2, "nombre": "DESPEGUE", "tipo": "Marca", "ingresos": 21330, "unidades": 1560, "ticket": 13.69, "ingresosAfiliados": 20410, "ingresosVideoPaid": 19200, "crecimiento": -59.7 },
+        { "pos": 3, "nombre": "CGlovely_Spain", "tipo": "Minorista", "ingresos": 14170, "unidades": 258, "ticket": 54.92, "ingresosAfiliados": 5840, "ingresosVideoPaid": 5740, "crecimiento": -4.9 },
+        { "pos": 4, "nombre": "Mobiclinic", "tipo": "Marca", "ingresos": 13930, "unidades": 307, "ticket": 45.38, "ingresosAfiliados": 10370, "ingresosVideoPaid": 11470, "crecimiento": 29.1 },
+        { "pos": 5, "nombre": "huellitas de vida", "tipo": "Minorista", "ingresos": 13270, "unidades": 85, "ticket": 156.07, "ingresosAfiliados": 9700, "ingresosVideoPaid": 9440, "crecimiento": -7.1 },
+        { "pos": 6, "nombre": "Mercatodo", "tipo": "Minorista", "ingresos": 9520, "unidades": 489, "ticket": 19.47, "ingresosAfiliados": 9310, "ingresosVideoPaid": 9210, "crecimiento": 52.8 },
+        { "pos": 7, "nombre": "JUPPLIES", "tipo": "Marca", "ingresos": 7680, "unidades": 351, "ticket": 21.88, "ingresosAfiliados": 6890, "ingresosVideoPaid": 6580, "crecimiento": -48.4 },
+        { "pos": 8, "nombre": "BATHBY", "tipo": "Marca", "ingresos": 7280, "unidades": 456, "ticket": 15.97, "ingresosAfiliados": 3980, "ingresosVideoPaid": 4620, "crecimiento": 185.9 },
+        { "pos": 9, "nombre": "BebeOutlet", "tipo": "Minorista", "ingresos": 6490, "unidades": 146, "ticket": 44.42, "ingresosAfiliados": 1020, "ingresosVideoPaid": 5140, "crecimiento": 17.5 },
+        { "pos": 10, "nombre": "Innovaciones MS", "tipo": "Minorista", "ingresos": 5230, "unidades": 131, "ticket": 39.96, "ingresosAfiliados": 2560, "ingresosVideoPaid": 3070, "crecimiento": 43.3 }
+      ]
+    }
+  ]
+}
