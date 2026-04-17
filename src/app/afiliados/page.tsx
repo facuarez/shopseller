@@ -39,8 +39,8 @@ const GUIDES = [
   },
   {
     href: "/afiliados/muestras",
-    title: "Muestras gratis y reembolsables en TTS",
-    description: "Cómo funcionan las muestras con reembolso por ventas (1, 2 o 3). Cálculo de ROI real y cómo elegir.",
+    title: "Cómo pedir muestras gratis siendo afiliado nuevo",
+    description: "Plantilla de mensaje que funciona, qué mira el seller, y cómo romper el círculo vicioso sin historial. Con ROI de muestras reembolsables.",
     tag: "Guía",
   },
   {
