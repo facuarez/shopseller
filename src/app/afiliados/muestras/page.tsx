@@ -24,9 +24,39 @@ export default function MuestrasPage() {
         <p>El seller envía el producto sin costo para el afiliado. No hay que devolver nada. El vendedor asume el 100% del riesgo: paga el producto, paga el envío, y espera que el creador publique contenido.</p>
         <p><strong>Desde el lado vendedor:</strong> enviamos muestras gratis porque es la forma más efectiva de activar afiliados. Pero es caro. Si el producto cuesta 10€ y el envío 3.50€, cada muestra nos sale 13.50€. De cada 10 muestras enviadas, 3-4 creadores publican video. El coste real por video publicado es de 33-45€.</p>
 
-        <h3>Muestras reembolsables</h3>
-        <p>El afiliado compra el producto a precio completo. Si publica un video que cumple los requisitos (mínimo de views, duración, etc.), TikTok le reembolsa el precio del producto. El seller no paga nada — es TikTok quien financia el reembolso como incentivo.</p>
-        <p><strong>Ventaja para el afiliado:</strong> podés acceder a productos sin depender de que un seller te apruebe. Si el producto cuesta 20€ y después te reembolsan, tu inversión neta es 0€ (salvo que no cumplas los requisitos).</p>
+        <h3>Muestras reembolsables (Cost Refund)</h3>
+        <p>El afiliado compra el producto a precio completo. El reembolso no depende solo de publicar el video — depende de <strong>generar ventas</strong>. El seller configura cuántas ventas necesitás para recuperar tu inversión, con opciones típicas de <strong>1, 2 o 3 ventas</strong>.</p>
+        <p>Esto es clave entenderlo: no es "publico video → me devuelven el dinero". Es "publico video → si genera X ventas, me reembolsan". Si no generás las ventas mínimas, perdés el precio del producto.</p>
+
+        <div className="not-prose my-6 p-5 rounded-xl border-2 border-border bg-card-bg">
+          <p className="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-3">Configuraciones típicas de reembolso</p>
+          <div className="space-y-3 text-sm">
+            <div className="flex items-start gap-3">
+              <span className="shrink-0 w-8 h-8 rounded-lg bg-green-500/10 text-green-600 dark:text-green-400 flex items-center justify-center text-xs font-bold font-data">1</span>
+              <div>
+                <p className="font-semibold text-text">Reembolso a 1 venta</p>
+                <p className="text-text-secondary text-xs leading-relaxed">Facilísimo de cumplir. Producto probablemente barato o nuevo en el catálogo del seller, que necesita activación.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="shrink-0 w-8 h-8 rounded-lg bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 flex items-center justify-center text-xs font-bold font-data">2</span>
+              <div>
+                <p className="font-semibold text-text">Reembolso a 2 ventas</p>
+                <p className="text-text-secondary text-xs leading-relaxed">Lo más común. Seller busca contenido que convierta, no videos sueltos. Exige que valides que el producto te funciona.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="shrink-0 w-8 h-8 rounded-lg bg-red-500/10 text-red-600 dark:text-red-400 flex items-center justify-center text-xs font-bold font-data">3</span>
+              <div>
+                <p className="font-semibold text-text">Reembolso a 3 ventas (o más)</p>
+                <p className="text-text-secondary text-xs leading-relaxed">Seller exigente o producto de ticket alto. Solo te conviene si tenés audiencia probada o el producto es muy vendible.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p><strong>Ventaja para el afiliado:</strong> podés acceder a productos sin depender de que un seller te apruebe una muestra gratis. Si el producto cuesta 20€ y generás las ventas mínimas, tu inversión neta es 0€ + las comisiones que hayas ganado.</p>
+        <p><strong>Riesgo:</strong> si el producto no convierte, perdés el precio del producto. Por eso es crítico elegir bien antes de invertir.</p>
 
         <h2>Cómo pedir muestras gratis (paso a paso)</h2>
         <ol>
@@ -48,20 +78,57 @@ export default function MuestrasPage() {
         </ul>
         <p>Lo que NO esperamos (pero agradecemos): que el video se vuelva viral. Lo que sí esperamos: que hagas un esfuerzo genuino.</p>
 
-        <h2>Cálculo de ROI de muestras</h2>
-        <p>Si vas a invertir tu tiempo en pedir muestras, hacé el cálculo:</p>
+        <h2>Cálculo de ROI de muestras reembolsables</h2>
+        <p>El cálculo cambia según cuántas ventas te exige el seller para reembolsar. Mirá los tres escenarios con un producto de 20€ y 15% de comisión:</p>
 
-        <div className="not-prose my-6 p-5 rounded-xl border-2 border-border bg-card-bg">
-          <p className="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-3">Ejemplo con muestras reembolsables</p>
+        <div className="not-prose my-6 p-5 rounded-xl border-2 border-green-500/20 bg-green-500/5">
+          <p className="text-xs font-semibold text-green-700 dark:text-green-400 uppercase tracking-wider mb-3">Escenario A — Reembolso a 1 venta (fácil)</p>
           <div className="space-y-2 font-data text-sm">
-            <div className="flex justify-between"><span className="text-text-secondary">Precio producto</span><span className="text-text font-semibold">20,00 €</span></div>
-            <div className="flex justify-between"><span className="text-text-secondary">Reembolso (si publicás)</span><span className="text-green-600 dark:text-green-400 font-semibold">-20,00 €</span></div>
-            <div className="flex justify-between"><span className="text-text-secondary">Tu inversión neta</span><span className="text-text font-bold">0,00 €</span></div>
+            <div className="flex justify-between"><span className="text-text-secondary">Inversión inicial</span><span className="text-text font-semibold">20,00 €</span></div>
+            <div className="flex justify-between"><span className="text-text-secondary">Generás 1 venta → te reembolsan</span><span className="text-green-600 dark:text-green-400 font-semibold">-20,00 €</span></div>
+            <div className="flex justify-between"><span className="text-text-secondary">Comisión de esa venta (15%)</span><span className="text-accent font-semibold">+3,00 €</span></div>
             <div className="border-t border-border pt-2 mt-2">
-              <div className="flex justify-between"><span className="text-text-secondary">Si el video genera 5 ventas × 20€ × 15%</span><span className="text-accent font-bold">+15,00 €</span></div>
+              <div className="flex justify-between"><span className="text-text-secondary">Si el video genera 5 ventas totales</span><span className="text-text-secondary">—</span></div>
+              <div className="flex justify-between"><span className="text-text font-semibold">Ganancia neta</span><span className="text-accent font-bold">+15,00 €</span></div>
             </div>
           </div>
         </div>
+
+        <div className="not-prose my-6 p-5 rounded-xl border-2 border-yellow-500/20 bg-yellow-500/5">
+          <p className="text-xs font-semibold text-yellow-700 dark:text-yellow-400 uppercase tracking-wider mb-3">Escenario B — Reembolso a 2 ventas (común)</p>
+          <div className="space-y-2 font-data text-sm">
+            <div className="flex justify-between"><span className="text-text-secondary">Inversión inicial</span><span className="text-text font-semibold">20,00 €</span></div>
+            <div className="flex justify-between"><span className="text-text-secondary">Si generás solo 1 venta</span><span className="text-red-500 font-semibold">sin reembolso · -20€</span></div>
+            <div className="flex justify-between"><span className="text-text-secondary">Si generás 2 ventas → reembolso</span><span className="text-green-600 dark:text-green-400 font-semibold">-20,00 €</span></div>
+            <div className="flex justify-between"><span className="text-text-secondary">Comisiones de 2 ventas (15%)</span><span className="text-accent font-semibold">+6,00 €</span></div>
+            <div className="border-t border-border pt-2 mt-2">
+              <div className="flex justify-between"><span className="text-text-secondary">Si el video genera 5 ventas totales</span><span className="text-text-secondary">—</span></div>
+              <div className="flex justify-between"><span className="text-text font-semibold">Ganancia neta</span><span className="text-accent font-bold">+15,00 €</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="not-prose my-6 p-5 rounded-xl border-2 border-red-500/20 bg-red-500/5">
+          <p className="text-xs font-semibold text-red-700 dark:text-red-400 uppercase tracking-wider mb-3">Escenario C — Reembolso a 3 ventas (exigente)</p>
+          <div className="space-y-2 font-data text-sm">
+            <div className="flex justify-between"><span className="text-text-secondary">Inversión inicial</span><span className="text-text font-semibold">20,00 €</span></div>
+            <div className="flex justify-between"><span className="text-text-secondary">Si generás menos de 3 ventas</span><span className="text-red-500 font-semibold">sin reembolso · -20€</span></div>
+            <div className="flex justify-between"><span className="text-text-secondary">Si generás 3+ ventas → reembolso</span><span className="text-green-600 dark:text-green-400 font-semibold">-20,00 €</span></div>
+            <div className="border-t border-border pt-2 mt-2">
+              <p className="text-xs text-text-secondary">Solo te conviene si tu audiencia probada convierte bien. Si no tenés historial, el riesgo es alto.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>Cómo elegir qué muestras reembolsables pedir</h3>
+        <p>Tres criterios antes de invertir:</p>
+        <ul>
+          <li><strong>El umbral de ventas:</strong> si estás empezando, solo aceptá muestras con reembolso a 1 o máximo 2 ventas.</li>
+          <li><strong>El producto:</strong> tiene que ser algo que tu audiencia realmente compraría. No importa si el producto es genial — si no le interesa a tu gente, no vende.</li>
+          <li><strong>El precio:</strong> cuanto más caro el producto, más riesgo asumís si no convierte. Para empezar, quedate con productos de 10-20€.</li>
+        </ul>
+
+        <h2>ROI de muestras gratis</h2>
 
         <div className="not-prose my-6 p-5 rounded-xl border-2 border-border bg-card-bg">
           <p className="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-3">Ejemplo con muestras gratis</p>
@@ -74,6 +141,8 @@ export default function MuestrasPage() {
             </div>
           </div>
         </div>
+
+        <p>Las muestras gratis siempre tienen ROI positivo (tu inversión es solo tiempo). El problema es que son más difíciles de conseguir: el seller aprueba pocas, y solo si tu perfil le cierra. Por eso muchos afiliados combinan ambas estrategias.</p>
 
         <h2>Cuántas muestras pedir por mes</h2>
         <p>Recomendación basada en lo que veo funcionar:</p>
