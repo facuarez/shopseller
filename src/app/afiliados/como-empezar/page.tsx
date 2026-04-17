@@ -61,6 +61,17 @@ export default function ComoEmpezarPage() {
         </ul>
         <p>Duración ideal: 15-45 segundos para productos simples, 45-90 segundos para productos que necesitan explicación.</p>
 
+        <h2>Volumen &gt; calidad (el insight que cambia todo)</h2>
+        <p>Esto es lo más importante que vas a leer sobre ser afiliado de TTS: <strong>no te obsesiones con hacer el video perfecto. Hacé muchos videos.</strong></p>
+        <p>Cuando empecés a ver los videos top ventas de cualquier producto en TTS (podés hacerlo desde el Creator Center o con Kalodata), vas a descubrir algo incómodo: la mayoría <em>no son videos elaborados</em>. Son caseros, mal editados, a veces hasta mal encuadrados. Pero funcionan.</p>
+        <p>¿Por qué? El algoritmo de TikTok es una lotería estadística. Cada video que subís se testea con una muestra chica de audiencia. Si pega, se amplifica. Si no, muere. Nadie — ni tú, ni el experto de turno — puede predecir cuál va a pegar.</p>
+        <p>Por eso la traba real no es <em>qué hacer</em>, es <em>hacer</em>. Los afiliados que ganan son los que aceptan publicar muchos videos decentes en vez de pocos videos &quot;perfectos&quot;.</p>
+
+        <h2>No borres tus videos viejos</h2>
+        <p>Error grave que veo todo el tiempo: afiliados que borran los videos que &quot;no funcionaron&quot;. NO lo hagas.</p>
+        <p>Los sellers con presupuesto hacen GMV Max (Shop Ads) sobre todos los videos que se generan de sus productos, no solo los nuevos. Un video tuyo de hace 3 meses puede empezar a convertir en cualquier momento, ya sea porque el seller activó una campaña o porque el algoritmo le dio una segunda oportunidad.</p>
+        <p>Cada video es una trampa de pesca. Sacala y perdés esa oportunidad para siempre. <Link href="/afiliados/cuantos-videos" className="text-accent">Más sobre esto →</Link></p>
+
         <h2>Cuánto se gana realmente</h2>
         <p>Seamos honestos con los números. Para un afiliado que está empezando:</p>
         <ul>

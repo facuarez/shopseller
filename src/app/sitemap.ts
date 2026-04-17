@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/afiliados/como-empezar`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/afiliados/muestras`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/afiliados/multipais`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE_URL}/afiliados/cuantos-videos`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
   ];
 
   const analisisPages: MetadataRoute.Sitemap = analisis.map((item) => ({

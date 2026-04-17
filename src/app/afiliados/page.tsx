@@ -25,6 +25,13 @@ const TOOLS = [
 
 const GUIDES = [
   {
+    href: "/afiliados/cuantos-videos",
+    title: "Cuántos videos publicar en TikTok Shop",
+    description: "La traba no está en qué hacer, sino en hacer. Por qué volumen &gt; calidad y cómo funciona realmente el algoritmo.",
+    tag: "Imprescindible",
+    featured: true,
+  },
+  {
     href: "/afiliados/como-empezar",
     title: "Cómo empezar como afiliado TTS España 2026",
     description: "Requisitos reales, paso a paso, y lo que un vendedor espera de vos. Sin las frases motivacionales de siempre.",
@@ -32,8 +39,8 @@ const GUIDES = [
   },
   {
     href: "/afiliados/muestras",
-    title: "Muestras gratis: cómo funcionan de verdad",
-    description: "Muestras gratis vs reembolsables, cómo pedirlas, qué esperan los sellers, y cálculo de ROI real.",
+    title: "Muestras gratis y reembolsables en TTS",
+    description: "Cómo funcionan las muestras con reembolso por ventas (1, 2 o 3). Cálculo de ROI real y cómo elegir.",
     tag: "Guía",
   },
   {
@@ -62,17 +69,17 @@ export default function AfiliadosPage() {
             <span className="text-xs text-accent font-medium">Sección para afiliados</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
-            Data para afiliados de TikTok Shop
+            Afiliado de TikTok Shop:
             <br />
-            <span className="text-accent">España y Europa</span>
+            <span className="text-accent">la traba no está en qué hacer, está en hacer</span>
           </h1>
           <p className="text-lg text-[#999] max-w-xl mb-6 leading-relaxed">
-            Herramientas y datos para tomar mejores decisiones. Qué productos promocionar,
-            cuánto podés ganar, a qué sellers pedirles muestras. Sin humo, sin cursos, sin MCN.
+            Tus videos son como trampas de peces. Llená TikTok de ellas.
+            Acá te damos data real, herramientas y la verdad de cómo funciona el algoritmo —
+            desde el lado del vendedor que ve todo.
           </p>
           <p className="text-sm text-[#666] max-w-lg">
-            Escrito por un vendedor que recibe solicitudes de afiliados todos los días.
-            Te cuento lo que funciona desde el otro lado.
+            Sin humo, sin cursos, sin MCN. Escrito por un operador que recibe solicitudes de afiliados todos los días.
           </p>
         </div>
       </div>
@@ -109,11 +116,11 @@ export default function AfiliadosPage() {
           <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Guías</p>
           <h2 className="text-2xl font-bold text-text mb-8">Lo que necesitás saber para operar</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {GUIDES.map((guide) => (
               <Link key={guide.href} href={guide.href}
-                className="group block p-6 rounded-xl border border-border bg-card-bg shadow-sm hover:border-accent/40 hover:shadow-md transition-all">
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-medium">{guide.tag}</span>
+                className={`group block p-6 rounded-xl shadow-sm hover:shadow-md transition-all ${guide.featured ? "border-2 border-accent/30 bg-accent/[0.03] hover:border-accent/60" : "border border-border bg-card-bg hover:border-accent/40"}`}>
+                <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${guide.featured ? "bg-accent/15 text-accent" : "bg-blue-500/10 text-blue-600 dark:text-blue-400"}`}>{guide.tag}</span>
                 <h3 className="font-bold text-text group-hover:text-accent transition-colors mt-3 mb-2">{guide.title}</h3>
                 <p className="text-sm text-text-secondary leading-relaxed">{guide.description}</p>
                 <span className="inline-flex items-center gap-1 text-sm font-semibold text-accent mt-4 group-hover:gap-2 transition-all">
