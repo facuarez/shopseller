@@ -1,11 +1,32 @@
 import type { MDXComponents } from "mdx/types";
+import Stat from "./mdx/Stat";
+import StatsGrid from "./mdx/StatsGrid";
+import Callout from "./mdx/Callout";
+import Quote from "./mdx/Quote";
+import Breakdown from "./mdx/Breakdown";
+import Process from "./mdx/Process";
+import BeforeAfter from "./mdx/BeforeAfter";
+import Summary from "./mdx/Summary";
+import Chart from "./mdx/Chart";
 
 /**
- * Componentes custom que se inyectan en el renderizado MDX.
- * Se pueden agregar componentes interactivos aquí (callouts, embeds, etc.)
+ * Componentes disponibles dentro de los archivos MDX.
+ *
+ * Componentes tipográficos (HTML overrides): h2, h3, p, a, ul, ol, li, blockquote, code, pre, table
+ *
+ * Componentes custom para artículos enriquecidos:
+ *   - <Summary>...</Summary> — TL;DR al inicio del artículo
+ *   - <Stat value="17%" label="Margen" accent /> — número destacado inline
+ *   - <StatsGrid stats={[...]} /> — grid de 2-4 métricas
+ *   - <Callout type="insight" title="...">...</Callout> — box destacado
+ *   - <Quote author="Facu">...</Quote> — pullquote grande
+ *   - <Breakdown items={[...]} total={{...}} /> — desglose con barras
+ *   - <Process steps={[...]} /> — timeline numerado vertical
+ *   - <BeforeAfter before={...} after={...} /> — comparativa 2 cols
+ *   - <Chart type="line|bar|pie" data={[...]} /> — gráfico Recharts
  */
 const components: MDXComponents = {
-  // Override de elementos HTML para aplicar estilos prose
+  // HTML overrides (estilos prose)
   h2: (props) => <h2 {...props} />,
   h3: (props) => <h3 {...props} />,
   p: (props) => <p {...props} />,
@@ -17,19 +38,17 @@ const components: MDXComponents = {
   code: (props) => <code {...props} />,
   pre: (props) => <pre {...props} />,
   table: (props) => <div className="overflow-x-auto"><table {...props} /></div>,
-  // Componente custom: callout/nota
-  Callout: ({ children, type = "info" }: { children: React.ReactNode; type?: "info" | "warning" | "tip" }) => {
-    const styles = {
-      info: "border-blue-500/30 bg-blue-500/5",
-      warning: "border-yellow-500/30 bg-yellow-500/5",
-      tip: "border-green-500/30 bg-green-500/5",
-    };
-    return (
-      <div className={`border-l-4 ${styles[type]} p-4 rounded-r-md my-4`}>
-        {children}
-      </div>
-    );
-  },
+
+  // Componentes custom
+  Summary,
+  Stat,
+  StatsGrid,
+  Callout,
+  Quote,
+  Breakdown,
+  Process,
+  BeforeAfter,
+  Chart,
 };
 
 export default components;
