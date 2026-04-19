@@ -25,14 +25,18 @@ export default function ConsultoriaPage() {
             <span className="text-xs text-accent font-medium">Diagnóstico operativo 1-1</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-5">
-            Análisis profundo de tu operación en TikTok Shop
+            Análisis profundo de tu operación en <span className="whitespace-nowrap">TikTok&nbsp;Shop</span>
             <br />
-            <span className="text-accent">por un operador que opera hace años</span>
+            <span className="text-accent">por un operador con casi 500K€ facturados</span>
           </h1>
-          <p className="text-lg text-[#999] max-w-2xl mb-6 leading-relaxed">
+          <p className="text-lg text-[#999] max-w-2xl mb-4 leading-relaxed">
             No es una llamada de 1 hora y ya está. Es un análisis completo de tu caso:
             productos, competencia, mercado, operación actual, y un plan de acción por escrito que recibís
-            a los 3 días. Con datos, no con teoría.
+            a los 3 días. Con datos reales, no con teoría.
+          </p>
+          <p className="text-sm text-[#666] max-w-2xl mb-8 leading-relaxed">
+            Operando TikTok Shop desde septiembre 2025 en una empresa de productos para el hogar en España.
+            Cerca de 500.000€ facturados en 7 meses con visión diaria de afiliados, GMV Max, logística y márgenes reales.
           </p>
           <div className="flex items-baseline gap-3 mb-8">
             <span className="text-4xl font-bold text-white font-data">499€</span>
@@ -210,9 +214,9 @@ export default function ConsultoriaPage() {
         <div className="mb-14 p-6 rounded-xl border border-border bg-card-bg">
           <h2 className="text-2xl font-bold text-text mb-3">Quién te va a asesorar</h2>
           <p className="text-text-secondary leading-relaxed mb-3">
-            Soy Facu, operador de TikTok Shop en una empresa europea de productos para el hogar basada en España.
-            Llevo operando en TTS Europa desde las primeras etapas del lanzamiento, gestionando catálogo,
-            afiliados, campañas GMV Max y logística de manera diaria.
+            Soy Facu, operador de TikTok Shop en una empresa de productos para el hogar basada en España.
+            Arranqué en septiembre de 2025 y en 7 meses facturamos cerca de <strong className="text-text">500.000€</strong> gestionando
+            catálogo, afiliados, campañas GMV Max y logística de manera diaria.
           </p>
           <p className="text-text-secondary leading-relaxed mb-4">
             Lo que te ofrezco no es teoría ni un curso. Es experiencia operativa directa: lo que funcionó, lo que falló,

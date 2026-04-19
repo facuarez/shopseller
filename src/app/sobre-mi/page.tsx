@@ -14,9 +14,9 @@ export default function SobreMiPage() {
         <h2>Quién soy</h2>
         <p>
           {/* TODO: Completar con tu historia real */}
-          Soy Facu, operador de TikTok Shop en una empresa europea de productos para el hogar basada en
-          España. Llevo operando en TTS Europa desde sus primeras etapas y he visto de primera mano cómo
-          evoluciona la plataforma, qué funciona y qué no.
+          Soy Facu, operador de TikTok Shop en una empresa de productos para el hogar basada en España.
+          Arranqué en septiembre de 2025 y en 7 meses facturamos cerca de 500.000€. He visto de primera mano
+          cómo evoluciona la plataforma día a día: afiliados, GMV Max, cambios de comisiones, logística cross-border.
         </p>
 
         <h2>Por qué este sitio</h2>
