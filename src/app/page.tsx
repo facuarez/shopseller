@@ -352,12 +352,13 @@ export default function Home() {
         <div className="relative max-w-4xl mx-auto px-4 text-center">
           <ScrollReveal>
             <p className="text-2xl sm:text-3xl font-bold text-white leading-snug mb-3">
-              No soy consultor. No vendo cursos.
+              Operador primero. Todo lo demás después.
             </p>
             <p className="text-lg text-[#888] max-w-2xl mx-auto mb-10">
-              Soy un operador que gestiona productos en TikTok Shop Europa todos los días.
+              Gestiono productos en TikTok Shop Europa todos los días.
               Las herramientas las construyo porque las necesito yo primero.
               Los datos los verifico con mi propia operación.
+              Lo que compartas acá es lo que me funcionó — no teoría.
             </p>
           </ScrollReveal>
 

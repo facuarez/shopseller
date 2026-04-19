@@ -139,8 +139,8 @@ export default function ConsultoriaPage() {
             afiliados, campañas GMV Max y logística de manera diaria.
           </p>
           <p className="text-text-secondary leading-relaxed mb-4">
-            No soy consultor profesional ni vendo cursos. Lo que te comparto es experiencia operativa real: lo que
-            funcionó, lo que falló, y las decisiones concretas que tomé ante situaciones similares a la tuya.
+            Lo que te ofrezco no es teoría ni un curso. Es experiencia operativa directa: lo que funcionó, lo que falló,
+            y las decisiones concretas que tomé ante situaciones similares a la tuya. Consultoría de operador, no de consultor.
           </p>
           <Link href="/sobre-mi" className="text-sm font-semibold text-accent hover:text-accent-hover transition-colors">
             Más sobre mí →
