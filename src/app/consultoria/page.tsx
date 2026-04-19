@@ -42,12 +42,13 @@ export default function ConsultoriaPage() {
             <span className="text-4xl font-bold text-white font-data">499€</span>
             <span className="text-sm text-[#888]">pago único · sin retainer</span>
           </div>
-          <a href="mailto:facu@shopseller.online?subject=Diagn%C3%B3stico%20operativo%20ShopSeller"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-all shadow-lg shadow-accent/20">
-            Reservar diagnóstico
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+          <a href="mailto:facu@shopseller.online?subject=Diagn%C3%B3stico%20operativo%20%E2%80%94%20Mi%20caso"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-all shadow-lg shadow-accent/20 group">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
+            Escribime y charlamos
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
           </a>
-          <p className="text-xs text-[#666] mt-3">Te respondo en 24h con agenda y formulario inicial.</p>
+          <p className="text-xs text-[#666] mt-3">Respondo yo directamente en 24h. Sin compromiso.</p>
         </div>
       </div>
 
@@ -251,19 +252,54 @@ export default function ConsultoriaPage() {
           </div>
         </div>
 
-        {/* CTA final */}
-        <div className="p-8 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-accent/[0.02] text-center">
-          <h2 className="text-2xl font-bold text-text mb-3">¿Listo para tener claridad por escrito?</h2>
-          <p className="text-text-secondary max-w-lg mx-auto mb-6">
-            6-8 horas de mi tiempo enfocadas en tu caso. Análisis de competencia real, plan de acción escrito,
-            y 2 semanas de acompañamiento. Por 499€.
+        {/* CTA final — personal + simple */}
+        <div className="relative p-8 sm:p-10 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-accent/[0.02] overflow-hidden">
+          {/* Avatar + identidad */}
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-accent to-accent-hover flex items-center justify-center text-white text-xl font-bold shrink-0">
+              F
+            </div>
+            <div>
+              <p className="text-sm font-bold text-text">Facu</p>
+              <p className="text-xs text-text-secondary">Operador TikTok Shop España</p>
+            </div>
+          </div>
+
+          <h2 className="text-2xl sm:text-3xl font-bold text-text mb-3">
+            Escribime. Respondo yo.
+          </h2>
+
+          <p className="text-text-secondary leading-relaxed mb-6 max-w-xl">
+            Sin formularios automáticos, sin sales funnel. Me contás tu caso en 4-5 líneas,
+            te digo honestamente si puedo ayudarte o no. Si tiene sentido, avanzamos con los 499€.
           </p>
-          <a href="mailto:facu@shopseller.online?subject=Diagn%C3%B3stico%20operativo%20ShopSeller"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-all shadow-lg shadow-accent/20">
-            Reservar diagnóstico · 499€
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+
+          <a href="mailto:facu@shopseller.online?subject=Diagn%C3%B3stico%20operativo%20%E2%80%94%20Mi%20caso"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-all shadow-lg shadow-accent/20 group">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            Escribir a Facu directamente
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
+              <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
-          <p className="text-xs text-text-secondary mt-3">facu@shopseller.online · Respuesta en 24h</p>
+
+          <div className="flex flex-wrap gap-x-5 gap-y-1 mt-5 text-xs text-text-secondary">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+              facu@shopseller.online
+            </span>
+            <span className="flex items-center gap-1.5">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+              Respondo en 24h
+            </span>
+            <span className="flex items-center gap-1.5">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>
+              Sin compromiso
+            </span>
+          </div>
         </div>
       </div>
     </div>
