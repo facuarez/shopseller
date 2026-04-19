@@ -32,6 +32,12 @@ export default function Header() {
           </Link>
         </nav>
 
+        {/* CTA Consultoría — destacado */}
+        <Link href="/consultoria" className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-accent border border-accent/30 rounded-lg hover:bg-accent hover:text-white transition-all">
+          Consultoría
+          <span className="text-[10px] font-data opacity-70">499€</span>
+        </Link>
+
         {/* Actions — derecha */}
         <div className="flex items-center gap-2 ml-auto">
           <ThemeToggle />
